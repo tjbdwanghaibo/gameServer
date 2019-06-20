@@ -1,0 +1,52 @@
+// -----------------------------------------
+// 通用全局
+// -----------------------------------------
+
+// 客户端请求：拉取玩家信息
+message CSInitData {
+	option (msgid) = 1101;
+}
+
+// 服务器推送：玩家信息
+message SCInitData {
+	option (msgid) = 1102;
+	required DHuman human 					= 1; // 玩家信息
+	repeated DCardData ownedCards			= 2; // 拥有的卡片
+	repeated int32 equipedCards				= 3; // 装备的卡片
+	repeated DHutItem ownedHutItem			= 4; // 拥有小屋物品
+}
+
+// 服务器更新：用户属性变化（只限发送给本人）
+message SCHumanInfoChange {
+	option (msgid) = 1103;
+	optional DHuman human = 1; 
+}
+
+// 服务器推送：服务器相关配置
+message SCServerConfig {
+	option (msgid) = 1104;
+	required int64 timeNow 					= 1; //当前服务器时间
+}
+
+// 客户端请求：ping
+message CSPing {
+	option (msgid) = 1116;
+}
+
+// 服务器返回：ping
+message SCPing {
+	option (msgid) = 1117;
+}
+
+// 服务器推送：剔除玩家
+message SCHumanKick {
+	option (msgid) = 1120;
+	required int32 resultCode 				= 1; // 被踢原因
+}
+
+// 服务器推送：错误提示
+message SCHint {
+	option (msgid) = 1121;
+	required int32 strId 					= 1; // 提示表的id
+	repeated string param 					= 2; // 参数的值
+}

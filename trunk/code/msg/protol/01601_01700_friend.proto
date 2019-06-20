@@ -1,0 +1,165 @@
+// -----------------------------------------
+// 好友
+// -----------------------------------------
+
+
+// 关注
+message CSAddFriend {
+	option (msgid) = 1601;
+	required int64 humanId					= 1; // 玩家Id
+}
+// 关注
+message SCAddFriend {
+	option (msgid) = 1602;
+	required int32 resultCode				= 1; // 0=成功
+	optional DHumanSimpleInfo friend		= 2;
+}
+
+// 取关
+message CSDeleteFriend {
+	option (msgid) = 1603;
+	required int64 humanId					= 1; // 玩家Id
+}
+// 取关
+message SCDeleteFriend {
+	option (msgid) = 1604;
+	required int32 resultCode				= 1; // 0=成功
+	optional int64 humanId					= 2; // 玩家Id
+}
+// 点赞
+message CSLaud {
+	option (msgid) = 1605;
+	required int64 humanId					= 1; // 玩家Id
+}
+// 点赞返回
+message SCLaudResult {
+	option (msgid) = 1606;
+	required int32 resultCode				= 1; // 0=成功
+	optional int64 humanId					= 2; // 玩家Id
+	optional int32 like 					= 3; // 点赞数
+}
+
+// 查找好友
+message CSFindFriend {
+	option (msgid) = 1607;
+	required string name					= 1; // 玩家名字或者玩家Id
+}
+// 查找好友返回
+message SCFindFriend {
+	option (msgid) = 1608;
+	optional DHumanSimpleInfo friend		= 1; // 
+}
+
+// 获取我的好友列表
+message CSGetMyFriends {
+	option (msgid) = 1609;
+	required int32 page						= 1; // 第几页（一页10个）
+}
+// 我的好友列表
+message SCGetMyFriends {
+	option (msgid) = 1610;
+	repeated DHumanSimpleInfo friend		= 1; // 结果
+}
+// 获取我的粉丝列表
+message CSGetMyFans {
+	option (msgid) = 1611;
+	required int32 page						= 1; // 第几页（一页10个）
+}
+// 我的粉丝列表
+message SCGetMyFans {
+	option (msgid) = 1612;
+	repeated DHumanSimpleInfo fans			= 1; // 结果
+}
+
+// 获取指定玩家的详细信息
+message CSGetPlayerInfo {
+	option (msgid) = 1613;
+	required int64 humanId					= 1; // 玩家Id
+}
+// 指定玩家的详细信息
+message SCGetPlayerInfo {
+	option (msgid) = 1614;
+	optional DHuman player					= 1; // 结果
+}
+
+// 获取指定玩家的点赞信息
+message CSGetPlayerLaud {
+	option (msgid) = 1615;
+	required int64 humanId					= 1; // 玩家Id
+	required int32 page					    = 2; // 第几页（一页10个）
+}
+// 指定玩家的点赞信息
+message SCGetPlayerLaud {
+	option (msgid) = 1616;
+	repeated DLaudInfo laud					= 1; // 结果
+	required int64 humanId					= 2; // 玩家Id
+	required int32 page						= 3; // 第几页（一页10个）
+}
+
+// 获取最近战斗列表
+message CSGetRecentPlayer {
+	option (msgid) = 1617;
+	required int32 page						= 1; // 第几页（一页10个）
+}
+// 我的最近战斗列表
+message SCGetRecentPlayers {
+	option (msgid) = 1618;
+	repeated DHumanSimpleInfo friend		= 1; // 结果
+}
+
+// 获取附近玩家列表
+message CSGetNearbyPlayer {
+	option (msgid) = 1619;
+	required int32 page						= 1; // 第几页（一页10个）
+}
+// 附近玩家列表
+message SCGetNearbyPlayer {
+	option (msgid) = 1620;
+	repeated DHumanSimpleInfo friend		= 1; // 结果
+}
+
+
+//获取黑名单列表
+message CSGetBlacklist {
+    option (msgid) = 1621;
+}
+
+//获取黑名单列表返回
+message SCGetBlacklist {
+    option (msgid) = 1622;
+    repeated DHumanSimpleInfo list	    	= 1; //玩家列表
+}
+
+//增加黑名单
+message CSAddBlacklist {
+	option (msgid) = 1623;
+	required int64 humanId 					= 1; //玩家Id
+}
+//增加黑名单
+message SCAddBlacklist {
+	option (msgid) = 1624;
+	required int32 resultCode				= 1; // 0=成功
+	optional int64 humanId 					= 2; //玩家Id
+}
+
+//删除黑名单
+message CSRemoveBlacklist {
+	option (msgid) = 1625;
+	required int64 humanId 					= 1; //玩家Id
+}
+//删除黑名单
+message SCRemoveBlacklist {
+	option (msgid) = 1626;
+	required int32 resultCode				= 1; // 0=成功
+	required int64 humanId 					= 2; //玩家Id
+}
+
+// 获取最近聊天列表
+message CSGetRecentChat {
+	option (msgid) = 1627;
+}
+// 我的最近聊天列表
+message SCGetRecentChat {
+	option (msgid) = 1628;
+	repeated DHumanSimpleInfo friend		= 1; // 结果
+}

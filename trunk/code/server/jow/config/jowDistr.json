@@ -1,0 +1,55 @@
+{
+	"conns" : [
+		{
+			"nodeAddr" : "tcp://127.0.0.1:10110",
+			"portStartupNumConn" : 5,
+			"connPort" : 20000
+		}
+	],
+	"games" : [
+		{
+			"nodeAddr" : "tcp://127.0.0.1:10120",
+			"portStartupNumGame" : 10,
+			"dbConfig" : {
+				"schema" : "wild_game0",
+				"addr" : "127.0.0.1:3306",
+				"user" : "root",
+				"pwd" : "111111",
+				"portStartupNumDBPart" : 3,
+				"portStartupNumDBLine" : 5
+			}
+		}
+	],
+	"login" : {
+		"nodeAddr" : "tcp://127.0.0.1:10130",
+		"dbConfig" : {
+			"schema" : "wild_login",
+			"addr" : "127.0.0.1:3306",
+			"user" : "root",
+			"pwd" : "111111",
+			"portStartupNumDBPart" : 1,
+			"portStartupNumDBLine" : 1
+		}
+	},
+
+	"match" : {
+		"nodeAddr" : "tcp://127.0.0.1:10210"
+	},
+	"central" : {
+		"nodeAddr" : "tcp://127.0.0.1:10220",
+		"dbConfig" : {
+			"schema" : "wild_central",
+			"addr" : "127.0.0.1:3306",
+			"user" : "root",
+			"pwd" : "111111",
+			"portStartupNumDBPart" : 3,
+			"portStartupNumDBLine" : 5
+		}
+	},
+	"rooms" : [
+		{
+			"nodeAddr" : "tcp://127.0.0.1:10230",
+			"portStartupNumRoom" : 10
+		}
+	]
+}

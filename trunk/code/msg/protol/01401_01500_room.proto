@@ -1,0 +1,101 @@
+// -----------------------------------------
+// 开房间
+// -----------------------------------------
+
+// 客户端请求：创建房间
+message CSRoomCreate {
+	option (msgid) = 1401;
+}
+
+// 房间中的成员
+message DRoomMember {
+	required int64 id 					= 1; // 玩家id
+	required string name				= 2; // 玩家姓名
+	required string head				= 3; // 玩家头像
+	required int32 index				= 4; // 在房间中的位置0-11
+	required bool leader				= 5; // 是否房主
+}
+
+// 服务器返回：创建房间
+message SCRoomCreateResult {
+	option (msgid) = 1402;
+	required int32 resultCode 			= 1; // 0=成功
+	optional int32 roomId				= 2; // 房间id
+	optional DRoomMember member 		= 3; // 房主
+}
+
+// 客户端请求：加机器人
+message CSRoomAddRobot {
+	option (msgid) = 1403;
+	required int32 camp 				= 1; // 阵营0,1,2
+}
+
+// 服务器推送：加机器人
+message SCRoomAddRobot {
+	option (msgid) = 1404;
+	required DRoomMember member 		= 1; // 机器人
+}
+
+// 客户端请求：踢出玩家
+message CSRoomKick {
+	option (msgid) = 1405;
+	required int32 index				= 1; // 在房间中的位置0-11
+}
+
+// 服务器推送：踢出玩家
+message SCRoomKick {
+	option (msgid) = 1406;
+	required int32 index				= 1; // 在房间中的位置0-11
+}
+
+// 客户端请求：邀请玩家
+message CSRoomInvite {
+	option (msgid) = 1407;
+	required int64 humanId				= 1; // 玩家id
+}
+
+// 服务器推送：邀请玩家
+message SCRoomInvite {
+	option (msgid) = 1408;
+	required int32 roomId				= 1; // 房间id
+	required int64 humanId 				= 2; // 邀请玩家id
+	required string name				= 3; // 玩家姓名
+	required string head				= 4; // 玩家头像
+}
+
+// 客户端请求：改变位置
+message CSRoomChangeIndex {
+	option (msgid) = 1409;
+}
+
+// 服务器返回：改变位置
+message SCRoomChangeIndex {
+	option (msgid) = 1410;
+	required DRoomMember member 		= 1; // 成员
+}
+
+// 客户端请求：交换位置请求
+message CSRoomSwapIndexRequest {
+	option (msgid) = 1411;
+	required int64 humanId				= 1; // 玩家id
+}
+
+// 服务器请求：交换位置请求
+message SCRoomSwapIndexRequest {
+	option (msgid) = 1412;
+	required int64 humanId 				= 1; // 请求交换位置的玩家id
+	required string name 				= 2; // 玩家姓名
+	required string head				= 3; // 玩家头像
+}
+
+// 客户端请求：交换位置响应
+message CSRoomSwapIndexResponse {
+	option (msgid) = 1413;
+	required int64 humanId				= 1; // 请求交换位置的玩家id
+}
+
+// 服务器返回：交换位置响应
+message SCRoomSwapIndexResponse {
+	option (msgid) = 1414;
+	repeated DRoomMember members		= 1; // 变化的成员信息
+}

@@ -1,0 +1,539 @@
+import "options.proto"; 
+option optimize_for = CODE_SIZE;
+
+// -----------------------------------------
+// 数据集合体
+// -----------------------------------------
+//2D坐标信息
+message DVector2 {
+	optional float x = 1;				//横坐标
+	optional float y = 2;				//纵坐标
+}
+//3D坐标信息
+message DVector3 {
+	optional float x = 1;				//X坐标
+	optional float y = 2;				//Y坐标
+	optional float z = 3;				//Z坐标
+}
+
+//角色信息
+message DCharacter {
+	required int64 id = 1;				//角色ID
+	optional string name = 2;			//昵称
+	optional int32 profession = 3;			//职业
+	optional int32 level = 4;			//等级
+	optional int32 sex = 5;				//性别
+	optional int64 survive_time = 6; 	// 剩余删除时间，单位(秒) 0 = 永久
+	optional int32 equipWeapon1 = 7;	// 主武器
+	optional int32 equipWeapon2 = 8;	// 副武器 
+	optional int32 vipLevel = 9;	// VIP等级
+}
+
+//玩家信息 传递给玩家本人的 此信息比较多 不要进行群发
+message DHuman {
+	optional int64 id					= 1; //角色ID
+	optional DUnitProp unitProp					= 2; //属性
+	optional string name				= 3; //昵称
+	optional int32 profession			= 4; //职业
+	optional int32 level				= 5; //等级
+	optional int32 sex					= 6; //性别
+	optional int32 hpCur				= 7; //当前生命
+	optional int32 mpCur				= 8; //当前法力
+	optional int32 hpMax				= 9; //当前法力
+	optional int32 mpMax				= 10;//当前法力
+	optional int32 combat				= 11;//总战斗力
+	
+	optional string modelSn 			= 12;//模型Sn
+	optional string skillGroupSn		= 13;//技能组
+	optional int32 sn 					= 14;//配置SN
+	optional int32 itemBagNumMax		= 15;//背包总格子数量
+	optional int32 itemBagNumBase		= 16;//背包初始格子数
+//	optional string propJson			= 17;//属性map 的json
+	optional bool firstChangeName		= 18;//是否第一次改名字
+	optional string payChargeOnceIds 	= 19;//某金额充值仅送一次的ID，用“，”分割
+
+//	optional int64 teamBundleID			= 23;//老大和小弟一起群体标号
+//	repeated int64 generalList 			= 24;//小弟的集合
+	optional int32 vipLevel 			= 25;//VIP等级
+//	optional int32 skylineLastStar 		= 26;//最后打开天剑界面时候的星星数量
+	optional bool isFirstStory 			= 27;//是否需要开场动画
+	repeated int32 guideIds 			= 28;//新手引导的状态
+	repeated int32 guideFlags 			= 29;//新手引导的标记
+	optional int32 instanceChapter 		= 30;//当前可以打的副本章节ID
+	optional int32 instanceChapterStarAll= 31;//副本所有的星星总和
+	
+//	optional bool questNameChangePassed = 32;//是否已经过了改名任务
+	
+//	optional int32 curWeapon			= 33;//当前武器
+//  repeated int32 weaponGroupSn		= 34;//武器组
+
+	optional int64 exp 					= 35;//经验
+	optional int64 coin					= 36;//银币数量
+	optional int64 gold					= 37;//金币数量
+	optional int64 bindingDiamond		= 38;//绑定钻石
+	optional int64 diamond				= 39;//钻石
+	optional int64 gene					= 40;//基因
+	optional int64 dust					= 41;//徽记精华
+	
+	optional int64 createTime			= 42;//角色创建时间
+	
+	optional int32 pkStatus			    = 43;//pk状态
+	optional int32 camp 				= 44;//阵营
+
+	optional int32 unReadMail			= 45;//未读邮件数目
+	repeated int32 funcFlags			= 46;//功能开启标记
+}
+
+//属性信息
+message DUnitProp {
+//-----------------GEN PROPKEY START, auto gen by PropGen.java, please do not modify.----------------------
+	//2015-12-28 19:24:30
+	optional int32 DmgAdd	= 1;	//伤害附加
+	optional float DmgPer	= 2;	//伤害加成
+	optional int32 DmgReductionAdd	= 3;	//减伤附加
+	optional float DmgReductionPer	= 4;	//减伤加成
+	optional int32 acritAdd	= 5;	//附加格挡
+	optional int32 acritBsc	= 6;	//格挡
+	optional int32 acritMax	= 7;	//格挡
+	optional float acritPer	= 8;	//格挡加成
+	optional float acritRateAdd	= 9;	//附加格挡率
+	optional float acritRateMax	= 10;	//最终格挡率
+	optional int32 atkAdd	= 11;	//附加攻击
+	optional int32 atkBsc	= 12;	//攻击
+	optional int32 atkMax	= 13;	//攻击
+	optional float atkPer	= 14;	//攻击加成
+	optional int32 atkSpeedPer	= 15;	//攻击加速
+	optional int32 critAdd	= 16;	//附加暴击
+	optional int32 critBsc	= 17;	//暴击
+	optional int32 critDmgAdd	= 18;	//暴伤附加
+	optional float critDmgPer	= 19;	//暴伤加成
+	optional int32 critDmgReductionAdd	= 20;	//暴免附加
+	optional float critDmgReductionPer	= 21;	//暴免加成
+	optional int32 critMax	= 22;	//暴击
+	optional float critPer	= 23;	//暴击加成
+	optional float critRateAdd	= 24;	//暴击率
+	optional float critRateMax	= 25;	//最终暴击率
+	optional int32 defAdd	= 26;	//附加防御
+	optional int32 defBsc	= 27;	//防御
+	optional int32 defMax	= 28;	//防御
+	optional float defPer	= 29;	//防御加成
+	optional int32 dodgeAdd	= 30;	//附加闪避
+	optional int32 dodgeBsc	= 31;	//闪避
+	optional int32 dodgeMax	= 32;	//闪避
+	optional float dodgePer	= 33;	//闪避加成
+	optional float dodgeRateAdd	= 34;	//附加闪避率
+	optional float dodgeRateMax	= 35;	//最终闪避率
+	optional int32 hitAdd	= 36;	//附加命中
+	optional int32 hitBsc	= 37;	//命中
+	optional int32 hitMax	= 38;	//命中
+	optional float hitPer	= 39;	//命中加成
+	optional float hitRateAdd	= 40;	//附加命中率
+	optional float hitRateMax	= 41;	//最终命中率
+	optional int32 hpAdd	= 42;	//附加生命
+	optional int32 hpBsc	= 43;	//生命
+	optional int32 hpCur	= 44;	//当前生命
+	optional int32 hpMax	= 45;	//生命
+	optional float hpPer	= 46;	//生命加成
+	optional int32 movSpeedAdd	= 47;	//附加移动速度
+	optional int32 movSpeedBsc	= 48;	//基础移动速度
+	optional int32 movSpeedMax	= 49;	//移动速度
+	optional int32 movSpeedPer	= 50;	//移动速度加成
+	//-------------------------------GEN PROPKEY END-----------------------------------------------------------	
+}
+
+//地图单位类型
+enum EWorldObjectType {
+	HUMAN = 0;		//玩家
+	MONSTER = 1;		//怪物 
+	DROP = 2;		//掉落物 
+	DOT = 3;		//持续伤害 
+	BULLET = 4;		//子弹
+	NPC = 5;		//游戏角色
+	PICK = 6;		//可采集物
+	TRIGGER = 7;		//机关
+	COMMON = 8;		//除上面外的其他地图单元
+	GENERAL = 9; //武将信息
+	COMPETE = 10; //竞技场信息
+	MIRRORHUMAN = 11; //玩家镜像
+	VIRTUAL = 12;	//虚拟体
+	COMPANION = 13;	//伙伴
+	BOX = 14;	// 宝箱
+	TRANSFER = 15;	//传送门
+	TREASURE = 16; //藏宝图宝箱
+	ESCORT = 17; //镖车
+}
+
+//装备属性
+message DItemProp {
+	required string propId		= 1; //属性id
+	required float value 		= 2; //属性值
+}
+
+//符文镶嵌
+message DGemProp {
+	optional bool status = 1;	//是否开启
+	optional int32 sn = 2;		//镶嵌的符文sn
+	optional string propId	= 3; //属性id
+	optional float value 	= 4; //属性值
+}
+
+// 图腾信息
+message DBadgeTotem {
+	required int32 sn 				= 1;  //图腾序号
+	required int32 level			= 2;  //图腾等级
+	required int32 forgePoint		= 3;  //图腾进阶点数
+	repeated DItem itemBadgeEquip	= 4;  //图腾上装备的徽记
+}
+
+// 物品中徽记特有属性
+message DItemBadge {
+	repeated DItemProp hideProp = 1; // 隐藏属性
+}
+
+// 物品中的装备特有属性
+message DItemEquipment {
+	optional int32 strthLevel 			= 1; // 强化(锻造)等级
+	repeated DItemProp strthProp 		= 2; // 锻造属性
+	repeated DItemProp nextStrthProp 	= 3; // 下一级锻造属性
+	repeated DItemProp refineProp 		= 4; // 精炼属性当前值
+	repeated DItemProp refineMaxProp 	= 5; // 精炼属性最大值
+	repeated DItemProp refineTempProp 	= 6; // 精炼属性临时值
+	optional string refineCombat 		= 7; // 精炼属性战斗力显示
+	optional int32 melt 				= 8; // 熔炼等级
+	repeated DItemProp mletProp 		= 9;// 熔炼属性
+	repeated DItemProp appendProp 		= 10;// 下一级熔炼属性
+	repeated DGemProp gemProp 			= 11;// 符文属性
+	repeated DItemProp gemAttr 			= 12;// 符文属性集合
+	repeated string equipAppendProp 	= 13;// 附加属性
+}
+
+//物品中的藏宝图特有属性
+message DItemTreasure {
+	optional int32 sceneSn = 1;		//宝藏所在场景SN
+	optional DVector3 pos  = 2;		//宝藏的坐标
+}	
+
+// item信息
+message DItem {
+	required int32 sn 					= 1; // SN
+	required int32 num 					= 2; // 数量
+	required int64 itemId 				= 3; // 物品Id
+	required int32 position 			= 4; // 物品在容器的位置
+	optional bool bind 					= 5; // 绑定状态
+	optional int32 score 				= 6; // 评分
+
+	repeated DItemProp baseProp 		= 7; // 基础属性
+	
+	optional DItemEquipment equipment 	= 8; // 装备专有
+	optional DItemBadge badge 		= 9; // 徽记专有
+	optional DItemTreasure treasure		= 10;// 藏宝图专用
+}
+
+//产出，包含：物品、铜钱、绑定铜钱、经验、绑定元宝
+message DProduce {
+	optional int32 sn 	= 1; // 物品sn			
+	optional int32 num 	= 2; // 物品数量
+}
+
+message DUnionInfo {
+	optional int64 unionId = 1;		//帮派id
+	optional string img=2;
+	optional string builderName = 3;		//创建者名字
+	optional string name=4;			//公会名字
+	optional int32 count=5;		//成员数量
+	optional int32 maxCount=6;		//帮派人数上限
+	optional int32 considered=7;		//是否入会审批  0：不需要审批 1：需要审批  *2:拒绝任何人加入
+	optional int32 switchLevel=8;		//限制等级开关，  1限制  2不限制
+	optional int32 enterLevel=9;		//准入等级
+	optional int64 contribute=10;		//公会建设度
+	optional int32 level=11;		//公会等级
+	optional bool hasApplied=12; //是否已经申请过该帮派
+	optional string post=13;		//*公告
+	optional int32 mailCount=14;		//*今日发送邮件数
+	optional int32 	index = 15;		// 在帮派排行榜的排名
+}
+
+// 技能组信息
+message DSkillCombo {
+	required int32 comboSn		= 1; // 技能组sn
+	required int32 comboLevel	= 2; // 技能组等级
+	required int32 comboSection	= 3; // 技能组已开启的段数
+}
+
+// 技能cd信息
+message DSkillCD {
+	repeated int32 skillSn 		= 1; // 技能sn列表
+	repeated int32 skillCD 		= 2; // 技能cd列表
+	repeated int32 comboSn 		= 3; // 技能组sn列表
+	repeated int32 comboCD 		= 4; // 技能组cd列表
+}
+
+//随机地图信息
+message DRandomTile {
+	optional int32 row = 1;	// 第几行
+	optional int32 col = 2;	// 第几列
+	optional int32 tileId = 3;	// RandomMap id
+}
+
+//地图信息
+message DInitDataStage {
+	required DVector2 posNow = 1;			//初始坐标
+	required int64 id = 2;				//地图真实ID
+	required int32 sn = 3;				//地图配置SN
+	optional int32 instanceSn = 4;			//副本Sn（如果是副本，会有此属性）
+	optional int32 lineNum = 5;			//分线号 默认为1
+	repeated DRandomTile tiles = 6;	// 随机地块信息
+}
+
+//单次伤害血量变化
+message DHpChgOnce {
+	required int32 hpChange = 1;		//血量变化值
+	required int32 hpCur = 2;		//当前血量
+	required int32 effect = 3;		//伤害类型（0：普通， 1：暴击，2：闪避）
+	required string hpType = 4;		//扣血类型（SKILL,BUFF,DOT）
+	required bool hpLost = 5;		//加血还是减血（true：减血，false：加血）
+	optional int32 hpMax = 6;		//最大血量
+	optional int64 attackerId = 7;		//造成血量变化的unitId
+	optional int32 damegeNum = 8;		//连携技 连击数量
+	optional float damegeAdd = 9;		//群体伤害的额外加成
+	optional float hurtAdd = 10;		//被单体伤害收到的额外加成
+}
+
+//目标血量变化集合信息
+message DHpChgTar {
+	required int64 id = 1;						//目标id
+	repeated DHpChgOnce dhpChgOnce = 2;			//目标血量变化集合
+}
+
+//血量变化包
+message SCFightHpChg {
+	option (msgid) = 1304;
+	repeated DHpChgTar dhpChgTar = 1;		//血量掉血list
+	optional int32 skillSn = 2;			//技能id
+	optional int32 skillEffectSn = 3;	//Skill Effect的ID
+}
+
+// 任务结构体
+message DQuest {
+	required int32 id 				= 1; // 任务ID
+	required int32 state			= 2; // 任务状态
+	optional int32 current_count	= 3; // 当前计数值
+	repeated DQuest child			= 4; // 子任务(只有主任务有该字段)
+	repeated DProduce rewards		= 5; // 任务的奖励列表
+	optional string progress	= 6; // 当前完成进度（用于环任务）
+	optional int64 remaining_time	= 7; // 剩余时间毫秒（用于环任务）
+	repeated DProduce entrust_rewards		= 8; // 环任务的奖励列表
+}
+
+//某人的具体信息
+message DHumanInfo {
+    optional int64 humanId = 1;		    //人物Id
+	optional string humanName = 2;		//名字
+	optional int32 level = 3;		    //等级
+	optional string modelSn = 4;		//头像
+	optional int32 hpCur = 5;		//当前血量
+	optional int32 hpMax = 6;		//最大血量
+	optional string mapName = 7;	//所在地图名字
+	optional int32 combat	= 11;	//总战斗力
+	optional int32 sn = 12;	//配置SN
+	optional DUnitProp prop = 13;	//基础属性
+	optional int32 weaponIndex = 14;	//主装备索引
+	optional int32 profession = 15; //职业
+	repeated DItem equip = 27;           //装备列表
+}
+
+// 物品cd信息
+message DItemCD {
+	required string scriptType		= 1; //物品使用脚本类型
+	required int64 cdTimestamp		= 2; //cd结束时间戳
+	required int32 cdTotal			= 3; //总CD时间
+}
+
+//聊天状态
+message DInformSet {
+	optional bool world = 1;	 //是否屏蔽世界
+	optional bool camp = 2;		//是否屏蔽阵营
+	optional bool union = 3;	//是否屏蔽社团
+	optional bool team = 4;		//是否屏蔽队伍
+	optional bool priv = 5;		//是否屏蔽私聊
+	optional bool leader = 6;	//是否屏蔽指挥
+	optional bool wifi = 7;		//仅在wifi下自动播放
+	optional bool stranger = 8;	//屏蔽陌生人私聊
+}
+// -----------------------------------------
+// 阵营相关
+// -----------------------------------------
+
+// 客户端请求：选择阵营
+message CSCampSelect {
+	option (msgid) = 1701;
+	required bool roll		= 1; // roll一个阵营加入
+	optional int32 camp 	= 2; // 阵营id
+}
+
+// 服务器返回：选择阵营
+message SCCampSelectResult {
+	option (msgid) = 1702;
+	required int32 result 	= 1; // 0=成功
+	optional int32 camp 	= 2; // 新阵营id
+}
+
+message CSCampChange {
+	option (msgid) = 1703;
+	required int32 camp 	= 1; // 阵营id
+}
+
+message SCCampChangeResult {
+	option (msgid) = 1704;
+	required int32 result 	= 1; // 0=成功
+	optional int32 camp 	= 2; // 新阵营id
+}
+
+// 获取阵营任务列表
+message CSGetCampQuest {
+	option (msgid) = 1705;
+}
+
+// 获取阵营任务列表（刷新）
+message SCGetCampQuest {
+	option (msgid) = 1706;
+	optional int32 finishCount 	= 1; // 任务完成数
+	optional int32 freeCount 	= 2; // 免费剩余数
+	repeated DQuest quests = 3; //任务
+	optional int64 price 	= 4; // 刷新花费
+}
+
+// 刷新阵营任务列表
+message CSRefreshCampQuest {
+	option (msgid) = 1707;
+	optional bool confirm 	= 1; // 二次确认刷新
+}
+
+
+	//爵位结构体
+message DSubtitle {
+	optional int32 subTitleSn		= 1; //爵位Sn
+	optional int32 feats			= 2; //功勋
+	optional int32 warValue			= 3; //战斗力
+	repeated DProduce DMedal		= 4; //勋章
+	repeated DSkill DSkills			= 5; //爵位技能
+	optional bool getsalary			= 6; //是否领取俸禄状态 
+}
+
+//爵位技能结构体
+message DSkill {
+	optional int32 sn				= 1; //爵位技能id
+	optional int32 level			= 2; //爵位技能等级
+}
+
+//读取角色爵位列表
+message CSReadSubTitle {
+	option (msgid) = 1708;
+}
+
+
+//角色爵位列表返回
+message SCReadSubTitleResult {
+	option (msgid) = 1709;
+	optional DSubtitle Dsubtitle 	= 1; //人物爵位信息
+}
+
+//领取俸禄
+message CSGetSubTitleSalary {
+	option (msgid) = 1710;
+}
+
+//返回领取俸禄结果
+message SCGetSubTitleSalaryResult {
+	option (msgid) = 1711;
+	optional int32 result 			= 1; //领取结果，0表示成功
+}
+
+//爵位技能升级
+message CSSubTitleSkillUp {
+	option (msgid) = 1712;
+	required int32 skillid			= 1; //爵位技能id
+}
+
+//爵位技能升级结果
+message SCSubTitleSkillUpResult {
+	option (msgid) = 1713;
+	optional int32 result 			= 1; //领取结果，0表示成功
+	optional DSubtitle Dsubtitl 	= 2; //升级后的人物爵位信息
+}
+
+//获得足够功勋后，爵位升级
+message SCSubTitleLevelUp {
+	option (msgid) = 1714;
+	optional int32 newsubtitle 		= 1; //新爵位sn
+	optional int32 newfeats			= 2; //新功勋
+}
+
+// -----------------------------------------
+// 圣器争夺
+// -----------------------------------------
+message DCampPlunderRank {
+	optional int64 id					= 1; //角色ID
+	optional int32 rank 				= 2; //排名
+	optional string name				= 3; //昵称
+	optional int32 profession			= 4; //职业
+	optional int32 level				= 5; //等级
+	optional int32 kill					= 6; //杀敌数
+	optional int32 gather				= 7; //采集数
+	optional int32 point				= 8; //积分
+}
+
+
+//圣器争夺UI显示
+message SCCampPlunderUI {
+	option (msgid) = 1715;
+	optional bool show 				= 1; //true显示,false隐藏,切地图后消失
+}
+
+//进入圣器争夺
+message SCCampPlunderEnter {
+	option (msgid) = 1716;
+}
+
+//进入圣器争夺返回协议
+message CSCampPlunderEnter {
+	option (msgid) = 1717;
+}
+
+//离开圣器争夺
+message CSCampPlunderLeave {
+	option (msgid) = 1718;
+}
+
+//积分信息
+message SCCampPlunderPoint {
+	option (msgid) = 1719;
+	optional int32 brother		= 1;	//兄弟会积分
+	optional int32 knight		= 2;	//骑士团积分
+}
+
+//获取战斗统计
+message CSCampPlunderRank {
+	option (msgid) = 1720;
+}
+
+//获取战斗统计
+message SCCampPlunderRank {
+	option (msgid) = 1721;
+	repeated DCampPlunderRank brotherRank	= 1;	//兄弟会排行
+	repeated DCampPlunderRank knightRank	= 2;	//骑士团排名
+	optional DCampPlunderRank self			= 3;	//自身排名
+}
+
+//战斗结果
+message SCCampPlunderResult {
+	option (msgid) = 1722;
+	optional int32 re						= 1;	//战斗结果 -1失败，0平局，1胜利
+}
+
+//状态变化
+message SCCampPlunderStateChange {
+	option (msgid) = 1723;
+	optional int32 state					= 1;	//活动状态。3:未开始，只能在出生点周围活动;4:开战,可以自由移动;5:结束,不可攻击
+	optional int64 cd						= 2;	//持续时间,倒计时,毫秒
+}

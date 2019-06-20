@@ -1,0 +1,1073 @@
+import "options.proto"; 
+option optimize_for = CODE_SIZE;
+
+// -----------------------------------------
+// 数据集合体
+// -----------------------------------------
+//2D坐标信息
+message DVector2 {
+	optional float x = 1;				//横坐标
+	optional float y = 2;				//纵坐标
+}
+//3D坐标信息
+message DVector3 {
+	optional float x = 1;				//X坐标
+	optional float y = 2;				//Y坐标
+	optional float z = 3;				//Z坐标
+}
+
+//角色信息
+message DCharacter {
+	required int64 id = 1;				//角色ID
+	optional string name = 2;			//昵称
+	optional int32 profession = 3;			//职业
+	optional int32 level = 4;			//等级
+	optional int32 sex = 5;				//性别
+}
+
+message DUnit {
+	optional int64 id		= 1;		//角色ID
+	optional DProp prop		= 2;		//属性
+	optional string name		= 3;		//昵称
+	optional int32 profession	= 4;		//职业
+	optional int32 level		= 5;		//等级
+	optional int32 sex		= 6;		//性别
+	optional int32 hpCur		= 7;		//当前生命
+	optional int32 mpCur		= 8;		//当前法力
+	optional int32 hpMax		= 9;		//当前法力
+	optional int32 mpMax		= 10;		//当前法力
+	optional string modelSn = 11;			//模型Sn
+	optional string skillGroupSn		= 12;		//技能组
+	optional string sn = 13;			//配置Sn
+	optional int64 teamBundleID		= 52;			//老大和小弟一起群体标号
+
+}
+
+//玩家信息 传递给玩家本人的 此信息比较多 不要进行群发
+message DHuman {
+	optional int64 id		= 1;		//角色ID
+	optional DProp prop		= 2;		//属性
+	optional string name		= 3;		//昵称
+	optional int32 profession	= 4;		//职业
+	optional int32 level		= 5;		//等级
+	optional int32 sex		= 6;		//性别
+	optional int32 hpCur		= 7;		//当前生命
+	optional int32 mpCur		= 8;		//当前法力
+	optional int32 hpMax		= 9;		//当前法力
+	optional int32 mpMax		= 10;		//当前法力
+	optional int32 actValue		= 11;		//当前活力
+	optional int32 actValueMax		= 12;		//总活力
+	optional int64 gold		= 13;		//元宝数量
+	optional int64 coin		= 15;		//铜币数量
+	optional int64 ghost	= 17;		//魂玉数量
+	optional int64 ghostJade	= 18;		//将魂数量
+	optional int64 honor	= 19;		//荣誉
+	optional int64 skillPoint	= 20;		//技能点数
+	optional int64 chargeGold = 21; 	//充值总数
+	optional int32 combat		= 22;		//总战斗力
+	optional int64 expCur		= 23;		//当前经验
+	optional string modelSn = 25;			//模型Sn
+	optional string skillGroupSn		= 26;		//技能组
+	optional string sn = 27;			//配置SN
+	optional int32 itemBagNumMax	= 30;		//背包总格子数量
+	optional int32 itemBagNumBase	= 31;		//背包初始格子数
+	optional string propJson		= 32;		//属性map 的json
+	optional bool firstChangeName	= 33;		//是否第一次改名字
+	optional int32 payActBuyCount = 40;	//体力已经购买次数
+	optional int32 payMoneyTreeCount = 41;	//体力已经购买次数
+	optional int32 paySkillPointCount = 42;	//体力已经购买次数
+	optional int32 payCompeteCount = 43;	//体力已经购买次数
+	optional string payChargeOnceIds = 44; //某金额充值仅送一次的ID，用“，”分割
+	optional int32 prestigeLevel = 45;		// 江湖威望级别
+	optional int64 prestige = 46;			// 江湖威望级别
+	optional int64 homePoint = 47;			// 剑庐资源
+	optional bool canMove		= 49;		//是否可以移动
+	optional bool canCastSkill      = 50;	//是否可以施法
+	optional bool canAttack		= 51;		//是否可以有各种动作
+	optional int64 teamBundleID		= 52;	//老大和小弟一起群体标号
+	repeated int64 generalList = 53; 		//小弟的集合
+	optional int32 vipLevel = 54;		//VIP等级
+	optional int32 skylineLastStar = 55;		//最后打开天剑界面时候的星星数量
+	optional bool isFirstStory = 56; //是否需要开场动画
+	repeated int32 guideIds = 70;		//新手引导的状态
+	repeated int32 guideFlags = 71;		//新手引导的标记
+	
+	optional int32 instanceChapter = 80;//当前可以打的副本章节ID
+	optional int32 instanceChapterStarAll = 81;//副本所有的星星总和
+	
+	optional bool questNameChangePassed = 91;	//是否已经过了改名任务
+	
+	optional int64 atkToken = 92;		//进攻令数量
+	optional int64 unionPoint = 93;		//联盟荣誉
+	optional int64 unionTokenNum = 94;		//帮派令
+	optional int64 treasureScores = 95;     //龙泉积分
+	optional int64 flower = 96;     //鲜花
+	optional int64 exploit = 97;     //战功
+	optional string reloadModelSn = 100; //换装 如果有就显示这个
+	optional int64 normalGeneralToken = 101;		//普通侠客兑换令
+	optional int64 goodGeneralToken = 102;		//卓越侠客兑换令
+	optional int64 dickGeneralToken = 103;		//完美侠客兑换令
+	optional int64 zhenfa = 104;		//阵法点数
+	optional int64 soulExp=105;   //龙泉剑魂值
+	optional int64 hoe=106;     //龙泉剑锄头(寻宝消耗值)
+	optional int64 essence=107;     //宝石精华(宝石分解或得可以在宝石商店兑换东西)
+	optional int64 crossMoney=108;	//跨服货币
+	optional int64 unionSkillPoint = 109;//帮派技能点
+	optional int64 wabaohuobi = 110;//挖宝货币(特殊挖宝需要的货币种类)
+	optional int64 treasureDailyScores = 111;//挖宝货币(特殊挖宝需要的货币种类)
+
+	repeated int64 magicWeaponList 	= 112; //法宝的集合
+	optional int32 sanjieluMaxChapter = 113;//三界录可以打的最大章节
+}
+
+//属性信息
+message DProp {
+	//----------------------------------------------------------------
+	// 1级属性
+	optional int32 zz			= 1; // 资质(已废弃)
+	optional int32 hp			= 2; // 生命
+	optional int32 atk			= 3; // 攻击
+	optional int32 def			= 4; // 防御
+	optional int32 physp		= 5; // 物理伤害减免百分比	
+	optional int32 magsp		= 6; // 法术伤害减免百分比	
+	optional int32 curdap		= 7; // 被治疗提升百分比	
+	optional int32 physn		= 8; // 物理伤害减免值	
+	optional int32 magsn		= 9; // 法术伤害减免值	
+	optional int32 curdan		= 10; // 被治疗提升值	
+	optional int32 phyap		= 11; // 物理伤害提升百分比	
+	optional int32 magap		= 12; // 法术伤害提升百分比	
+	optional int32 curap		= 13; // 治疗提升百分比	
+	optional int32 phyan		= 14; // 物理伤害提升值	
+	optional int32 magan		= 15; // 法术伤害提升值	
+	optional int32 curan		= 16; // 治疗提升值	
+	optional int32 hitratio		= 17; // 直接命中率	
+	optional int32 dodratio		= 18; // 直接闪避率	
+	optional int32 penratio		= 19; // 直接破击率	
+	optional int32 bloratio		= 20; // 直接格挡率	
+	optional int32 blodratio	= 21; // 格挡伤害百分比		
+	optional int32 criratio		= 22; // 直接暴击率	
+	optional int32 resratio		= 23; // 直接韧性率	
+	optional int32 cridratio	= 24; // 暴击伤害百分比		
+	optional int32 hpp			= 25; // 生命提升百分比
+	optional int32 atkp			= 26; // 攻击提升百分比
+	optional int32 defp			= 27; // 防御提升百分比
+	optional int32 hit			= 28; // 命中值
+	optional int32 dod			= 29; // 闪避值
+	optional int32 pen			= 30; // 破击值
+	optional int32 blo			= 31; // 格挡值
+	optional int32 cri			= 32; // 暴击值
+	optional int32 res			= 33; // 韧性值
+	optional int32 ls			= 34; // 生命偷取
+	optional int32 rd			= 35; // 怒气偷取
+	optional int32 sdmg			= 36; // 元神伤害
+	optional int32 spe			= 37; // 出手优先值
+	optional int32 act			= 38; // 行动间隔
+	optional int32 ats			= 39; // 攻击速度
+	optional int32 ms			= 40; // 移动速度
+	optional int32 debuffs		= 41; // 异常抵抗	
+	optional int32 rage			= 42; // 怒气上限
+	optional int32 ragein		= 43; // 初始怒气	
+	optional int32 rageas		= 44; // 怒气增加或减少	
+	optional int32 mana			= 45; // 灵气上限
+	optional int32 mrr			= 46; // 灵气恢复
+	optional int32 damp			= 47; // 伤害提升百分比
+	optional int32 damm			= 48; // 伤害减免百分比
+
+	//----------------------------------------------------------------
+	// 2级属性
+	optional int32 hitratior	= 49; // 命中率	
+	optional int32 dodratior	= 50; // 闪避率	
+	optional int32 penratior	= 51; // 破击率	
+	optional int32 bloratior	= 52; // 格挡率	
+	optional int32 criratior	= 53; // 暴击率	
+	optional int32 resratior	= 54; // 韧性率	
+	optional int32 hpr			= 55; // 实际生命
+	optional int32 atkr			= 56; // 实际攻击
+	optional int32 defr			= 57; // 实际防御
+}
+
+//地图单位类型
+enum EWorldObjectType {
+	HUMAN = 0;		//玩家
+	MONSTER = 1;		//怪物 
+	DROP = 2;		//掉落物 
+	DOT = 3;		//持续伤害 
+	BULLET = 4;		//持续伤害 
+	NPC = 5;		//游戏角色
+	PICK = 6;		//可采集物
+	TRIGGER = 7;		//机关
+	COMMON = 8;		//除上面外的其他地图单元
+	GENERAL = 9; //武将信息
+	COMPETE = 10; //竞技场信息
+	MIRRORHUMAN = 11; //玩家镜像
+	MAGICWEAPON = 12; //法宝
+}
+
+//item信息
+message DItem {
+	optional int32 sn = 1;				//SN
+	optional int32 num = 2;				//数量
+	optional int32 bind = 3;			//绑定状态
+	optional int32 type = 4;			//类型
+	optional int64 itemId = 5;			//物品Id
+	optional int32 position = 6;			//物品在容器的位置
+	repeated int32 rubySn= 7;			//宝石sn
+	optional string strthPropPlus = 8;		//强化属性  
+	optional int32 strthLevel = 9;			//强化等级
+	optional int32 strthPerfectPct = 10;		//强化完美度 
+	optional string refinePropPlus = 11;		//洗练属性
+	optional string param = 12;			//扩展属性
+	optional int32 combat = 13;			//战斗力
+	optional int64 unitID = 14;			//装备所属ID
+	optional string xilianJson = 15;	//洗练的属性
+	optional string xilianJsonTemp = 16;	//最后一次洗练的属性
+	optional string label = 17; 		//显示文字，后端推送，无需更新前端
+	optional DDynamicItem dynamicItem = 18;		//服务器新加的物品信息
+}
+
+//产出，包含：物品、铜钱、绑定铜钱、经验、绑定元宝
+message DProduce {
+	optional int32 sn = 1;			
+	optional int32 num = 2;				//数量
+	optional bool isItem = 3;  //是否是物品， 可能是货币
+	optional DDynamicItem dynamicItem = 4;		//服务器新加的物品信息
+}
+
+//新出的物品，服务器端改加配置即可，客户端不用更新
+message DDynamicItem {
+	optional int32 sn = 1;	//SN
+	optional int32 type = 2;	//类型
+	optional string name = 3;	//道具名称
+	optional string iconId = 4;	//图表ID
+	optional string description = 5;	//物品描述
+	optional string output = 6;	//物品来源
+	optional string comment = 7;	//增加属性说明
+	optional int32 color = 8;	//颜色
+	optional string words = 9;	//图标显示文字
+}
+
+message DUnionInfo {
+	optional int64 unionId = 1;		//帮派id
+	optional string img=2;          //帮派图标
+	optional string builderName = 3;		//创建者名字
+	optional string name=4;			//公会名字
+	optional int32 count=5;		//成员数量
+	optional int32 maxCount=6;		//帮派人数上限
+	optional int32 considered=7;		//是否入会审批  0：不需要审批 1：需要审批  *2:拒绝任何人加入
+	optional int32 switchLevel=8;		//限制等级开关，  1限制  2不限制
+	optional int32 enterLevel=9;		//准入等级
+	optional int64 contribute=10;		//公会建设度
+	optional int32 level=11;		//公会等级
+	optional bool hasApplied=12; //是否已经申请过该帮派
+	optional string post=13;		//*公告
+	optional int32 mailCount=14;		//*今日发送邮件数
+	optional int32 	index = 15;		// 在帮派排行榜的排名
+	optional int32 totalCombat=16;		//总战斗力
+	optional int64 rankScore=17;		//排名数据
+	optional int32 onlineCount=18;		//在线成员数量
+	optional int32 olTraineeCount=19;    //在线学徒数量
+	optional int32 traineeCount=20;      //学徒数量
+	optional int32 traineeMax=21;        //学徒上限
+	optional int64 money=22;		//公会资金
+	optional string dec=23;		//*宣言
+	optional int64 builderId = 24;		//创建者humanId
+	optional int64 unionShowId = 25;		//帮派编号
+	optional int32 groupType = 26;   //帮派战分组
+	
+}
+
+message DFlower {
+	required int64 humanId = 1; 			//ID
+	required string humanName = 2; 			//name
+	required string model = 3; 			//头像
+	required int32 level = 4; 			//等级
+	required int32 vipLevel = 5; 			//等级
+	required int64 flower = 6; 			//赠送或收到的花
+	required string serverName=7;       //服务器名称
+	required bool isDisplayServerName=8; //是否显示服务器名称
+}
+	
+// 玩家信息
+message DCompeteOffLineHumanInfo {
+	optional int32 	index = 1;		// 排名
+	optional string name = 2;		// 姓名
+	optional int64 	humanId = 3;	// 玩家id
+	optional int32 	combat = 4;		// 战斗力
+	optional int32 	level = 5;		// 等级
+	optional int32 	profession = 6;	// 职业
+	optional int32 	sex = 7; 		// 性别
+	optional string modelSn = 8; 		// 模型SN
+	optional int32 vipLevel = 9;     //vip等级
+	optional string unionName = 10; 		// 帮派名字
+}
+
+// 自己武将的结构体
+message DGenHpAndRage{
+	optional int64 id = 1;	// ID
+	optional int32 hpMax = 2;	//血量
+	optional int32 hp = 3;		//当前血量
+	optional int32 rage = 4;	//怒气
+}
+message DTreasureSkill {
+	optional int32 sn=1;
+	optional int32 residueCD=2;
+	optional int32 CD=3;
+	optional int32 tokenNum = 4;
+}
+
+message DTreasureBuff {
+	optional int32 sn = 1;	//buffSn
+	optional int32 time = 2;	//剩余时间
+	optional int32 fullTime = 3; //总时间
+	optional int32 count = 4;	//-1表示按时间， 生效次数,有的buff不是按照时间，而是次数，进入一次PVP就减少一次
+}
+
+
+//好友信息
+message DUserInfo {
+  optional int64  id = 1;          //用户Id
+  optional string modelSn = 2;     //头像
+  optional int32 level = 3;     //当前等级
+  optional string name = 4;     //名称
+  optional int32 vipLevel = 5;     //vip等级
+  optional int64 prestige = 6;     //江湖威望 
+  optional int64 timeLogin = 7;      //最后一次登录时间
+  optional int64 timeLogout = 8;     //最后一次登出时间
+  optional string groupName = 9;     //帮会名称 
+  optional int32  top5Combat = 10;   //战斗力
+  optional bool isFriend = 11; //  是否是好友?
+  optional bool isBan = 12;    //是否在屏蔽列表中?
+  optional int32 favorDegree=13;	//好感度
+  optional string mateName=14;//配偶名称
+  optional int64 recentlytime = 15;     //最近联系时间
+  optional bool isOnline= 16;//是否在线
+}
+
+//武林排行的结构体
+message DWulinRankInfo {
+  optional string modelSn = 1;    // 玩家模型SN
+  optional string name = 2;      //玩家姓名
+  optional int64 Level = 3;     //玩家等级
+  optional string title = 4;   //玩家称号
+  optional int64 humanId = 5;	// 玩家id
+  optional int32 vipLevel = 6;     //vip等级
+}
+
+
+message DBattleMsg {
+	optional SCFightHpChg hpChg = 1;
+	repeated int64 genId = 2;	// ID
+	repeated DVector2 genPos = 3;	//位置
+	repeated int32 genHp = 4;	//血量
+}
+
+
+// 防守武将的结构体
+message DArenaOppGen{
+	optional int32 level = 1;	// 级别
+	optional string name = 2;	// 名字
+	optional string modelSn = 3;// 模型SN
+	optional int32 star = 4;	//星级
+	optional int32 juexingLevel = 5;//觉醒等级
+	optional int32 advanceLevel = 6;//进阶等级
+}
+
+message DSkill {
+	optional int32 sequence = 1;		//技能序号
+	optional int32 skillSn = 2;			//技能sn
+	optional int32 skillLevel = 3;		//技能等级
+	optional int32 canUpgrade = 4;		//是否能够学习，0 不能学习 1 可以学习
+}
+
+
+message DTitle {
+	required int32 sn = 1; 			//sn
+	required string name = 2;		//名称
+	required int32 kind = 3;  //0:普通称号  1：高级称号
+	required int64 time = 4; //剩余时间
+	optional string image = 5; //称号图片
+	required int32 use = 6; 			//是否被装备  1：装备中  0：未装备
+	optional string titleInfo = 7;	//称号信息
+	optional string titleBuff = 8 ;		//buff
+	required bool isOverLay = 9; // 是否叠加
+	required int32 activation = 10; 			//是否激活
+}
+
+
+//任务信息
+message DQuest {
+	required int32 id = 1;			//任务ID
+	optional int32 targetProgress = 2;
+	optional int32 nowProgress = 3;
+	optional int32 status = 4;		//0是未完成，1是任务中，2是完成，3是不允许开始（一般是级别限制）
+	optional int32 type = 5;//任务类型，对应quest表中type列
+	optional int32 typeId = 6;//对应quest表中TypeId列
+}
+
+
+//地图单位信息
+message DStageObject {
+	optional DVector2 pos = 1;			//坐标
+	optional DVector2 dir = 2;			//方向
+	optional int64 objId = 3;			//WordldObjectId
+	optional string modelSn = 4;			//模型Sn
+	optional string name = 5;			//昵称
+	optional EWorldObjectType type = 6;		//对象类识别码 HUMAN玩家 MONSTER怪物 DROP掉落物 DOT持续伤害 NPC游戏角色 BULLET子弹 MAGICWEAPON 法宝
+	optional DStageHuman human = 7;			//玩家对象
+	optional DStageMonster monster = 8;		//怪物对象
+	optional DStageDrop drop = 9;			//掉落物
+	optional DStagePick pick = 10;			//采集物
+	optional DStageNPC npc = 11;			//npc
+	optional DStageDot dot = 12;			//持续技能
+	optional DStageGeneral general = 13;			//武将
+	optional DStageBullet bullet = 14;			//子弹
+	optional DStageMirrorHuman mirrorHuman = 15;			//玩家镜像
+	repeated DFire fire = 16;				//烟花相关信息
+	optional int64 summonerId = 17;			//召唤者ID（如果为0表示没有召唤者）
+	optional DStageMagicWeapon magicWeapon = 18;	// 法宝
+}
+
+message DTowerRank {
+	optional int32 	index = 1;		// 排名
+	optional string name = 2;		// 姓名
+	optional int64 	humanId = 3;	// 玩家id
+	optional int32 	combat = 4;		// 战斗力
+	optional int32 	level = 5;		// 等级
+	optional int32 	maxlayer = 6;		// 最高排名
+	optional string modelSn = 7;// 模型SN
+	optional int32 vipLevel = 8;     //vip等级
+}
+
+//敌人的整个结构体
+message DHomeGuardAtkInfo {
+	required int32 index 					= 1;
+	optional DGuardLeader leader 			= 2; // 武将
+	repeated DGuardSlave slaves 			= 3; // 阵容
+	optional DGuardMagicWeapon magicWeapon 	= 4; // 上阵法宝
+}
+
+//地图单位信息（被其他玩家看到） 玩家
+message DStageHuman {
+	repeated DVector3 posEnd	= 1;		//目标路径坐标
+	optional int32 level		= 2;		//等级
+	optional int32 sex		= 3;		//性别
+	optional int32 profession	= 4;		//职业
+	optional int32 hpCur		= 5;		//血量
+	optional int32 hpMax		= 6;		//最大血量
+	optional int32 mpCur		= 7;		//魔量
+	optional int32 mpMax		= 8;		//最大魔量
+	optional bool evil		= 14;		//罪恶,红名
+	optional double speed		= 15;		//速度
+	optional int64 teamId		= 16;		//队伍Id
+	optional int64 unionId		= 17;		//帮派Id
+	optional int64 countryId	= 18;		//阵营Id
+	optional int32 equipWeaponSn		= 19;		//武器
+	optional int32 equipClothesSn		= 20;		//衣服
+	optional int32 equipWeaponStrthLevel = 21; 	//武器强化等级
+	optional string pvpMode		= 22;		//pvp模式
+	optional bool inFighting	= 23;		//是否在战斗状态
+	optional int32 titleSn		= 24;		//称号
+	repeated DSkill skill = 25;				//技能
+	optional string skillGroupSn		= 26;		//技能组
+	optional int32 rage		= 27;			//怒气
+	optional int32 combat		= 31;			//战力
+	optional int64 teamBundleID		= 32;			//老大和小弟一起群体标号
+	optional bool canMove		= 33;		//是否可以移动
+	optional bool canCastSkill      = 34;		//是否可以施法
+	optional bool canAttack		= 35;		//是否可以有各种动作
+	optional string propJson		= 36;		//属性map 的json
+	optional string sn		= 37;			//配置SN
+	repeated int32 key   = 38;       //钥匙
+	optional int64 pkProtectTime   =  39;   //pvp结束冷却时间
+	optional string unionName = 40;        //玩家所在帮派名称
+	repeated DTitle title = 41;		//玩家称号
+	optional int32 vipLevel = 42;	//vip等级
+	optional int32 boold = 43;	//杀戮值
+	optional int32 killScore = 44;	//跨服血战，头上顶的分数
+	optional string serverId = 45;	//服务器ID
+	optional int64 onHookReliveTime   =  46;//挂机副本玩家复活时间
+	optional int64 onHookProtectTime   =  47;   //挂机副本Pk结束冷却时间
+}
+
+
+//地图单位信息（被玩家看到） 怪物
+message DStageMonster {
+	repeated DVector3 posEnd = 1;			//目标路径坐标
+	optional int32 level		= 2;		//等级
+	optional int32 hpCur = 3;			//当前血量
+	optional int32 hpMax = 4;			//最大血量
+	optional int32 collisionRadius = 5;		//碰撞半径
+	optional double speed = 6;			//速度
+	optional bool  active = 7;			//怪物是否激活
+	optional int32 face = 8;			//模型出现朝向
+	optional string pvpMode	= 10;			//pvp模式
+	optional int32 pvpDiWoId = 11;			//pvp模式敌我组id
+	optional int64 teamBundleID		= 12;			//老大和小弟一起群体标号
+	repeated DSkill skill = 13;				//技能
+	optional string skillGroupSn		= 14;		//技能组
+	optional int32 index = 15;				//怪物顺序索引
+	optional int32 atkSpeed		= 16;		//攻击速度
+	optional bool canMove		= 17;		//是否可以移动
+	optional bool canCastSkill      = 18;		//是否可以施法
+	optional bool canAttack		= 19;		//是否可以有各种动作
+	optional string propJson		= 20;		//属性map 的json
+	optional int32 combat		= 21;			//战力
+	optional string sn		= 22;			//配置SN
+	optional int32 rage		= 27;			//怒气
+	optional bool isJueXing = 28;			//是否是觉醒怪
+	optional int32 jueXingLevel = 29;		//觉醒等级
+	optional int32 rageMax	= 30;			//怒气上限
+	optional int32 armorCur 	= 31; // 当前护甲值
+	optional int32 armorMax		= 32; // 最大护甲值
+	optional int32 fantasyRefreshSn		= 33;//帮会boss sn
+	optional int32 WildBossSn		= 34;//wild boss sn
+	optional bool isPVE		= 35;//是否正在pve
+}
+
+
+message DStageGeneral {
+	repeated DVector3 posEnd			= 1; // 目标路径坐标
+	optional int32 level				= 2; // 等级
+	optional int32 sex					= 3; // 性别
+	optional int32 profession			= 4; // 职业
+	optional int32 hpCur				= 5; // 血量
+	optional int32 hpMax				= 6; // 最大血量
+	optional int32 mpCur				= 7; // 魔量
+	optional int32 mpMax				= 8; // 最大魔量
+	optional string transfiguration		= 9; // 变身到的武将sn(只有主角才能变身)
+	optional int32 transfigurationHP	= 10;// 变身血量
+	optional int64 belongHumanId		= 11;// 所属玩家id
+	optional double speed				= 15;// 速度
+	optional int64 teamId				= 16;// 队伍Id
+	optional int64 unionId				= 17;// 帮派Id
+	optional int64 countryId			= 18;// 阵营Id
+	optional int32 equipWeaponSn		= 19;// 武器
+	optional int32 equipClothesSn		= 20;// 衣服
+	optional int32 equipWeaponStrthLevel= 21;// 武器强化等级
+	optional string pvpMode				= 22;// pvp模式
+	optional bool inFighting			= 23;// 是否在战斗状态
+	optional int32 titleSn				= 24;// 称号
+	optional int32 rage					= 25;// 怒气
+	optional int32 advLevel				= 26;// 进阶等级
+	optional int32 stars				= 27;// 星级
+	optional int32 combat				= 31;// 战力
+	optional int64 teamBundleID			= 32;// 老大和小弟一起群体标号
+	repeated DSkill skill 				= 33;// 技能
+	optional string skillGroupSn		= 34;// 技能组
+	optional int32 atkSpeed				= 35;// 攻击速度
+	optional bool canMove				= 36;// 是否可以移动
+	optional bool canCastSkill			= 37;// 是否可以施法
+	optional bool canAttack				= 38;// 是否可以有各种动作
+	optional string propJson			= 39;// 属性map 的json
+	optional string sn					= 40;// 配置SN
+	optional int32 friendship 			= 41;// 武将忠诚度
+	optional int32 friendshipLevel		= 42;// 武将忠诚度级别
+	optional bool isJuexing 			= 43;// 是否觉醒
+	optional int32 jueXingLevel 		= 44;// 觉醒等级
+	optional int32 spiritLevel			= 45;// 真气等级
+	optional int32 rageMax				= 46;// 怒气上限
+	optional string humanName 			= 47;// 所属玩家的名字(当前只给主角替身武将设置该字段)
+}
+
+// 法宝信息
+message DStageMagicWeapon {
+	repeated DVector3 posEnd			= 1; // 目标路径坐标
+	optional int32 level				= 2; // 等级
+	optional int32 hpCur				= 3; // 血量
+	optional int32 hpMax				= 4; // 最大血量
+	optional double speed				= 5; // 速度
+	optional int32 mana					= 6; // 灵气
+	optional int32 manaMax				= 7; // 灵气上限
+	optional int32 combat				= 8; // 战力
+	optional int64 teamBundleID			= 9; // 老大和小弟一起群体标号
+	repeated DSkill skill 				= 10;// 技能
+	optional string skillGroupSn		= 11;// 技能组
+	optional bool canMove				= 12;// 是否可以移动
+	optional bool canCastSkill			= 13;// 是否可以施法
+	optional bool canAttack				= 14;// 是否可以有各种动作
+	optional string propJson			= 15;// 属性map 的json
+	optional string sn					= 16;// 配置SN
+	optional int64 belongHumanId		= 17;// 所属玩家id
+	optional int32 stars				= 18;// 星级
+}
+
+//地图单位信息（被玩家看到） 持续技能
+message DStageDot {
+	optional int32 dotSn = 1;				//sn
+	optional DVector2 pos = 2;				//坐标
+	optional int32 scopeType = 3;				//范围类型（1，圆形）
+	optional int32 scopeParam1 = 4;			//范围参数1
+	optional int32 scopeParam2 = 5;			//范围参数2
+	optional int64 createId = 6;				//创建ID 可能是 武将 bullet dot 
+}
+
+message DStageBullet {
+	optional int32 bulletSn = 1;				//sn
+	optional DVector2 pos = 2;				//坐标
+	optional DVector2 posTar = 3;				//坐标
+	optional int64 unitTarID = 4;				//目标单位的ID
+	optional int32 skillSn = 5;				//bullet 所属技能的SN
+	optional int64 createId = 6;				//创建ID 可能是 武将 bullet dot 
+	optional int64 fireId = 7;				//技能释放者ID 只能是武将 怪物 
+}
+
+
+//地图单位信息（被玩家看到） 掉落物
+message DStageDrop {
+	optional string type = 1;			//掉落物 item物品 coin金币
+	optional int32 itemSn = 2;			//物品SN
+	optional int32 num = 3;				//数量
+	optional int64 humanId = 4;			//该物品的归属者
+	optional int32 protectTime = 5;			//保护时间（秒） 在这期间只有本人才能拾取
+	optional int32 bind = 6;			//是否绑定
+	optional int64 monsterId = 7;			//哪个怪物掉的
+	optional DDynamicItem dynamicItem = 8;	//服务器新增道具（可能为空）
+	optional int32 dynamicItemCount = 9;	//新增道具数量
+}
+
+
+
+//地图单位信息（被玩家看到） 采集物
+message DStagePick {
+	optional int32 pickSn = 1;				//sn
+	optional DVector2 pos = 2;				//坐标
+	optional bool visible = 3;				//是否可见
+}
+
+//地图单位信息（被玩家看到） NPC
+message DStageNPC {
+	optional int32 ownerBundleId = 1;	//所属方标号ID
+	optional string name = 2;
+	optional string normalTitle = 3;
+	optional string seniorTitle = 4;
+	optional string modelSn = 5;	//模型sn
+	optional int64  belongHumanId = 6;//专属玩家id
+	optional string  belongHumanName = 7;//专属玩家name
+}
+
+//地图单位信息（被玩家看到） 玩家镜像
+message DStageMirrorHuman {
+	optional int32 level		= 1;		//等级
+	repeated int32 keys = 2;	//广播钥匙数量
+	optional int64 unionId		= 3;		//帮派Id
+	optional string unionName = 4;        //玩家所在帮派名称
+	repeated DTitle title = 5;		//玩家称号
+	optional int32 vipLevel = 6;	//vip等级
+	optional int32 blood = 7;	//血战杀戮值
+	optional string serverId=8;	//服务器名称
+	optional int32 iBattleType = 9;	//战斗类型0是默认，1是龙泉pvp，2是龙泉宝箱
+}
+
+
+message DFire {
+	required int32 sn = 1;
+	required int32 num = 2;		//还有几发  
+}
+
+// 防守武将的结构体
+message DGuardLeader{
+	optional int32 index = 1;	// 0是前锋，1是中间，2是最后，也就是自己	
+	optional string name = 2;	// 名字
+	optional int32 combat = 3;	// 战斗力
+	optional string modelSn = 4;// 模型SN
+	optional int32 level = 5;	// 级别
+	optional int64 time = 6;	// 剩余时间	自身为0
+	optional int32 vipLevel = 7;	// vip等级
+	optional string unionName = 8;	// 帮会名称
+	optional int32 prestigeLevel = 9;	// 威望等级
+	optional int64 id = 10;	//玩家ID
+	optional bool isFriend = 11; //是否是好友
+	optional bool isBan = 12;    //是否在屏蔽列表中
+	optional string mateName=13;//配偶名称
+	optional string serverId=14;	//服务器名称
+}
+ 
+// 防守阵容的结构体
+message DGuardSlave{
+	optional int32 level 			= 1; // 级别
+	optional string name 			= 2; // 名字
+	optional string modelSn 		= 3; // 模型SN
+	optional int32 profession 		= 4; // 职业
+	optional int32 sex 				= 5; // 性别	
+	optional int32 hpMax 			= 6; // 血量
+	optional int32 hp 				= 7; // 当前血量
+	optional int32 rage 			= 8; // 怒气
+	optional int32 star 			= 9; // 星级
+	optional int64 id 				=10; // id
+	optional int32 hurt 			=11; // 输出伤害
+	optional int32 advLevel 		=12; // 进阶等级
+	optional int32 jueXingLevel 	=13; // 觉醒等级
+	optional string transfiguration =14; // 变身(只有主角才可以变身)
+}
+
+// 防守法宝的结构体
+message DGuardMagicWeapon {
+	optional int64 id 		= 1; // id
+	optional int32 level 	= 2; // 级别
+	optional string name 	= 3; // 名字
+	optional string modelSn = 4; // 模型SN
+	optional int32 star 	= 5; // 星级
+}
+
+//血量变化包
+message SCFightHpChg {
+	option (msgid) = 1304;
+	repeated DHpChgTar dhpChgTar = 1;		//血量掉血list
+	optional int32 skillSn = 2;			//技能id
+}
+
+
+//目标血量变化集合信息
+message DHpChgTar {
+	optional int64 id = 1;						//目标id
+	repeated DHpChgOnce dhpChgOnce = 2;			//目标血量变化集合
+}
+
+//单次伤害血量变化
+message DHpChgOnce {
+	optional int32 hpChange = 1;		//血量变化值
+	optional int32 hpCur = 2;		//当前血量
+	optional int32 hpMax = 3;		//最大血量
+	optional int32 atkRage = 4;		//攻击者的怒气
+	optional int32 defRage = 5;		//防守者的怒气
+	optional int32 effect = 6;		//伤害类型（0：普通， 1：暴击，2：闪避）
+	optional bool hpLost = 7;		//加血还是减血（true：减血，false：加血）
+	optional int32 atkerType = 8;		//1是主角，2是魂将
+	optional string hpType = 9;		//扣血类型（SKILL,BUFF,DOT）
+	optional int64 attackerId = 10;		//造成血量变化的unitId
+	optional DVector2 attPos = 11;		//玩家是否有攻击位移
+	optional DBackPos backPos = 12; 	//被攻击以后的位置
+	optional int32 damegeNum = 13;		//连携技 连击数量
+	optional float damegeAdd = 14;		//群体伤害的额外加成
+	optional float hurtAdd = 15;		//被单体伤害收到的额外加成
+	optional int32 armorCur 	= 16; // 当前护甲值
+	optional int32 armorMax		= 17; // 最大护甲值
+}
+
+
+
+//攻击目标位置改变
+message DBackPos {
+	optional int64 id = 1;						//目标id
+	optional DVector2 pos = 2;		//目标被攻击后的位置
+	optional int32 type = 3;		//2为击退 1个倒地 3是许褚扔怪物的位置
+}
+
+message DFightData{
+	optional int64 id=1;
+	optional int32 value=2;
+}
+
+message DFightLastRewardItem {
+	optional string desc = 1; //获得名次的描述
+	repeated int32 sn = 2;	//物品sn
+	repeated int32 num = 3;	//物品数量
+}
+
+//武将身上装备信息
+message DEquipment {
+	optional int32 id 		= 1;//部位
+	optional int32 sn 		= 2;//装备sn
+	optional int32 level 	= 3;//等级
+	optional int32 star 	= 4;//星级
+	optional string jingLianProp = 5; //精炼属性
+	optional string starProp = 6; //冲星属性
+}
+
+//爬塔历史排行结构体
+message DTowerHistoryRank {
+	optional int32 	index = 1;		// 排名
+	optional string name = 2;		// 姓名
+	optional int64 	humanId = 3;	// 玩家id
+	optional int32 	level = 4;		// 等级
+	optional string modelSn = 5;// 模型SN
+	optional int32 vipLevel = 6;     //vip等级
+	optional int64 rankTime = 7;	// 通关时间
+}
+
+//爬塔最近排行结构体
+message DTowerRecentRank {
+	optional int32 	index = 1;		// 排名
+	optional string name = 2;		// 姓名
+	optional int64 	humanId = 3;	// 玩家id
+	optional int32 	level = 4;		// 等级
+	optional string modelSn = 5;	// 模型SN
+	optional int32 vipLevel = 6;    // vip等级
+	repeated DTowerGeneral generals = 7; // 出战武将列表
+	optional string magicWeaponSn = 8; // 出战法宝SN
+	optional int32 magicWeaponStar = 9; // 出战法宝星级
+	optional int32 magicWeaponLevel = 10; // 出战法宝等级
+	optional int64 rankTime = 11; // 通关时间
+}
+
+//爬塔武将信息结构体
+message DTowerGeneral {
+	optional string sn = 1; // 配置SN
+	optional int32 star = 2; // 星级
+	optional int32 level = 3; // 等级
+}
+
+//爬塔战斗过程中的通关条件状态
+message DTowerFightCondition {
+	optional int32 	type = 1;		// 条件类型 1星星数 2时间(单位秒) 3总血量(例如：100%就填10000)
+	optional int32 	curValue = 2; //当前值
+	optional bool isReach = 3;		// 是否满足
+}
+
+//活动ActiveGeneral结构体
+message DActiveGeneralForConf {
+	optional int32 	sn = 1;		// 活动ID
+	optional string activeTitle = 2; // 活动标题四个字
+	optional string iconSN = 3;		// 标题图标
+	optional string timeType = 4;		// 1、开服时间 2、自然时间  3、合服时间
+	optional string displayTime = 5;		// 显示时间
+	optional string startTime = 6;		// 开始时间
+	optional bool timelimit = 7;		// 是否为长期活动
+	optional string finishTime = 8;		// 结束时间
+	optional string disappearTime = 9;		// 消失时间
+	optional string activeTitle2 = 10;		// 活动标题2
+	optional string activeContent1 = 11;		// 活动内容一文本
+	optional int32 	activeTypeSN = 12;		// 活动目标函数
+	repeated DActiveGoalForConf activegoal = 13;		// 活动目标列表
+	optional bool open = 14;		// 是否开启
+	optional int32 	playerLevel = 15;		// 开启角色等级
+	optional int32 	sequence = 16;		// 排序
+	optional string UIStyle = 17;		// 适用于右侧UI的样式
+}
+
+//活动ActiveGoal结构体
+message DActiveGoalForConf {
+	optional int32 	sn = 1;		// 活动目标ID
+	optional int32 	activeSN = 2;		// 活动ID
+	optional string target1 = 3; // 目标参数一
+	optional string target2 = 4; // 目标参数二
+	optional string target3 = 5; // 目标参数三
+	optional string activeGoalContent = 6; // 活动目标文本
+	repeated DProduce items = 7;		// 奖励列表(对应配置表itemSN : itemCount)
+}
+
+//活动Activity结构体
+message DActivityForConf {
+	optional int32 	sn = 1;		// DAY
+	optional DProduce Item = 2;		// 道具(对应配置表ItemSN : ItemNum)
+	optional int32 VipLimit = 3; // 额外奖励VIP等级
+	optional int32 Times = 4; // 翻倍倍数
+}
+
+//活动ActivityFirstChargeBox结构体
+message DActivityFirstChargeBoxForConf {
+	optional int32 sn = 1;		// sn
+	repeated DProduce items = 2;		// 奖励列表(对应配置表itemSn : itemCount)
+	optional string title = 3;		// 标题
+	optional string content = 4;		// 内容
+}
+
+//活动ActivityVipBox结构体
+message DActivityVipBoxForConf {
+	optional int32 sn = 1;		// sn
+	optional int32 level = 2;		// 等级
+	optional int32 original_cost = 3;		// 原价
+	optional int32 cost = 4;		// 售价
+	repeated DProduce items = 5;		// 奖励列表(对应配置表itemSn : itemCount)
+	optional string title = 6;		// 标题
+	optional string content = 7;		// 内容
+}
+
+//活动ActivityLevelBox结构体
+message DActivityLevelBoxForConf {
+	optional int32 sn = 1;		// sn
+	optional int32 level = 2;		// 等级
+	repeated DProduce items = 3;		// 奖励列表(对应配置表itemSn : itemCount)
+	optional string title = 4;		// 标题
+	optional string content = 5;		// 内容
+}
+
+//活动ActivityOnlineBox结构体
+message DActivityOnlineBoxForConf {
+	optional int32 sn = 1;		// sn
+	optional int32 time = 2;		// 连续时间单位分钟
+	repeated DProduce items = 3;		// 奖励列表(对应配置表itemSn : itemCount)
+	optional string title = 4;		// 标题
+	optional string content = 5;		// 内容
+}
+
+//活动ActivityOfflineBox结构体
+message DActivityOfflineBoxForConf {
+	optional int32 sn = 1;		// sn
+	optional int32 time = 2;		// 离线时间单位分钟
+	repeated DProduce items = 3;		// 奖励列表(对应配置表itemSn : itemCount)
+	optional string title = 4;		// 标题
+	optional string content = 5;		// 内容
+}
+
+//活动UserBackBox结构体
+message DUserBackBoxForConf {
+	optional int32 sn = 1;		// sn
+	optional int32 minDaysLeft = 2;		// 最小天数没有登录
+	optional int32 maxDaysLeft = 3;		// 最大天数没有登录
+	repeated DProduce items1 = 4;		// 第一天的奖励列表(对应配置表itemSn1 : itemCount1)
+	repeated DProduce items2 = 5;		// 第二天的奖励列表(对应配置表itemSn2 : itemCount2)
+	repeated DProduce items3 = 6;		// 第三天的奖励列表(对应配置表itemSn3 : itemCount3)
+	repeated DProduce items4 = 7;		// 第四天的奖励列表(对应配置表itemSn4 : itemCount4)
+	repeated DProduce items5 = 8;		// 第五天的奖励列表(对应配置表itemSn5 : itemCount5)
+	repeated DProduce items6 = 9;		// 第六天的奖励列表(对应配置表itemSn6 : itemCount6)
+	repeated DProduce items7 = 10;		// 第七天的奖励列表(对应配置表itemSn7 : itemCount7)
+	optional string title = 11;		// 标题
+	optional string content = 12;		// 内容
+}
+
+//活动ActivityOpenServer结构体
+message DActivityOpenServerForConf {
+	optional int32 sn = 1;		// sn
+	optional string text = 2;		// 活动类型名
+	repeated int32 subActivitySn = 3;		// 子页签SN（对应到ActivityGeneral）
+	optional string startTime = 4;		// 开始时间（按开服时间计）
+}
+
+//活动ActivityFinalReward结构体
+message DActivityFinalRewardForConf {
+	optional int32 sn = 1;		// id
+	optional int32 finishNum = 2;		// 完成任务数
+	optional DProduce item = 3;		// 奖励内容(对应配置表itemSn : itemCount)
+}
+
+//活动ActivityHappy结构体
+message DActivityHappyForConf {
+	optional int32 sn = 1;		// sn
+	optional string text = 2;		// 活动类型名
+	repeated int32 subActivitySn = 3;		// 子页签SN（对应到ActivityGeneral）
+	optional string startTime = 4;		// 开始时间（按开服时间计）
+}
+
+//活动ActivityHappyFinalReward结构体
+message DActivityHappyFinalRewardForConf {
+	optional int32 sn = 1;		// id
+	optional int32 finishNum = 2;		// 完成任务数
+	optional DProduce item = 3;		// 奖励内容(对应配置表itemSn : itemCount)
+}
+
+//活动Fund结构体
+message DFundForConf {
+	optional int32 sn = 1;		// 基金活动ID，链接到ActiveGeneral表中，万一有两个基金活动呢
+	optional int32 activitySn = 2;		// 活动sn(表ActiveGeneral)
+	optional int32 VipLimmit = 3;		// VIP限制
+	optional int32 moneyType = 4;		// 消耗货币类型
+	optional int32 Cost = 5;		// 消耗
+	repeated int32 LevelGoal = 6;		// 开服基金条目，链接到bundID
+	repeated int32 ServiceBuy = 7;		// 全服购买条目
+}
+
+//活动FundGoal结构体
+message DFundGoalForConf {
+	optional int32 sn = 1;		// ID
+	optional int32 Type = 2;		// 类型：1=等级，2=服务器购买人数
+	optional int32 Target = 3;		// 目标参数
+	optional string Content = 4;		// 描述
+	repeated DProduce item = 5;		// 奖励内容(对应配置表itemSN : itemCount)
+}
+
+enum BattleTypes {
+	// 副本
+	Instance 							= 1;
+	// 竞技场
+	Arena 								= 2;
+	// 竞技场防守
+	ArenaDef 							= 3;
+	// 爬塔
+	Tower 								= 4;
+	// 家园争夺
+	Home 								= 5;
+	// 家园山门防守
+	HomeDef 							= 6;
+	// 新家园争夺
+	HomeNew 							= 7;
+	// 新家园防守
+	HomeDefNew 							= 8;
+	// 实时PVP
+	PVP 								= 9;
+	// 实时PVP的PVE
+	PVPMonster 							= 10;
+	// 武林争霸
+	Supremacy 							= 11;
+	// 帮派强盗
+	UnionMonster 						= 12;
+	// 山门复仇
+	HomeRevenge 						= 13;
+	// 远征
+	Expedition 							= 14;
+	// 帮派战
+	UnionWar 							= 15;
+	// 玄冥教内功免疫
+	XMJNeigong 							= 16;
+	// 玄冥教外功免疫
+	XMJWaigong 							= 17;
+	// 天梯竞技场
+	LadderArena 						= 18;
+	// 天梯竞技场防守
+	LadderArenaDef 						= 19;
+	// 世界boss
+	WorldBoss 							= 20;
+	// 生存PVP
+	SurvivalPVP 						= 21;
+	// 帮派入侵
+	UnionInvade 						= 22;
+	// 渝州守卫
+	GuardCity 							= 23;
+	// 天神降临
+	ChallengeGod 						= 24;
+	// 跨服血战
+	CrossServerBlood 					= 25;
+	CrossSupremacyAudition 				= 26;
+    CrossSupremacyPromotion 			= 27;
+    CrossSupremacyFinal 				= 28;
+    // 狭路相逢
+	ChallengeNPC 						= 29;
+	// 帮派BOSS
+	UnionBoss 							= 30;
+	Replay 								= 31;
+	// 纵横三界 资源副本
+	ResourceRep 						= 32;
+	/**帮会幻境副本*/
+	UnionFantasy 						= 33;
+	// 组队
+	Team 								= 34;
+	// 挂机
+	OnHook 								= 35;
+	// 野外boss
+	WildBoss 								= 36;
+}
+//充值完成，返回充值记录
+message SCCharge{
+	option (msgid) = 3801;
+	required int32 sn = 1;	//充值配表SN
+	required string orderId = 2;	//订单号
+	required int64 gold=3;	//获得元宝数量
+	optional int32 currency = 4;//货币类型    1人民币2美元3日元4港币5英镑6新加坡币7越南盾8台币9韩元10泰铢
+	optional int32 amount = 5;//金额
+}
+
+//货币增加日志
+message SCMoneyAddLog{
+	option (msgid) = 3802;
+	required int32 sn = 1;	//货币类型
+	required int64 num = 2;	//货币数量
+	required int32 logKey = 3;	//日志id
+	required string logName = 4;	//日志名称
+}
+
+//货币使用日志
+message SCMoneyReduceLog{
+	option (msgid) = 3803;
+	required int32 sn = 1;	//货币类型
+	required int64 num = 2;	//货币数量
+	required int32 logKey = 3;	//日志id
+	required string logName = 4;	//日志名称
+}
+
+//充值完成，返回充值记录,sn大于100的商品
+message SCCharge100{
+	option (msgid) = 3804;
+	required int32 sn = 1;	//充值配表SN
+	required string orderId = 2;	//订单号
+	optional int64 gold=3;	//获得元宝数量
+}

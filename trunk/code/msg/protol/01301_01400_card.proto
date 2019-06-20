@@ -1,0 +1,47 @@
+// -----------------------------------------
+// 收集
+// -----------------------------------------
+
+
+// 更新某个卡片的信息
+message SCUpdataCard {
+	option (msgid) = 1301;
+	optional DCardData card = 1;
+}
+
+// 携带
+message CSCarryCard {
+	option (msgid) = 1306;
+	required int32 cardSn 	= 1; // sn
+}
+
+// 携带返回
+message SCCarryCard {
+	option (msgid) = 1307;
+	required bool result 	= 1;// 结果
+	optional int32 cardSn 	= 2;// sn
+}
+// 卸下卡片
+message CSTakeOffCard {
+	option (msgid) = 1308;
+	required int32 cardSn 	= 1; // sn
+}
+
+// 卸下卡片返回
+message SCTakeOffCard {
+	option (msgid) = 1309;
+	required bool result 	= 1;// 结果
+	optional int32 cardSn 	= 2;// sn
+}
+// 卡片升级
+message CSCardLevelUp {
+	option (msgid) = 1310;
+	required int32 cardSn 	= 1; // sn
+}
+
+// 卡片升级返回
+message SCCardLevelUp {
+	option (msgid) = 1311;
+	required bool result 	= 1;// 结果
+	optional int32 cardSn 	= 2;// sn
+}

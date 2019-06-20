@@ -1,0 +1,1 @@
+build.bat ../game.proto ../../client/goe/client/project/Assets/Game/msg

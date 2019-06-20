@@ -1,0 +1,1381 @@
+
+¨≥
+union.protooptions.proto" 
+DVector2	
+x (	
+y ("+
+DVector3	
+x (	
+y (	
+z ("V
+
+DCharacter
+
+id (
+name (	
+
+profession (
+level (
+sex ("Ï
+DUnit
+
+id (
+prop (2.DProp
+name (	
+
+profession (
+level (
+sex (
+hpCur (
+mpCur (
+hpMax	 (
+mpMax
+ (
+modelSn (	
+skillGroupSn (	
+
+sn (	
+teamBundleID4 ("˛
+
+DHuman
+
+id (
+prop (2.DProp
+name (	
+
+profession (
+level (
+sex (
+hpCur (
+mpCur (
+hpMax	 (
+mpMax
+ (
+actValue (
+actValueMax (
+gold (
+coin (
+ghost (
+	ghostJade (
+honor (
+
+skillPoint (
+
+chargeGold (
+combat (
+expCur (
+modelSn (	
+skillGroupSn (	
+
+sn (	
+itemBagNumMax (
+itemBagNumBase (
+propJson  (	
+firstChangeName! (
+payActBuyCount( (
+payMoneyTreeCount) (
+paySkillPointCount* (
+payCompeteCount+ (
+payChargeOnceIds, (	
+prestigeLevel- (
+prestige. (
+	homePoint/ (
+canMove1 (
+canCastSkill2 (
+	canAttack3 (
+teamBundleID4 (
+generalList5 (
+vipLevel6 (
+skylineLastStar7 (
+isFirstStory8 (
+guideIdsF (
+
+guideFlagsG (
+instanceChapterP (
+instanceChapterStarAllQ (
+questNameChangePassed[ (
+atkToken\ (
+
+unionPoint] (
+unionTokenNum^ (
+treasureScores_ (
+flower` (
+exploita (
+reloadModelSnd (	
+normalGeneralTokene (
+goodGeneralTokenf (
+dickGeneralTokeng (
+zhenfah (
+soulExpi (
+hoej (
+essencek (
+
+crossMoneyl (
+unionSkillPointm (
+
+wabaohuobin (
+treasureDailyScoreso (
+magicWeaponListp (
+sanjieluMaxChapterq ("‚
+DProp
+
+zz (
+
+hp (
+atk (
+def (
+physp (
+magsp (
+curdap (
+physn (
+magsn	 (
+curdan
+ (
+phyap (
+magap (
+curap (
+phyan (
+magan (
+curan (
+hitratio (
+dodratio (
+penratio (
+bloratio (
+	blodratio (
+criratio (
+resratio (
+	cridratio (
+hpp (
+atkp (
+defp (
+hit (
+dod (
+pen (
+blo (
+cri  (
+res! (
+
+ls" (
+
+rd# (
+sdmg$ (
+spe% (
+act& (
+ats' (
+
+ms( (
+debuffs) (
+rage* (
+ragein+ (
+rageas, (
+mana- (
+mrr. (
+damp/ (
+damm0 (
+	hitratior1 (
+	dodratior2 (
+	penratior3 (
+	bloratior4 (
+	criratior5 (
+	resratior6 (
+hpr7 (
+atkr8 (
+defr9 ("ÿ
+DItem
+
+sn (
+num (
+bind (
+type (
+itemId (
+position (
+rubySn (
+strthPropPlus (	
+
+strthLevel	 (
+strthPerfectPct
+ (
+refinePropPlus (	
+param (	
+combat (
+unitID (
+
+xilianJson (	
+xilianJsonTemp (	
+label (	"
+dynamicItem (2.DDynamicItem"W
+DProduce
+
+sn (
+num (
+isItem ("
+dynamicItem (2.DDynamicItem"ö
+DDynamicItem
+
+sn (
+type (
+name (	
+iconId (	
+description (	
+output (	
+comment (	
+color (
+words	 (	"Ë
+
+DUnionInfo
+unionId (
+img (	
+builderName (	
+name (	
+count (
+maxCount (
+
+considered (
+switchLevel (
+
+enterLevel	 (
+
+contribute
+ (
+level (
+
+hasApplied (
+post (	
+	mailCount (
+index (
+totalCombat (
+	rankScore (
+onlineCount (
+olTraineeCount (
+traineeCount (
+
+traineeMax (
+money (
+dec (	
+	builderId (
+unionShowId (
+	groupType ("û
+DFlower
+humanId (
+	humanName (	
+model (	
+level (
+vipLevel (
+flower (
+
+serverName (	
+isDisplayServerName ("æ
+DCompeteOffLineHumanInfo
+index (
+name (	
+humanId (
+combat (
+level (
+
+profession (
+sex (
+modelSn (	
+vipLevel	 (
+	unionName
+ (	"D
+DGenHpAndRage
+
+id (
+hpMax (
+
+hp (
+rage ("M
+DTreasureSkill
+
+sn (
+	residueCD (
+
+CD (
+tokenNum ("J
+DTreasureBuff
+
+sn (
+time (
+fullTime (
+count ("ß
+	DUserInfo
+
+id (
+modelSn (	
+level (
+name (	
+vipLevel (
+prestige (
+	timeLogin (
+
+timeLogout (
+	groupName	 (	
+
+top5Combat
+ (
+isFriend (
+isBan (
+favorDegree (
+mateName (	
+recentlytime (
+isOnline ("p
+DWulinRankInfo
+modelSn (	
+name (	
+Level (
+title (	
+humanId (
+vipLevel ("c
+
+DBattleMsg
+hpChg (2.SCFightHpChg
+genId (
+genPos (2	.DVector2
+genHp ("v
+DArenaOppGen
+level (
+name (	
+modelSn (	
+star (
+juexingLevel (
+advanceLevel ("S
+DSkill
+sequence (
+skillSn (
+
+skillLevel (
+
+canUpgrade ("ß
+DTitle
+
+sn (
+name (	
+kind (
+time (
+image (	
+use (
+	titleInfo (	
+	titleBuff (	
+	isOverLay	 (
+
+activation
+ ("o
+DQuest
+
+id (
+targetProgress (
+nowProgress (
+status (
+type (
+typeId ("Ô
+DStageObject
+pos (2	.DVector2
+dir (2	.DVector2
+objId (
+modelSn (	
+name (	
+type (2.EWorldObjectType
+human (2.DStageHuman
+monster (2.DStageMonster
+drop	 (2.DStageDrop
+pick
+ (2.DStagePick
+npc (2
+.DStageNPC
+dot (2
+.DStageDot
+general (2.DStageGeneral
+bullet (2.DStageBullet'
+mirrorHuman (2.DStageMirrorHuman
+fire (2.DFire
+
+summonerId ('
+magicWeapon (2.DStageMagicWeapon"é
+
+DTowerRank
+index (
+name (	
+humanId (
+combat (
+level (
+maxlayer (
+modelSn (	
+vipLevel ("à
+DHomeGuardAtkInfo
+index (
+leader (2.DGuardLeader
+slaves (2.DGuardSlave'
+magicWeapon (2.DGuardMagicWeapon"Ì
+DStageHuman
+posEnd (2	.DVector3
+level (
+sex (
+
+profession (
+hpCur (
+hpMax (
+mpCur (
+mpMax (
+evil (
+speed (
+teamId (
+unionId (
+	countryId (
+equipWeaponSn (
+equipClothesSn (
+equipWeaponStrthLevel (
+pvpMode (	
+
+inFighting (
+titleSn (
+skill (2.DSkill
+skillGroupSn (	
+rage (
+combat (
+teamBundleID  (
+canMove! (
+canCastSkill" (
+	canAttack# (
+propJson$ (	
+
+sn% (	
+key& (
+pkProtectTime' (
+	unionName( (	
+title) (2.DTitle
+vipLevel* (
+boold+ (
+	killScore, (
+serverId- (	
+onHookReliveTime. (
+onHookProtectTime/ ("∑
+DStageMonster
+posEnd (2	.DVector3
+level (
+hpCur (
+hpMax (
+collisionRadius (
+speed (
+active (
+face (
+pvpMode
+ (	
+	pvpDiWoId (
+teamBundleID (
+skill (2.DSkill
+skillGroupSn (	
+index (
+atkSpeed (
+canMove (
+canCastSkill (
+	canAttack (
+propJson (	
+combat (
+
+sn (	
+rage (
+	isJueXing (
+jueXingLevel (
+rageMax (
+armorCur (
+armorMax  (
+fantasyRefreshSn! (
+
+WildBossSn" (
+isPVE# ("§
+DStageGeneral
+posEnd (2	.DVector3
+level (
+sex (
+
+profession (
+hpCur (
+hpMax (
+mpCur (
+mpMax (
+transfiguration	 (	
+transfigurationHP
+ (
+belongHumanId (
+speed (
+teamId (
+unionId (
+	countryId (
+equipWeaponSn (
+equipClothesSn (
+equipWeaponStrthLevel (
+pvpMode (	
+
+inFighting (
+titleSn (
+rage (
+advLevel (
+stars (
+combat (
+teamBundleID  (
+skill! (2.DSkill
+skillGroupSn" (	
+atkSpeed# (
+canMove$ (
+canCastSkill% (
+	canAttack& (
+propJson' (	
+
+sn( (	
+
+friendship) (
+friendshipLevel* (
+	isJuexing+ (
+jueXingLevel, (
+spiritLevel- (
+rageMax. (
+	humanName/ (	"€
+DStageMagicWeapon
+posEnd (2	.DVector3
+level (
+hpCur (
+hpMax (
+speed (
+mana (
+manaMax (
+combat (
+teamBundleID	 (
+skill
+ (2.DSkill
+skillGroupSn (	
+canMove (
+canCastSkill (
+	canAttack (
+propJson (	
+
+sn (	
+belongHumanId (
+stars ("Å
+	DStageDot
+dotSn (
+pos (2	.DVector2
+	scopeType (
+scopeParam1 (
+scopeParam2 (
+createId ("ô
+DStageBullet
+bulletSn (
+pos (2	.DVector2
+posTar (2	.DVector2
+	unitTarID (
+skillSn (
+createId (
+fireId ("º
+
+DStageDrop
+type (	
+itemSn (
+num (
+humanId (
+protectTime (
+bind (
+	monsterId ("
+dynamicItem (2.DDynamicItem
+dynamicItemCount	 ("E
+
+DStagePick
+pickSn (
+pos (2	.DVector2
+visible ("õ
+	DStageNPC
+ownerBundleId (
+name (	
+normalTitle (	
+seniorTitle (	
+modelSn (	
+belongHumanId (
+belongHumanName (	"¥
+DStageMirrorHuman
+level (
+keys (
+unionId (
+	unionName (	
+title (2.DTitle
+vipLevel (
+blood (
+serverId (	
+iBattleType	 (" 
+DFire
+
+sn (
+num ("ˆ
+DGuardLeader
+index (
+name (	
+combat (
+modelSn (	
+level (
+time (
+vipLevel (
+	unionName (	
+prestigeLevel	 (
+
+id
+ (
+isFriend (
+isBan (
+mateName (	
+serverId (	"Ó
+DGuardSlave
+level (
+name (	
+modelSn (	
+
+profession (
+sex (
+hpMax (
+
+hp (
+rage (
+star	 (
+
+id
+ (
+hurt (
+advLevel (
+jueXingLevel (
+transfiguration (	"[
+DGuardMagicWeapon
+
+id (
+level (
+name (	
+modelSn (	
+star ("E
+SCFightHpChg
+	dhpChgTar (2
+.DHpChgTar
+skillSn (:à√ò
+"8
+	DHpChgTar
+
+id (
+
+dhpChgOnce (2.DHpChgOnce"«
+
+DHpChgOnce
+hpChange (
+hpCur (
+hpMax (
+atkRage (
+defRage (
+effect (
+hpLost (
+	atkerType (
+hpType	 (	
+
+attackerId
+ (
+attPos (2	.DVector2
+backPos (2	.DBackPos
+	damegeNum (
+	damegeAdd (
+hurtAdd (
+armorCur (
+armorMax ("<
+DBackPos
+
+id (
+pos (2	.DVector2
+type ("'
+
+DFightData
+
+id (
+value ("=
+DFightLastRewardItem
+desc (	
+
+sn (
+num ("i
+
+DEquipment
+
+id (
+
+sn (
+level (
+star (
+jingLianProp (	
+starProp (	"Ö
+DTowerHistoryRank
+index (
+name (	
+humanId (
+level (
+modelSn (	
+vipLevel (
+rankTime ("
+DTowerRecentRank
+index (
+name (	
+humanId (
+level (
+modelSn (	
+vipLevel ( 
+generals (2.DTowerGeneral
+magicWeaponSn (	
+magicWeaponStar	 (
+magicWeaponLevel
+ (
+rankTime ("8
+DTowerGeneral
+
+sn (	
+star (
+level ("G
+DTowerFightCondition
+type (
+curValue (
+isReach ("Û
+DActiveGeneralForConf
+
+sn (
+activeTitle (	
+iconSN (	
+timeType (	
+displayTime (	
+	startTime (	
+	timelimit (
+
+finishTime (	
+disappearTime	 (	
+activeTitle2
+ (	
+activeContent1 (	
+activeTypeSN ('
+
+activegoal (2.DActiveGoalForConf
+open (
+playerLevel (
+sequence (
+UIStyle (	"ö
+DActiveGoalForConf
+
+sn (
+activeSN (
+target1 (	
+target2 (	
+target3 (	
+activeGoalContent (	
+items (2	.DProduce"X
+DActivityForConf
+
+sn (
+Item (2	.DProduce
+VipLimit (
+Times ("f
+DActivityFirstChargeBoxForConf
+
+sn (
+items (2	.DProduce
+title (	
+content (	"í
+DActivityVipBoxForConf
+
+sn (
+level (
+original_cost (
+cost (
+items (2	.DProduce
+title (	
+content (	"o
+DActivityLevelBoxForConf
+
+sn (
+level (
+items (2	.DProduce
+title (	
+content (	"o
+DActivityOnlineBoxForConf
+
+sn (
+time (
+items (2	.DProduce
+title (	
+content (	"p
+DActivityOfflineBoxForConf
+
+sn (
+time (
+items (2	.DProduce
+title (	
+content (	"®
+DUserBackBoxForConf
+
+sn (
+minDaysLeft (
+maxDaysLeft (
+items1 (2	.DProduce
+items2 (2	.DProduce
+items3 (2	.DProduce
+items4 (2	.DProduce
+items5 (2	.DProduce
+items6	 (2	.DProduce
+items7
+ (2	.DProduce
+title (	
+content (	"`
+DActivityOpenServerForConf
+
+sn (
+text (	
+subActivitySn (
+	startTime (	"U
+DActivityFinalRewardForConf
+
+sn (
+	finishNum (
+item (2	.DProduce"[
+DActivityHappyForConf
+
+sn (
+text (	
+subActivitySn (
+	startTime (	"Z
+ DActivityHappyFinalRewardForConf
+
+sn (
+	finishNum (
+item (2	.DProduce"â
+DFundForConf
+
+sn (
+
+activitySn (
+	VipLimmit (
+	moneyType (
+Cost (
+	LevelGoal (
+
+ServiceBuy ("f
+DFundGoalForConf
+
+sn (
+Type (
+Target (
+Content (	
+item (2	.DProduce"à
+DUnionMemberInfo
+memberId (
+
+memberName (	
+type (
+level (
+
+contribute (
+lastTimeToNow (
+isOnline (
+modelSn (	
+combat	 (
+
+unionMoney
+ (
+dayContribute (
+contributeTime (
+vipLevel ("f
+DUnionApplyInfo
+applyId (
+
+memberName (	
+level (
+modelSn (	
+combat ("“
+DUnionSelfInfo
+selfId (
+level (
+type (
+maxContribute (
+
+contribute (
+worshipCount (
+receivePoint (
+combat (
+dayContribute	 (
+donationCount
+ ("6
+	DUnionLog
+time (	
+type (
+param (	"e
+CSUnionList
+unionId (
+name (	
+num (
+level (:0
+	isDragMsg (:à√ç"\
+SCUnionList
+unions (2.DUnionInfo
+num (
+numMax (
+type (:à√é"
+CSUnionInfo:à√è"s
+SCUnionInfo
+union (2.DUnionInfo"
+members (2.DUnionMemberInfo
+self (2.DUnionSelfInfo:à√ê"0
+CSUnionBuild
+name (	
+img (	:à√ë"&
+CSUnionApply
+unionId (:à√í":
+SCUnionApply
+unionId (
+
+hasApplied (:à√ì"@
+CSSetUnionInfo
+name (	
+img (	
+post (	:à√î"@
+SCSetUnionInfo
+name (	
+img (	
+post (	:à√ï"
+CSUnionLevelUp:à√ñ"L
+SCUnionLevelUp
+level (
+maxCount (
+
+contribute (:à√ó"G
+CSUnionAuthorize
+memberId (
+type (
+code (	:à√ò"9
+SCUnionAuthorize
+memberId (
+type (:à√ô"U
+CSUnionSettings
+
+considered (
+switchLevel (
+
+enterLevel (:à√ú"U
+SCUnionSettings
+
+considered (
+switchLevel (
+
+enterLevel (:à√ù"
+CSUnionWork:à√û"®
+SCUnionWork
+
+considered (
+switchLevel (
+
+enterLevel ( 
+applys (2.DUnionApplyInfo
+count (
+maxCount (
+
+contribute (:à√ü"8
+CSUnionDealApply
+applyId (
+type (:à√†""
+CSUnionExit
+code (	:à√°"
+SCUnionExit:à√¢"
+CSTestInUnion:à√£"'
+SCTestInUnion
+unionId (:à√§"$
+
+CSUnionLog
+unionId (:à√•"-
+
+SCUnionLog
+logs (2
+.DUnionLog:à√¶"(
+CSUnionGetOut
+memberId (:à√ß"(
+SCUnionGetOut
+memberId (:à√®"*
+CSUnionDonation
+costType (:à√©"≤
+SCUnionDonation
+
+contribute (
+maxContribute (
+unionContribute (
+
+unionLevel (
+
+unionMoney (
+donationCount (
+dayContribute (:à√™">
+SCUnionInfoChange
+unionId (
+	unionName (	:à√´"'
+CSUnionInvite
+humanId (:à√¨"5
+SCUnionInvite
+unionId (
+info (	:à√≠":
+CSUnionInviteReply
+unionId (
+type (:à√Æ"?
+SCUnionInviteReply
+unionId (
+	unionName (	:à√Ø"(
+SCAuthorizeInform
+type (:à√∞"2
+CSUnionWorship
+
+id (
+index (:à√±"&
+SCUnionWorship
+count (:à√≤".
+SCUnionWorshipReward
+worship (:à√≥"
+CSUnionReceiveWorship:à√¥"0
+SCUnionReceiveWorship
+maxPoint (:à√µ"7
+CSUnionSendMail
+title (	
+detail (	:à√∂"+
+SCUnionSendMail
+	mailCount (:à√∑"#
+SCApplyBright
+num (:à√∏"
+CSInvadeIsOpen:à√π"'
+SCInvadeIsOpen
+isOpen (:à√∫"
+CSInvadeInfo:à√ª"ö
+SCUnionInvadeInfoResult
+
+remainTime (
+remaimMosNum (
+humanNum (
+lastHumanNum (
+lastKillMosNum (
+MosSum (:à√º"$
+CSInvadeEnter
+gate (:à√Ω"
+CSInvadTokenNum:à√æ"*
+SCInvadTokenNum
+tokenNum (:à√ø"
+CSInvadLunPan:à√¿"8
+SCInvadLunPanResult
+produce (2	.DProduce:à√¡"(
+CSUnionChangeName
+name (	:à√¬"(
+SCUnionChangeName
+name (	:à√√"&
+CSUnionChangeImg
+img (	:à√ƒ"&
+SCUnionChangeImg
+img (	:à√≈"(
+CSUnionChangePost
+post (	:à√∆"(
+SCUnionChangePost
+post (	:à√«")
+CSEnterUnionMap
+unionId (:à√»"$
+CSUnionPVEEnter
+
+id (:à√…"
+CSUnionPVELeave:à√ "
+CSUnionPVEEnd:à√À"8
+SCUnionPVEEndResult
+produce (2	.DProduce:à√Ã"'
+CSMemberInfoDetail
+
+id (:à√Õ"A
+SCMemberInfoDetail$
+allGuard (2.DHomeGuardAtkInfo:à√Œ"*
+SCUnionPVEEnterResult
+
+sn (:à√œ"$
+CSInvadeBasic
+gate (:à√–"T
+SCInvadeBasicResult
+
+remainTime (
+remaimMosNum (
+gate (:à√—"3
+SCInvadeMosNumChange
+remaimMosNum (:à√“"e
+DUnionBonus
+name (	
+bonusNum (
+
+bonusState (
+	bonusDate (
+bonusID ("Y
+DBonusReceiverInfo&
+unionMember (2.DUnionMemberInfo
+date (
+money ("
+CSGetUnionBonusInfo:à√”":
+SCUnionBonusInfo
+	bonusList (2.DUnionBonus:à√‘"9
+CSGiveBonus
+	bonusType (
+bonusNum (:à√’"<
+CSDrawUnionBonus
+bonusID (
+drawType (:à√÷"Ω
+SCDrawUnionBonus
+drawType (
+myGold (
+	giverName (	
+bonusNum (
+sumGold ()
+receiverList (2.DBonusReceiverInfo
+	bonusInfo (2.DUnionBonus:à√◊"
+SCGiveBonus:à√ÿ"
+CSUnionSkillList:à√Ÿ":
+DUnionSkill
+
+sn (
+level (
+maxLevel ("ë
+SCUnionSkillList
+skills (2.DUnionSkill#
+info (2.SCUnionSkillDonation
+num (
+
+skillPoint (
+
+contribute (:à√⁄"$
+CSResearchSkill
+
+sn (:à√€"!
+CSStudySkill
+
+sn (:à√‹"H
+CSUnionSkillDonation
+type (
+itemId (
+num (:à√›"g
+SCUnionSkillDonation
+
+unionMoney (
+donationGoldCount (
+donationItemCount (:à√ﬁ"^
+DUnionBossInfo
+
+sn (
+level (
+exp (
+status (
+residueTimes ("L
+DUnionBossRank
+order (
+name (	
+level (
+damage ("
+CSUnionBOSSList:à√ﬂ";
+SCUnionBOSSList!
+bossList (2.DUnionBossInfo:à√‡"$
+CSUnionBossRank
+
+sn (:à√·";
+SCUnionBossRank!
+RankList (2.DUnionBossRank:à√‚"*
+CSSummonUnionBoss
+bossSn (:à√„"&
+SCSummonUnionBoss
+
+sn (:à√‰"%
+CSUnionBossEnter
+
+sn (:à√Â"∏
+SCUnionBossInfo
+name (	
+sumBlood (
+curBlood (
+curState (
+
+remainTime (
+modelSn (	
+	openLevel (
+
+summonerID (
+bossSn	 (:à√Ê"G
+SCUnionBossDropBlood
+sumBloodNum (
+curBloodNum (:à√Á".
+CSUnionBossPVEEnter
+mosterId (:à√Ë"*
+CSUnionBossPVELeave
+type (:à√È"
+CSUnionBossPVEEnd:à√Í"
+SCUnionBossPVEEnd:à√Î":
+SCUnionBossHumanNumInStage
+stageHumanNum (:à√Ï"I
+CSfeedUnionBoss
+bossSn (
+foodNum (
+foodSn (:à√Ì"E
+SCfeedUnionBoss
+bossSn (
+exp (
+status (:à√Ó"
+CSUnionBossLeave:à√Ô""
+CSUnionBossInvitePartener:à√"
+CSGetUnionBossInfo:à√Ò" 
+CSUnionBossResidueTimes:à√Ú"/
+SCUnionBossResidueTimes
+times (:à√Û"B
+SCRefreshUnionBOSSList!
+bossList (2.DUnionBossInfo:à√Ù"U
+DUnionGoods
+
+sn (
+	moneyType (
+price (
+num (
+pos ("
+CSUnionShopInfo:à√ı"J
+SCUnionShopInfo
+goods (2.DUnionGoods
+refreshTime (:à√ˆ"%
+CSUnionBuyGoods
+pos (:à√˜"I
+SCUnionBuyGoods
+result (
+pos (
+
+contribute (:à√¯"
+CSRefreshUnionShop:à√˘"L
+SCRefreshUnionShop
+goods (2.DUnionGoods
+
+contribute (:à√˙"
+CSBuyUnionSkillPoint:à√˚">
+SCBuyUnionSkillPoint
+num (
+
+skillPoint (:à√¸"%
+CSUnionApplyAll
+num (:à√˝")
+SCUnionApplyAll
+unionId (:à√˛"&
+CSUnionChangeDec
+dec (	:à√ˇ"&
+SCUnionChangeDec
+dec (	:à√Ä"=
+SCUnionNewMember"
+members (2.DUnionMemberInfo:à√Å")
+CSUnionXuanZhan
+unionId (:à√Ç"Ç
+SCUnionXuanZhan
+result (
+unionId (%
+xuanzhan (2.DUnionXuanZhanData
+time (
+
+unionMoney (:à√É"
+CSUnionXuanZhanData:à√Ñ"r
+DUnionXuanZhanData
+unionId (
+xuanZhanEndTime (
+bActive (
+killNum (
+bekilled ("a
+SCUnionXuanZhanData
+result (%
+xuanzhan (2.DUnionXuanZhanData
+time (:à√Ö"*
+CSUnionXuanZhanList
+page (:à√Ü"∏
+DXuanZhanUnion
+unionId (
+xuanZhanEndTime (
+bActive (
+killNum (
+bekilled (
+showId (
+	unionName (	
+	unionicon (	
+
+unionlevel	 ("h
+SCUnionXuanZhanList
+result (
+union (2.DXuanZhanUnion
+time (
+page (:à√á"+
+CSUnionXuanZhanQuery
+name (	:à√à"[
+SCUnionXuanZhanQuery
+result (
+union (2.DXuanZhanUnion
+time (:à√â"
+CSUnionXuanZhanRecord:à√ä"b
+DUnionXuanZhanRecord
+time (
+name (	
+killNum (
+bekilled (
+win ("U
+SCUnionXuanZhanRecord
+result (%
+record (2.DUnionXuanZhanRecord:à√ã".
+SCUnionMemberRemove
+memberId (:à√å*±
+EWorldObjectType	
+HUMAN 
+MONSTER
+DROP
+DOT
+
+BULLET
+NPC
+PICK
+TRIGGER
+
+COMMON
+GENERAL	
+COMPETE
+
+MIRRORHUMAN
+MAGICWEAPON*œ
+BattleTypes
+Instance	
+Arena
+ArenaDef	
+Tower
+Home
+HomeDef
+HomeNew
+
+HomeDefNew
+PVP	
+
+PVPMonster
+
+	Supremacy
+UnionMonster
+HomeRevenge
+
+Expedition
+UnionWar
+
+XMJNeigong
+
+XMJWaigong
+LadderArena
+LadderArenaDef
+	WorldBoss
+SurvivalPVP
+UnionInvade
+	GuardCity
+ChallengeGod
+CrossServerBlood
+CrossSupremacyAudition
+CrossSupremacyPromotion
+CrossSupremacyFinal
+ChallengeNPC
+	UnionBoss
+
+Replay
+ResourceRep 
+UnionFantasy!
+Team"
+
+OnHook#
+WildBoss$BH

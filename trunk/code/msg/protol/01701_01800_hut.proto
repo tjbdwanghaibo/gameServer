@@ -1,0 +1,59 @@
+// -----------------------------------------
+// 小屋
+// -----------------------------------------
+
+
+// 更新某个物品的信息
+message SCUpdataHutItem {
+	option (msgid) = 1701;
+	optional DHutItem item = 1;
+}
+// 打开小屋
+message CSOpenHut {
+	option (msgid) = 1702;
+}
+// 打开小屋返回
+message SCOpenHut {
+	option (msgid) = 1703;
+	repeated DHutItem iem = 1;
+}
+
+// 使用
+message CSUseHutItem {
+	option (msgid) = 1704;
+	required int32 sn 	= 1; // sn
+}
+
+// 使用返回
+message SCUseHutItem {
+	option (msgid) = 1705;
+	required int32 result 	= 1;// 结果
+	optional int32 sn 		= 2;// sn
+}
+
+// 购买
+message CSBuyHutItem {
+	option (msgid) = 1706;
+	required int32 sn 		 = 1; // sn
+	required int32 timeIndex = 2; // 时间类型
+	required int32 moneyType = 3; // 货币类型
+	
+}
+// 购买返回
+message SCBuyHutItem {
+	option (msgid) = 1707;
+	required int32 result 	= 1;// 结果
+	optional int32 sn 		= 2; // sn
+}
+// 赠送
+message CSGiftHutItem {
+	option (msgid) = 1708;
+	required int32 sn 		 = 1; // sn
+	required int32 timeIndex = 2; // 时间类型
+	required int32 moneyType = 3; // 货币类型
+}
+// 赠送返回
+message SCGiftHutItem {
+	option (msgid) = 1709;
+	required int32 result 	= 1;// 结果
+}

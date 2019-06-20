@@ -1,0 +1,100 @@
+// -----------------------------------------
+// 战斗
+// -----------------------------------------
+
+// 客户端请求：进入战斗
+message CSBattleStart {
+	option (msgid) = 1201;
+	required int32 mode 				= 1; // 玩法类型
+}
+
+// 战斗玩家信息
+message DBattlePlayer {
+	repeated DKV items 					= 1; // 道具及等级
+	optional int32 equiped 				= 2; // 装备的技能
+	optional int32 pet 					= 3; // 宠物
+	optional int32 emoj 				= 4; // 表情
+	optional int32 foot 				= 5; // 脚印
+	optional int32 skin 				= 6; // 皮肤
+	required string name				= 7; //名字
+	optional int32 character			= 8; //角色
+	optional int32 arms					= 9; //武器
+	optional int32 headdress			= 10; //头饰
+	optional int32 clothes				= 11; //服饰
+}
+
+// 指令
+message DBattleCMD {
+	required int32 frame 				= 1; // 帧
+	required int32 cmdType 				= 3; // 操作类型
+	optional int32 arg1 				= 4;
+	optional int32 arg2 				= 5;
+	optional int32 arg3 				= 6;
+	optional int32 arg4 				= 7;
+	optional string arg5 				= 8;
+}
+
+// 服务器推送：战斗开始
+message SCBattleStart {
+	option (msgid) = 1202;
+	required int32 sn 					= 1; // 副本sn
+	required int32 mode					= 2; // 模式（网络 单机 录像）
+	required int32 seed					= 3; // 随机种子
+	required int32 playerId 			= 4; // 当前玩家id
+	required int32 frame 				= 5; // 当前帧
+	repeated DBattleCMD cmds 			= 6; // 指令
+}
+
+// 客户端请求：玩家指令
+message CSBattleDo {
+	option (msgid) = 1203;
+	required int32 cmdType 				= 1; // 操作类型
+	optional int32 arg1 				= 2;
+	optional int32 arg2 				= 3;
+	optional int32 arg3 				= 4;
+	optional int32 arg4 				= 5;
+	optional string arg5 				= 6;
+}
+
+// 服务器推送：玩家指令
+message SCBattleDo {
+	option (msgid) = 1204;
+	repeated DBattleCMD cmds 			= 2; // 指令
+}
+
+// 客户端请求：战斗结束
+message CSBattleOver {
+	option (msgid) = 1205;
+}
+
+// 服务器推送：战斗结束
+message SCBattleOver {
+	option (msgid) = 1206;
+}
+
+// 服务器推送：帧包
+message SCTick {
+	option (msgid) = 1207;
+	required int32 frame 				= 1; //服务器当前帧
+}
+
+// 服务器推送：战斗开始切图
+message SCBattleStageSwitch {
+	option (msgid) = 1208;
+	required int32 sn 					= 1; // 副本sn
+}
+//前端战斗切图完成
+message CSBattleStageSwitchEnd {
+	option (msgid) = 1209;
+}
+
+// 客户端请求：离开战斗
+message CSBattleLeave {
+	option (msgid) = 1210;
+}
+
+// 服务器推送：离开战斗返回
+message SCBattleLeaveResult {
+	option (msgid) = 1211;
+	required int32 resultCode 			= 1; // 0=成功
+}
