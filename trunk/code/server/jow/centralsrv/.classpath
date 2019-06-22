@@ -6,5 +6,6 @@
 	<classpathentry kind="lib" path="/corelibs/connsrv.jar"/>
 	<classpathentry kind="lib" path="/corelibs/core.jar"/>
 	<classpathentry kind="lib" path="/corelibs/dbsrv.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/common"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

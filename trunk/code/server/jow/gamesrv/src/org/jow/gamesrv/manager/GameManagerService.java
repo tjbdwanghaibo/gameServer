@@ -26,8 +26,6 @@ import org.jow.loginsrv.RPCProxy.AccountServiceProxy;
 
 @DistrClass(importClass= {CallPoint.class, HumanInfo.class, Param.class, List.class, HumanCentralInfo.class})
 public class GameManagerService extends Service{
-
-	
 	/** 在线玩家信息 */
 	private Map<Long, HumanOnlineInfo> onlineHumans = new HashMap<>();
 	/** 本服全部玩家基本信息 */

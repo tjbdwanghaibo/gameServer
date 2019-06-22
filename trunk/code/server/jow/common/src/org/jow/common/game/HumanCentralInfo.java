@@ -10,7 +10,7 @@ import org.jow.core.interfaces.ISerilizable;
 
 /**
  * 中央服上的玩家信息
- * @author Administrator
+ * @author Yangxianmeng
  *
  */
 public class HumanCentralInfo implements ISerilizable {
