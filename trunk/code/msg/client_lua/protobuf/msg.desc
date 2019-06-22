@@ -1,544 +1,0 @@
-
-üE
-	msg.protooptions.proto" 
-DVector2	
-x (	
-y ("+
-DVector3	
-x (	
-y (	
-z ("è
-DHuman
-
-id (
-diamond (
-bindingDiamond (
-gold (
-openFunctions (
-keyCount (
-openBoxCount (
-
-skillPoint (
-skill	 (
-pet
- (
-emoj (
-foot (
-name (	
-	signature (	
-level (
-head (	
-sex (
-dan (
-star (
-protectScore (
-	character (
-arms (
-	headdress (
-clothes (
-	attention (
-fans (
-like (
-online (
-isFriend ("¤
-DHumanSimpleInfo
-
-id (
-name (	
-head (	
-sex (
-dan (
-online (
-time (
-isEnemy (
-level	 (
-distence
- ("8
-	DLaudInfo
-name (	
-head (	
-laudNum ("v
-
-DRoundData
-rank (
-mode (
-	killCount (
-	deadCount (
-assistCount (
-	timestamp ("5
-DSeasonData
-num (
-dan (
-star ("Y
-	DCardData
-
-sn (
-level (
-debrisCount (
-state (
-carry ("U
-DHutItem
-
-sn (
-forever (
-use (
-	timeLimit (
-used ("
-DKV	
-k (	
-v ("h
-CSLogin
-account (	
-password (	
-deviceId (	
-	channelId (	
-version (	:ˆÃo")
-SCLoginResult
-
-resultCode (:ˆÃp"?
-CSAccountReconnect
-account (	
-
-sessionKey (:ˆÃy"4
-SCAccountReconnectResult
-
-resultCode (:ˆÃz"6
-SCAccountLoginQueue
-num (
-sec (:ˆÃ™"+
-CSKeyActivate
-keyActivate (	:ˆÃš"*
-SCKeyActivate
-
-resultCode (:ˆÃ›"
-
-CSInitData:ˆÃÍ"‚
-
-SCInitData
-human (2.DHuman
-
-ownedCards (2
-.DCardData
-equipedCards (
-ownedHutItem (2	.DHutItem:ˆÃÎ"2
-SCHumanInfoChange
-human (2.DHuman:ˆÃÏ"(
-SCServerConfig
-timeNow (:ˆÃÐ"
-CSPing:ˆÃÜ"
-SCPing:ˆÃÝ"(
-SCHumanKick
-
-resultCode (:ˆÃà"-
-SCHint
-strId (
-param (	:ˆÃá"$
-CSBattleStart
-mode (:ˆÃ±	"¿
-DBattlePlayer
-items (2.DKV
-equiped (
-pet (
-emoj (
-foot (
-skin (
-name (	
-	character (
-arms	 (
-	headdress
- (
-clothes ("r
-
-DBattleCMD
-frame (
-cmdType (
-arg1 (
-arg2 (
-arg3 (
-arg4 (
-arg5 (	"z
-SCBattleStart
-
-sn (
-mode (
-seed (
-playerId (
-frame (
-cmds (2.DBattleCMD:ˆÃ²	"j
-
-CSBattleDo
-cmdType (
-arg1 (
-arg2 (
-arg3 (
-arg4 (
-arg5 (	:ˆÃ³	".
-
-SCBattleDo
-cmds (2.DBattleCMD:ˆÃ´	"
-CSBattleOver:ˆÃµ	"
-SCBattleOver:ˆÃ¶	"
-SCTick
-frame (:ˆÃ·	"(
-SCBattleStageSwitch
-
-sn (:ˆÃ¸	"
-CSBattleStageSwitchEnd:ˆÃ¹	"
-CSBattleLeave:ˆÃº	"0
-SCBattleLeaveResult
-
-resultCode (:ˆÃ»	"/
-SCUpdataCard
-card (2
-.DCardData:ˆÃ•
-"$
-CSCarryCard
-cardSn (:ˆÃš
-"4
-SCCarryCard
-result (
-cardSn (:ˆÃ›
-"&
-CSTakeOffCard
-cardSn (:ˆÃœ
-"6
-SCTakeOffCard
-result (
-cardSn (:ˆÃ
-"&
-CSCardLevelUp
-cardSn (:ˆÃž
-"6
-SCCardLevelUp
-result (
-cardSn (:ˆÃŸ
-"
-CSRoomCreate:ˆÃù
-"T
-DRoomMember
-
-id (
-name (	
-head (	
-index (
-leader ("]
-SCRoomCreateResult
-
-resultCode (
-roomId (
-member (2.DRoomMember:ˆÃú
-"%
-CSRoomAddRobot
-camp (:ˆÃû
-"5
-SCRoomAddRobot
-member (2.DRoomMember:ˆÃü
-""
-
-CSRoomKick
-index (:ˆÃý
-""
-
-SCRoomKick
-index (:ˆÃþ
-"&
-CSRoomInvite
-humanId (:ˆÃÿ
-"R
-SCRoomInvite
-roomId (
-humanId (
-name (	
-head (	:ˆÃ€"
-CSRoomChangeIndex:ˆÃ"8
-SCRoomChangeIndex
-member (2.DRoomMember:ˆÃ‚"0
-CSRoomSwapIndexRequest
-humanId (:ˆÃƒ"L
-SCRoomSwapIndexRequest
-humanId (
-name (	
-head (	:ˆÃ„"1
-CSRoomSwapIndexResponse
-humanId (:ˆÃ…"?
-SCRoomSwapIndexResponse
-members (2.DRoomMember:ˆÃ†"'
-CSTeamCreate
-battleSn (:ˆÃÝ"¶
-DTeamMember
-
-id (
-name (	
-head (	
-dan (
-star (
-leader (
-prepare (
-	character (
-arms	 (
-	headdress
- (
-clothes ("]
-SCTeamCreateResult
-
-resultCode (
-teamId (
-member (2.DTeamMember:ˆÃÞ"&
-CSTeamInvite
-humanId (:ˆÃß"/
-SCTeamInviteResult
-
-resultCode (:ˆÃà"Y
-SCTeamInviteReceive
-teamId (
-humanId (
-name (	
-head (	:ˆÃá"#
-
-CSTeamJoin
-teamId (:ˆÃâ"\
-SCTeamJoinResult
-
-resultCode (
-teamId (
-members (2.DTeamMember:ˆÃã"1
-
-SCTeamJoin
-member (2.DTeamMember:ˆÃä"
-CSTeamLeave:ˆÃå".
-SCTeamLeaveResult
-
-resultCode (:ˆÃæ"7
-SCTeamLeave
-humanId (
-leaderId (:ˆÃç"$
-
-CSTeamKick
-humanId (:ˆÃè">
-SCTeamKickResult
-
-resultCode (
-humanId (:ˆÃé"$
-
-SCTeamKick
-humanId (:ˆÃê"'
-CSTeamPrepare
-prepare (:ˆÃë"A
-SCTeamPrepareResult
-
-resultCode (
-prepare (:ˆÃì"8
-SCTeamPrepare
-humanId (
-prepare (:ˆÃí"7
-SCSyncMemberInfo
-member (2.DTeamMember:ˆÃî"%
-CSAddFriend
-humanId (:ˆÃÁ"K
-SCAddFriend
-
-resultCode (!
-friend (2.DHumanSimpleInfo:ˆÃÂ"(
-CSDeleteFriend
-humanId (:ˆÃÃ"<
-SCDeleteFriend
-
-resultCode (
-humanId (:ˆÃÄ" 
-CSLaud
-humanId (:ˆÃÅ"H
-SCLaudResult
-
-resultCode (
-humanId (
-like (:ˆÃÆ"#
-CSFindFriend
-name (	:ˆÃÇ"8
-SCFindFriend!
-friend (2.DHumanSimpleInfo:ˆÃÈ"%
-CSGetMyFriends
-page (:ˆÃÉ":
-SCGetMyFriends!
-friend (2.DHumanSimpleInfo:ˆÃÊ""
-CSGetMyFans
-page (:ˆÃË"5
-SCGetMyFans
-fans (2.DHumanSimpleInfo:ˆÃÌ")
-CSGetPlayerInfo
-humanId (:ˆÃÍ"1
-SCGetPlayerInfo
-player (2.DHuman:ˆÃÎ"7
-CSGetPlayerLaud
-humanId (
-page (:ˆÃÏ"Q
-SCGetPlayerLaud
-laud (2
-.DLaudInfo
-humanId (
-page (:ˆÃÐ"(
-CSGetRecentPlayer
-page (:ˆÃÑ">
-SCGetRecentPlayers!
-friend (2.DHumanSimpleInfo:ˆÃÒ"(
-CSGetNearbyPlayer
-page (:ˆÃÓ"=
-SCGetNearbyPlayer!
-friend (2.DHumanSimpleInfo:ˆÃÔ"
-CSGetBlacklist:ˆÃÕ"8
-SCGetBlacklist
-list (2.DHumanSimpleInfo:ˆÃÖ"(
-CSAddBlacklist
-humanId (:ˆÃ×"<
-SCAddBlacklist
-
-resultCode (
-humanId (:ˆÃØ"+
-CSRemoveBlacklist
-humanId (:ˆÃÙ"?
-SCRemoveBlacklist
-
-resultCode (
-humanId (:ˆÃÚ"
-CSGetRecentChat:ˆÃÛ";
-SCGetRecentChat!
-friend (2.DHumanSimpleInfo:ˆÃÜ"1
-SCUpdataHutItem
-item (2	.DHutItem:ˆÃ¥"
-	CSOpenHut:ˆÃ¦"*
-	SCOpenHut
-iem (2	.DHutItem:ˆÃ§"!
-CSUseHutItem
-
-sn (:ˆÃ¨"1
-SCUseHutItem
-result (
-
-sn (:ˆÃ©"G
-CSBuyHutItem
-
-sn (
-	timeIndex (
-	moneyType (:ˆÃª"1
-SCBuyHutItem
-result (
-
-sn (:ˆÃ«"H
-CSGiftHutItem
-
-sn (
-	timeIndex (
-	moneyType (:ˆÃ¬"&
-SCGiftHutItem
-result (:ˆÃ­"Ø
-DMSG
-channel (
-content (	
-	timestamp (
-sendHumanId (
-sendHumanName (	
-sendHumanLevel (
-sendHumanHeadSn (	
-sendHumanSex (
-voiceURL	 (	
-receiveHumanId
- ("#
-SCChat
-msg (2.DMSG:ˆÃ‰"e
-CSChat
-channel (
-content (	
-	targetKey (
-items (
-voiceURL (	:ˆÃŠ"-
-
-SCChatPack
-chatMsg (2.SCChat:ˆÃ‹"
-CSGetWorldChatBuffer:ˆÃŒ"d
-DMail
-
-id (
-title (	
-	timestamp (
-read (
-hasItem (
-pickup (".
-SCInitMailList
-mails (2.DMail:ˆÃí"$
-CSGetMailDetail
-
-id (:ˆÃî"¹
-SCGetMailDetail
-
-id (
-detail (	
-itemSns (
-itemNums (
-delTimestamp (
-receiver (
-receiverName (	
-sender (
-
-senderName	 (	:ˆÃï"
-
-CSReadMail
-
-id (:ˆÃð" 
-
-SCReadMail
-ids (:ˆÃñ".
-SCMailNewRemind
-mail (2.DMail:ˆÃò"%
-CSPickupMailItem
-
-id (:ˆÃó"Y
-SCPickupItemMailResult
-pickedUpIds (
-result (
-isPickUpAll (:ˆÃô"!
-CSMailRemove
-
-id (:ˆÃõ""
-SCMailRemove
-ids (:ˆÃö"C
-CSChangeName
-name (	
-	signature (	
-sex (:ˆÃÑ"W
-SCChangeName
-
-resultCode (
-name (	
-	signature (	
-sex (:ˆÃÒ"#
-CSChangeHead
-head (	:ˆÃÓ"7
-SCChangeHead
-
-resultCode (
-head (	:ˆÃÔ"*
-CSGetHistoryData
-humanId (:ˆÃÕ"_
-SCGetHistoryData
-historydata (2.DKV
-
-seasondata (2.DKV
-humanId (:ˆÃÖ"(
-CSGetRoundData
-humanId (:ˆÃ×"C
-SCGetRoundData
-data (2.DRoundData
-humanId (:ˆÃØ")
-CSGetSeasonData
-humanId (:ˆÃÙ"E
-SCGetSeasonData
-data (2.DSeasonData
-humanId (:ˆÃÚ"!
-CSGmCmd
-command (	:ˆÃ­M*s
-EHistoryDataType
-	GAMECOUNT
-GAMETIMETOTAL
-	KILLCOUNT
-	DEADCOUNT
-MAXSCORE
-CHAMPIONCOUNTBH

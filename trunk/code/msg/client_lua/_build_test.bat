@@ -1,1 +1,0 @@
-build.bat test/test.proto test/msg
