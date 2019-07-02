@@ -1,12 +1,15 @@
 package org.jow.gamesrv;
 
+import org.jow.centralsrv.RPCProxy.HumanGlobalServiceProxy;
 import org.jow.common.db.DB;
 import org.jow.common.entity.game.HumanDB;
+import org.jow.common.event.Event;
 import org.jow.common.game.HumanCentralInfo;
 import org.jow.common.game.HumanInfo;
 import org.jow.core.CallPoint;
 import org.jow.core.Port;
 import org.jow.core.Record;
+import org.jow.core.config.CentralConfig;
 import org.jow.core.config.GameConfig;
 import org.jow.core.config.JowDistr;
 import org.jow.core.support.Param;
@@ -14,7 +17,8 @@ import org.jow.core.support.TickTimer;
 import org.jow.core.support.TimerQueue;
 import org.jow.core.support.random.RandomUtils;
 import org.jow.gamesrv.RPCProxy.GameManagerServiceProxy;
-import org.jow.gamesrv.module.Chat.ModChat;
+import org.jow.gamesrv.event.OnHumanFirstLogin;
+import org.jow.gamesrv.module.chat.ModChat;
 
 /**
  * 玩家对象
@@ -34,7 +38,7 @@ public class HumanObject {
 	private HumanDB humanDB;
 	
 	/** 正在加载时计时器 等于零时表示加载完毕 */
-	private int loadingNum = 0;
+	public int loadingNum = 0;
 	/** 正在登陆中 */
 	private boolean logining = true;
 	
@@ -112,14 +116,28 @@ public class HumanObject {
 			humanCentralInfo.setHead(humanDB.getHead());
 			humanCentralInfo.setLevel(humanDB.getLevel());
 			
-			
-			
-			
+			HumanGlobalServiceProxy proxy = HumanGlobalServiceProxy.newInstance(CentralConfig.NODE_CENTRAL, 
+					CentralConfig.PORT_HUMAN_GLOBAL, CentralConfig.SERV_HUMAN_GLOBAL);
+			proxy.humanCreate(humanCentralInfo);
+		}else {
+			humanDB = new HumanDB(record);
+		}
+		HumanManager.load(this);
+	}
+	
+	/**
+	 * 玩家加载完后 回调
+	 */
+	public void onLoadDataFinished() {
+		//上次登陆时间
+		long timeLast = humanDB.getTimeLogin();
+		
+		if( timeLast == 0) {
+			Event.fire(new OnHumanFirstLogin(this));
 		}
 		
 		
 	}
-	
 	
 	public boolean isLogining() {
 		// TODO Auto-generated method stub
@@ -132,7 +150,7 @@ public class HumanObject {
 	}
 
 	public CallPoint getConnPoint() {
-		// TODO Auto-generated method stub
+		
 		return connPoint;
 	}
 
@@ -150,5 +168,13 @@ public class HumanObject {
 		// TODO Auto-generated method stub
 		
 	}
+
+	public long getId() {
+		return id;
+	}
+
+	
+
+	
 
 }

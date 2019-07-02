@@ -1,5 +1,8 @@
-package org.jow.gamesrv.module.Chat;
+package org.jow.gamesrv.module.chat;
 
+import java.util.List;
+
+import org.jow.core.Record;
 import org.jow.gamesrv.HumanObject;
 import org.jow.gamesrv.module.ModuleHumanBase;
 
@@ -30,6 +33,15 @@ public class ModChat extends ModuleHumanBase {
 	public void pulse(long now) {
 		// TODO Auto-generated method stub
 		super.pulse(now);
+	}
+
+
+
+
+
+	public void loadRecentChatFromDB(List<Record> records) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
