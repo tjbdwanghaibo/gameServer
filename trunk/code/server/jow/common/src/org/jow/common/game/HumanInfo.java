@@ -5,10 +5,10 @@ import java.io.IOException;
 import org.jow.common.entity.game.HumanDB;
 import org.jow.core.InputStream;
 import org.jow.core.OutputStream;
-import org.jow.core.interfaces.ISerilizable;
-import org.jow.core.support.Param;
+import org.jow.core.Parms;
+import org.jow.core.interfaces.ISerializable;
 
-public class HumanInfo implements ISerilizable {
+public class HumanInfo implements ISerializable {
 
 	/** 玩家Id */
 	private long id;
@@ -22,9 +22,6 @@ public class HumanInfo implements ISerilizable {
 	private int sex;
 	/** 是否在线 */
 	private boolean online;
-	/** 签名 */
-	private String signature;
-	
 	
 	public HumanInfo() {
 
@@ -36,8 +33,8 @@ public class HumanInfo implements ISerilizable {
 		this.level = humanDB.getLevel();
 		this.head = humanDB.getHead();
 		this.sex = humanDB.getSex();
+		
 		this.online = true;
-		this.signature = humanDB.getSignature();
 	}
 	
 	
@@ -49,7 +46,6 @@ public class HumanInfo implements ISerilizable {
 		out.write(head);
 		out.write(sex);
 		out.write(online);
-		out.write(signature);
 	}
 	
 	
@@ -61,10 +57,9 @@ public class HumanInfo implements ISerilizable {
 		head = in.read();
 		sex = in.read();
 		online = in.read();
-		signature = in.read();
 	}
 
-	public void update(Param param) {
+	public void update(Parms param) {
 		String name = param.get(HumanDB.K.name);
 		if(name != null){
 			this.setName(name);
@@ -82,11 +77,6 @@ public class HumanInfo implements ISerilizable {
 		Integer sex = param.get(HumanDB.K.sex);
 		if (sex != null) {
 			setSex(sex);
-		}
-		
-		String signature = param.get(HumanDB.K.signature);
-		if (signature != null) {
-			setSignature(signature);
 		}
 	}
 	
@@ -137,14 +127,6 @@ public class HumanInfo implements ISerilizable {
 
 	public void setOnline(boolean online) {
 		this.online = online;
-	}
-
-	public String getSignature() {
-		return signature;
-	}
-
-	public void setSignature(String signature) {
-		this.signature = signature;
 	}
 
 	

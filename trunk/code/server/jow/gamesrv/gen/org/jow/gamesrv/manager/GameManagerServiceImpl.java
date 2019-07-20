@@ -1,19 +1,19 @@
 package org.jow.gamesrv.manager;
                     
 import org.jow.core.Service;
-import org.jow.core.gen.proxy.RPCImplBase;
+import org.jow.core.gen.proxy.RPCImpIBase;
 import org.jow.gamesrv.RPCProxy.GameManagerServiceProxy.EnumCall;
 import org.jow.core.support.function.*;
 import java.util.List;
 import org.jow.common.game.HumanCentralInfo;
 import org.jow.common.game.HumanInfo;
 import org.jow.core.CallPoint;
-import org.jow.core.support.Param;
+import org.jow.core.Parms;
 import org.jow.core.gen.JowGenFile;
 
 @SuppressWarnings("unchecked")
 @JowGenFile
-public final class GameManagerServiceImpl extends RPCImplBase {
+public final class GameManagerServiceImpl extends RPCImpIBase {
 	
 	/**
 	 * 获取函数指针

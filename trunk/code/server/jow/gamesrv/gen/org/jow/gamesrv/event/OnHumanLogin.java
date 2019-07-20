@@ -1,7 +1,7 @@
 package org.jow.gamesrv.event;
 
 import org.jow.core.interfaces.IEvent;
-import org.jow.core.support.Param;
+import org.jow.core.Parms;
 import org.jow.gamesrv.HumanObject;
 import org.jow.common.event.EventKey;
 import org.jow.core.gen.JowGenFile;
@@ -11,7 +11,7 @@ import org.jow.core.gen.JowGenFile;
 public final class OnHumanLogin implements IEvent {
 
 
-	/** 角色数据 */
+	/** 玩家数据 */
 	private HumanObject humanObj;
 	/** 最后登陆时间 */
 	private long timeLoginLast;
@@ -22,8 +22,8 @@ public final class OnHumanLogin implements IEvent {
 	}
 	
 	@Override
-	public Param toParam() {
-		Param param = new Param();
+	public Parms toParam() {
+		Parms param = new Parms();
 		param.put("humanObj", humanObj);
 		param.put("timeLoginLast", timeLoginLast);
 		return param;
@@ -35,7 +35,7 @@ public final class OnHumanLogin implements IEvent {
 	}
 
 	/**
-	 * 角色数据  
+	 * 玩家数据  
 	 */
 	public HumanObject getHumanObj() {
 		return humanObj;

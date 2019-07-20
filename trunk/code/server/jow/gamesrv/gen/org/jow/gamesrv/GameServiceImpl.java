@@ -1,7 +1,7 @@
 package org.jow.gamesrv;
                     
 import org.jow.core.Service;
-import org.jow.core.gen.proxy.RPCImplBase;
+import org.jow.core.gen.proxy.RPCImpIBase;
 import org.jow.gamesrv.RPCProxy.GameServiceProxy.EnumCall;
 import org.jow.core.support.function.*;
 import org.jow.core.CallPoint;
@@ -9,7 +9,7 @@ import org.jow.core.gen.JowGenFile;
 
 @SuppressWarnings("unchecked")
 @JowGenFile
-public final class GameServiceImpl extends RPCImplBase {
+public final class GameServiceImpl extends RPCImpIBase {
 	
 	/**
 	 * 获取函数指针

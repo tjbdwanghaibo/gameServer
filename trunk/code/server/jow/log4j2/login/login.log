@@ -1,0 +1,108 @@
+2019-07-20 14:08:51,576 (LoginStartup.java:45) [INFO][LOGIN] =========初始化基本环境=========
+2019-07-20 14:08:51,937 (LoginStartup.java:54) [INFO][LOGIN] =========创建Node=========
+2019-07-20 14:08:51,991 (LoginStartup.java:60) [INFO][LOGIN] ======连接到本区DB服务器=======
+2019-07-20 14:08:52,188 (DBConnection.java:83) [INFO][CORE_DB] 创建新的数据库连接。
+2019-07-20 14:08:52,246 (Port.java:129) [INFO][CORE] 启动Port=org.jow.dbsrv.a@188715b5[portId=dbPart0]
+2019-07-20 14:08:52,250 (Port.java:808) [INFO][CORE] 加入服务 service = org.jow.dbsrv.DBPartService@333291e3 servId = serv0
+2019-07-20 14:08:52,251 (Port.java:129) [INFO][CORE] 启动Port=org.jow.dbsrv.a@498d318c[portId=dbLine0]
+2019-07-20 14:08:52,251 (Port.java:808) [INFO][CORE] 加入服务 service = org.jow.dbsrv.DBLineService@402bba4f servId = serv0
+2019-07-20 14:08:52,252 (Port.java:129) [INFO][CORE] 启动Port=org.jow.dbsrv.a@f5ac9e4[portId=idAllot]
+2019-07-20 14:08:52,272 (Port.java:808) [INFO][CORE] 加入服务 service = org.jow.dbsrv.idAllot.IdAllotService@4b282b3 servId = idAllot
+2019-07-20 14:08:52,329 (DBConnection.java:83) [INFO][CORE_DB] 创建新的数据库连接。
+2019-07-20 14:08:53,253 (LoginStartup.java:73) [INFO][LOGIN] =========连接本区连接服务器=======
+2019-07-20 14:08:53,256 (BufferPool.java:41) [INFO][CORE] 创建新的BufferPool缓冲池，已创建总数量：count=1
+2019-07-20 14:08:53,256 (Node.java:176) [INFO][CORE] 添加远程node：name=conn0,addr=tcp://127.0.0.1:10110
+2019-07-20 14:08:53,260 (Port.java:129) [INFO][CORE] 启动Port=org.jow.common.DefaultPort@52e6fdee[portId=port0]
+2019-07-20 14:08:53,261 (LoginStartup.java:86) [INFO][LOGIN] =========加载系统数据=========
+2019-07-20 14:08:53,302 (IdAllotPool.java:91) [INFO][CORE] ID apply sync successed, port=port0, begin=18800001, end=19000000
+2019-07-20 14:08:53,333 (Port.java:129) [INFO][CORE] 启动Port=org.jow.loginsrv.AccountPort@1a451d4d[portId=account]
+2019-07-20 14:08:53,339 (Port.java:808) [INFO][CORE] 加入服务 service = org.jow.loginsrv.AccountService@32eff876 servId = account
+2019-07-20 14:08:53,339 (LoginStartup.java:115) [INFO][LOGIN] ======Node正式启动======
+2019-07-20 14:08:53,339 (LoginStartup.java:119) [INFO][LOGIN] ====================
+2019-07-20 14:08:53,339 (LoginStartup.java:120) [INFO][LOGIN] login started.
+2019-07-20 14:08:53,340 (LoginStartup.java:121) [INFO][LOGIN] Listen:tcp://127.0.0.1:10130
+2019-07-20 14:08:53,340 (LoginStartup.java:122) [INFO][LOGIN] ====================
+2019-07-20 14:08:53,353 (IdAllotPool.java:91) [INFO][CORE] ID apply sync successed, port=account, begin=19000001, end=19200000
+2019-07-20 14:08:53,353 (AccountService.java:77) [INFO][LOGIN] load balance info...
+2019-07-20 14:08:53,404 (AccountService.java:86) [INFO][LOGIN] load balance finished!
+2019-07-20 14:09:24,486 (LoginStartup.java:45) [INFO][LOGIN] =========初始化基本环境=========
+2019-07-20 14:09:24,843 (LoginStartup.java:54) [INFO][LOGIN] =========创建Node=========
+2019-07-20 14:09:24,894 (LoginStartup.java:60) [INFO][LOGIN] ======连接到本区DB服务器=======
+2019-07-20 14:09:25,094 (DBConnection.java:83) [INFO][CORE_DB] 创建新的数据库连接。
+2019-07-20 14:09:25,145 (Port.java:129) [INFO][CORE] 启动Port=org.jow.dbsrv.a@188715b5[portId=dbPart0]
+2019-07-20 14:09:25,148 (Port.java:808) [INFO][CORE] 加入服务 service = org.jow.dbsrv.DBPartService@333291e3 servId = serv0
+2019-07-20 14:09:25,149 (Port.java:129) [INFO][CORE] 启动Port=org.jow.dbsrv.a@498d318c[portId=dbLine0]
+2019-07-20 14:09:25,150 (Port.java:808) [INFO][CORE] 加入服务 service = org.jow.dbsrv.DBLineService@402bba4f servId = serv0
+2019-07-20 14:09:25,150 (Port.java:129) [INFO][CORE] 启动Port=org.jow.dbsrv.a@f5ac9e4[portId=idAllot]
+2019-07-20 14:09:25,170 (Port.java:808) [INFO][CORE] 加入服务 service = org.jow.dbsrv.idAllot.IdAllotService@22a8b151 servId = idAllot
+2019-07-20 14:09:25,227 (DBConnection.java:83) [INFO][CORE_DB] 创建新的数据库连接。
+2019-07-20 14:09:26,151 (LoginStartup.java:73) [INFO][LOGIN] =========连接本区连接服务器=======
+2019-07-20 14:09:26,155 (BufferPool.java:41) [INFO][CORE] 创建新的BufferPool缓冲池，已创建总数量：count=1
+2019-07-20 14:09:26,155 (Node.java:176) [INFO][CORE] 添加远程node：name=conn0,addr=tcp://127.0.0.1:10110
+2019-07-20 14:09:26,159 (Port.java:129) [INFO][CORE] 启动Port=org.jow.common.DefaultPort@52e6fdee[portId=port0]
+2019-07-20 14:09:26,160 (LoginStartup.java:86) [INFO][LOGIN] =========加载系统数据=========
+2019-07-20 14:09:26,201 (IdAllotPool.java:91) [INFO][CORE] ID apply sync successed, port=port0, begin=19200001, end=19400000
+2019-07-20 14:09:26,232 (Port.java:129) [INFO][CORE] 启动Port=org.jow.loginsrv.AccountPort@1a451d4d[portId=account]
+2019-07-20 14:09:26,238 (Port.java:808) [INFO][CORE] 加入服务 service = org.jow.loginsrv.AccountService@32eff876 servId = account
+2019-07-20 14:09:26,238 (LoginStartup.java:115) [INFO][LOGIN] ======Node正式启动======
+2019-07-20 14:09:26,238 (LoginStartup.java:119) [INFO][LOGIN] ====================
+2019-07-20 14:09:26,238 (LoginStartup.java:120) [INFO][LOGIN] login started.
+2019-07-20 14:09:26,239 (LoginStartup.java:121) [INFO][LOGIN] Listen:tcp://127.0.0.1:10130
+2019-07-20 14:09:26,239 (LoginStartup.java:122) [INFO][LOGIN] ====================
+2019-07-20 14:09:26,252 (IdAllotPool.java:91) [INFO][CORE] ID apply sync successed, port=account, begin=19400001, end=19600000
+2019-07-20 14:09:26,252 (AccountService.java:77) [INFO][LOGIN] load balance info...
+2019-07-20 14:09:26,323 (AccountService.java:86) [INFO][LOGIN] load balance finished!
+2019-07-20 14:09:53,277 (LoginStartup.java:45) [INFO][LOGIN] =========初始化基本环境=========
+2019-07-20 14:09:53,628 (LoginStartup.java:54) [INFO][LOGIN] =========创建Node=========
+2019-07-20 14:09:53,684 (LoginStartup.java:60) [INFO][LOGIN] ======连接到本区DB服务器=======
+2019-07-20 14:09:53,864 (DBConnection.java:83) [INFO][CORE_DB] 创建新的数据库连接。
+2019-07-20 14:09:53,913 (Port.java:129) [INFO][CORE] 启动Port=org.jow.dbsrv.a@188715b5[portId=dbPart0]
+2019-07-20 14:09:53,916 (Port.java:808) [INFO][CORE] 加入服务 service = org.jow.dbsrv.DBPartService@333291e3 servId = serv0
+2019-07-20 14:09:53,917 (Port.java:129) [INFO][CORE] 启动Port=org.jow.dbsrv.a@498d318c[portId=dbLine0]
+2019-07-20 14:09:53,918 (Port.java:808) [INFO][CORE] 加入服务 service = org.jow.dbsrv.DBLineService@402bba4f servId = serv0
+2019-07-20 14:09:53,918 (Port.java:129) [INFO][CORE] 启动Port=org.jow.dbsrv.a@f5ac9e4[portId=idAllot]
+2019-07-20 14:09:53,938 (Port.java:808) [INFO][CORE] 加入服务 service = org.jow.dbsrv.idAllot.IdAllotService@4ccaf4be servId = idAllot
+2019-07-20 14:09:53,990 (DBConnection.java:83) [INFO][CORE_DB] 创建新的数据库连接。
+2019-07-20 14:09:54,919 (LoginStartup.java:73) [INFO][LOGIN] =========连接本区连接服务器=======
+2019-07-20 14:09:54,922 (BufferPool.java:41) [INFO][CORE] 创建新的BufferPool缓冲池，已创建总数量：count=1
+2019-07-20 14:09:54,923 (Node.java:176) [INFO][CORE] 添加远程node：name=conn0,addr=tcp://127.0.0.1:10110
+2019-07-20 14:09:54,927 (Port.java:129) [INFO][CORE] 启动Port=org.jow.common.DefaultPort@52e6fdee[portId=port0]
+2019-07-20 14:09:54,927 (LoginStartup.java:86) [INFO][LOGIN] =========加载系统数据=========
+2019-07-20 14:09:54,968 (IdAllotPool.java:91) [INFO][CORE] ID apply sync successed, port=port0, begin=19600001, end=19800000
+2019-07-20 14:09:54,999 (Port.java:129) [INFO][CORE] 启动Port=org.jow.loginsrv.AccountPort@1a451d4d[portId=account]
+2019-07-20 14:09:55,005 (Port.java:808) [INFO][CORE] 加入服务 service = org.jow.loginsrv.AccountService@32eff876 servId = account
+2019-07-20 14:09:55,005 (LoginStartup.java:115) [INFO][LOGIN] ======Node正式启动======
+2019-07-20 14:09:55,006 (LoginStartup.java:119) [INFO][LOGIN] ====================
+2019-07-20 14:09:55,006 (LoginStartup.java:120) [INFO][LOGIN] login started.
+2019-07-20 14:09:55,006 (LoginStartup.java:121) [INFO][LOGIN] Listen:tcp://127.0.0.1:10130
+2019-07-20 14:09:55,006 (LoginStartup.java:122) [INFO][LOGIN] ====================
+2019-07-20 14:09:55,020 (IdAllotPool.java:91) [INFO][CORE] ID apply sync successed, port=account, begin=19800001, end=20000000
+2019-07-20 14:09:55,020 (AccountService.java:77) [INFO][LOGIN] load balance info...
+2019-07-20 14:09:55,070 (AccountService.java:86) [INFO][LOGIN] load balance finished!
+2019-07-20 14:10:25,686 (LoginStartup.java:45) [INFO][LOGIN] =========初始化基本环境=========
+2019-07-20 14:10:26,052 (LoginStartup.java:54) [INFO][LOGIN] =========创建Node=========
+2019-07-20 14:10:26,100 (LoginStartup.java:60) [INFO][LOGIN] ======连接到本区DB服务器=======
+2019-07-20 14:10:26,308 (DBConnection.java:83) [INFO][CORE_DB] 创建新的数据库连接。
+2019-07-20 14:10:26,358 (Port.java:129) [INFO][CORE] 启动Port=org.jow.dbsrv.a@188715b5[portId=dbPart0]
+2019-07-20 14:10:26,361 (Port.java:808) [INFO][CORE] 加入服务 service = org.jow.dbsrv.DBPartService@333291e3 servId = serv0
+2019-07-20 14:10:26,362 (Port.java:129) [INFO][CORE] 启动Port=org.jow.dbsrv.a@498d318c[portId=dbLine0]
+2019-07-20 14:10:26,362 (Port.java:808) [INFO][CORE] 加入服务 service = org.jow.dbsrv.DBLineService@402bba4f servId = serv0
+2019-07-20 14:10:26,363 (Port.java:129) [INFO][CORE] 启动Port=org.jow.dbsrv.a@f5ac9e4[portId=idAllot]
+2019-07-20 14:10:26,383 (Port.java:808) [INFO][CORE] 加入服务 service = org.jow.dbsrv.idAllot.IdAllotService@3903b165 servId = idAllot
+2019-07-20 14:10:26,437 (DBConnection.java:83) [INFO][CORE_DB] 创建新的数据库连接。
+2019-07-20 14:10:27,364 (LoginStartup.java:73) [INFO][LOGIN] =========连接本区连接服务器=======
+2019-07-20 14:10:27,368 (BufferPool.java:41) [INFO][CORE] 创建新的BufferPool缓冲池，已创建总数量：count=1
+2019-07-20 14:10:27,369 (Node.java:176) [INFO][CORE] 添加远程node：name=conn0,addr=tcp://127.0.0.1:10110
+2019-07-20 14:10:27,372 (Port.java:129) [INFO][CORE] 启动Port=org.jow.common.DefaultPort@52e6fdee[portId=port0]
+2019-07-20 14:10:27,373 (LoginStartup.java:86) [INFO][LOGIN] =========加载系统数据=========
+2019-07-20 14:10:27,404 (IdAllotPool.java:91) [INFO][CORE] ID apply sync successed, port=port0, begin=20000001, end=20200000
+2019-07-20 14:10:27,445 (Port.java:129) [INFO][CORE] 启动Port=org.jow.loginsrv.AccountPort@1a451d4d[portId=account]
+2019-07-20 14:10:27,450 (Port.java:808) [INFO][CORE] 加入服务 service = org.jow.loginsrv.AccountService@32eff876 servId = account
+2019-07-20 14:10:27,451 (LoginStartup.java:115) [INFO][LOGIN] ======Node正式启动======
+2019-07-20 14:10:27,451 (LoginStartup.java:119) [INFO][LOGIN] ====================
+2019-07-20 14:10:27,451 (LoginStartup.java:120) [INFO][LOGIN] login started.
+2019-07-20 14:10:27,451 (LoginStartup.java:121) [INFO][LOGIN] Listen:tcp://127.0.0.1:10130
+2019-07-20 14:10:27,451 (LoginStartup.java:122) [INFO][LOGIN] ====================
+2019-07-20 14:10:27,465 (IdAllotPool.java:91) [INFO][CORE] ID apply sync successed, port=account, begin=20200001, end=20400000
+2019-07-20 14:10:27,465 (AccountService.java:77) [INFO][LOGIN] load balance info...
+2019-07-20 14:10:27,516 (AccountService.java:86) [INFO][LOGIN] load balance finished!

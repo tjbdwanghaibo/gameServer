@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.jow.common.msg.MsgIds;
-import org.jow.core.support.Param;
+import org.jow.core.Parms;
 import org.jow.core.support.SysException;
 import org.jow.core.support.Utils;
 import org.jow.core.support.log.LogCore;
@@ -22,7 +22,7 @@ public abstract class MsgHandler {
 	/** 过滤的协议列表 */
 	public static Map<Integer, String> filterProtos = new ConcurrentHashMap<>();
 	
-	public abstract void fire(GeneratedMessage msg, Param param);
+	public abstract void fire(GeneratedMessage msg, Parms param);
 	
 	/**
 	 * 解析消息
@@ -59,7 +59,7 @@ public abstract class MsgHandler {
 			}
 			
 			//发送接受到的消息事件
-			Param param = new Param(params);
+			Parms param = new Parms(params);
 			//把消息Id加入参数中 不用再次获取
 			param.put("msgId", msgId);
 			fire(msg, param);

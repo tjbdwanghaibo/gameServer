@@ -2,23 +2,18 @@ package org.jow.gamesrv.module;
 
 import org.jow.gamesrv.HumanObject;
 
-/**
- * 玩家模块基类
- * 
- * @author Yangxianmeng
- *
- */
-public abstract class ModuleHumanBase {
-
-	/** 所属玩家对象 */
-	private HumanObject humanObject;
+public class ModuleHumanBase {
 	
-	public ModuleHumanBase(HumanObject humanObject) {
-		this.humanObject = humanObject;
+	//所属对象玩家
+	protected HumanObject humanObj;
+	
+	public ModuleHumanBase(HumanObject humanObj) {
+		this.humanObj = humanObj;
 	}
 	
+	
 	/**
-	 * 从DB加载完后，初始化模块
+	 * 从db记载完后，初始化模块
 	 */
 	public void initData() {
 		
@@ -31,10 +26,12 @@ public abstract class ModuleHumanBase {
 	 */
 	public void pulse(long now) {
 		
+	}
+	
+	
+	public HumanObject getHumanObj() {
 		
+		return humanObj;
 	}
-
-	public HumanObject getHumanObject() {
-		return humanObject;
-	}
+	
 }

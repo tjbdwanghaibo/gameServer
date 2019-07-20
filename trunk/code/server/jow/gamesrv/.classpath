@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
-	<classpathentry kind="lib" path="/corelibs/connsrv.jar"/>
-	<classpathentry kind="lib" path="/corelibs/core.jar"/>
-	<classpathentry kind="lib" path="/corelibs/dbsrv.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/common"/>
-	<classpathentry kind="lib" path="/libs/protobuf.jar"/>
-	<classpathentry kind="lib" path="/libs/zmq.jar"/>
-	<classpathentry kind="lib" path="/libs/log4j-api-2.6.2-javadoc.jar"/>
 	<classpathentry kind="lib" path="/libs/log4j-api-2.6.2.jar"/>
+	<classpathentry kind="lib" path="../config"/>
+	<classpathentry kind="lib" path="/libs/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="/libs/fastjson.jar"/>
 	<classpathentry kind="lib" path="/libs/log4j-slf4j-impl-2.6.2.jar"/>
 	<classpathentry kind="lib" path="/libs/slf4j-api-1.7.21.jar"/>
+	<classpathentry kind="lib" path="/libs/protobuf.jar"/>
+	<classpathentry kind="lib" path="/corelibs/core.jar"/>
+	<classpathentry kind="lib" path="/corelibs/dbsrv.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/corelibs"/>
+	<classpathentry kind="lib" path="/libs/log4j-core-2.6.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

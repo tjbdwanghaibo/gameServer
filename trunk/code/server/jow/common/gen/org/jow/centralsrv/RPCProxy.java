@@ -3,7 +3,7 @@ package org.jow.centralsrv;
 import org.jow.core.Call;                    
 import org.jow.core.CallPoint;
 import org.jow.core.Port;
-import org.jow.core.support.Param;
+import org.jow.core.Parms;
 import org.jow.core.support.Utils;
 import org.jow.core.support.function.*;
 import org.jow.core.gen.proxy.RPCProxyBase;
@@ -17,13 +17,18 @@ import org.jow.core.gen.JowGenFile;
 public class RPCProxy {
 	public static final class HumanGlobalServiceProxy extends RPCProxyBase {
 		public final class EnumCall{
-			public static final int ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_CHANGERNAME_LONG_STRING = 1;
-			public static final int ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_GETONLINE_LIST = 2;
-			public static final int ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_GETONLINE_LONG = 3;
-			public static final int ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_HUMANCREATE_HUMANCENTRALINFO = 4;
-			public static final int ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_HUMANLOGIN_LONG_CALLPOINT_CALLPOINT = 5;
-			public static final int ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_HUMANLOGOUT_LONG = 6;
-			public static final int ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_SENDMSG_LIST_INT_CHUNK = 7;
+			public static final int ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_CHANGENAME_LONG_STRING = 1;
+			public static final int ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_FINDHUMAN_STRING = 2;
+			public static final int ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_GETHUMANINFO_LIST = 3;
+			public static final int ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_GETNEARBYPLAYER_LONG = 4;
+			public static final int ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_GETONLINE_LONG = 5;
+			public static final int ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_GETONLINES_LIST = 6;
+			public static final int ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_HUMANCREATE_HUMANCENTRALINFO = 7;
+			public static final int ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_HUMANLOGIN_LONG_CALLPOINT_CALLPOINT = 8;
+			public static final int ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_HUMANLOGOUT_LONG = 9;
+			public static final int ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_HUMANUPDATE_PARMS = 10;
+			public static final int ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_SENDMSG_LIST_INT_CHUNK = 11;
+			public static final int ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_SENDMSG_LONG_INT_CHUNK = 12;
 		}
 		
 		private CallPoint remote;
@@ -41,7 +46,7 @@ public class RPCProxy {
 		 * @return
 		 */
 		public static HumanGlobalServiceProxy newInstance(CallPoint targetPoint) {
-			return createInstance(targetPoint.nodeId, targetPoint.portId, targetPoint.servId);
+			return createInstance(targetPoint.nodeId, targetPoint.portId, targetPoint.serviceId);
 		}
 		
 		/**
@@ -74,8 +79,8 @@ public class RPCProxy {
 		 * @param methodName
 		 * @param context
 		 */
-		public void listenResult(JowFunction2<Param, Param> method, Object...context) {
-			listenResult(method, new Param(context));
+		public void listenResult(JowFunction2<Parms, Parms> method, Object...context) {
+			listenResult(method, new Parms(context));
 		}
 		
 		/**
@@ -84,17 +89,17 @@ public class RPCProxy {
 		 * @param methodName
 		 * @param context
 		 */
-		public void listenResult(JowFunction2<Param, Param> method, Param context) {
+		public void listenResult(JowFunction2<Parms, Parms> method, Parms context) {
 			context.put("_callerInfo", remote.callerInfo);
 			localPort.listenResult(method, context);
 		}
 		
 		
-		public void listenResult(JowFunction3<Boolean, Param, Param> method, Object...context) {
-			listenResult(method, new Param(context));
+		public void listenResult(JowFunction3<Boolean, Parms, Parms> method, Object...context) {
+			listenResult(method, new Parms(context));
 		}
 		
-		public void listenResult(JowFunction3<Boolean, Param, Param> method, Param context) {
+		public void listenResult(JowFunction3<Boolean, Parms, Parms> method, Parms context) {
 			context.put("_callerInfo", remote.callerInfo);
 			localPort.listenResult(method, context);
 		}
@@ -103,23 +108,38 @@ public class RPCProxy {
 		/**
 		 * 等待返回值
 		 */
-		public Param waitForResult() {
+		public Parms waitForResult() {
 			return localPort.waitForResult();
 		}
 		
-		public void changerName(long arg0, String arg1) {
+		public void changeName(long arg0, String arg1) {
 			remote.callerInfo = Utils.getCallerInfo();
-			localPort.call(false, remote, EnumCall.ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_CHANGERNAME_LONG_STRING, new Object[]{ arg0, arg1 });
+			localPort.call(false, remote, EnumCall.ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_CHANGENAME_LONG_STRING, new Object[]{ arg0, arg1 });
 		}
 		
-		public void getOnline(List arg0) {
+		public void findHuman(String arg0) {
 			remote.callerInfo = Utils.getCallerInfo();
-			localPort.call(false, remote, EnumCall.ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_GETONLINE_LIST, new Object[]{ arg0 });
+			localPort.call(false, remote, EnumCall.ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_FINDHUMAN_STRING, new Object[]{ arg0 });
+		}
+		
+		public void getHumanInfo(List arg0) {
+			remote.callerInfo = Utils.getCallerInfo();
+			localPort.call(false, remote, EnumCall.ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_GETHUMANINFO_LIST, new Object[]{ arg0 });
+		}
+		
+		public void getNearbyPlayer(long arg0) {
+			remote.callerInfo = Utils.getCallerInfo();
+			localPort.call(false, remote, EnumCall.ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_GETNEARBYPLAYER_LONG, new Object[]{ arg0 });
 		}
 		
 		public void getOnline(long arg0) {
 			remote.callerInfo = Utils.getCallerInfo();
 			localPort.call(false, remote, EnumCall.ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_GETONLINE_LONG, new Object[]{ arg0 });
+		}
+		
+		public void getOnlines(List arg0) {
+			remote.callerInfo = Utils.getCallerInfo();
+			localPort.call(false, remote, EnumCall.ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_GETONLINES_LIST, new Object[]{ arg0 });
 		}
 		
 		public void humanCreate(HumanCentralInfo arg0) {
@@ -137,25 +157,53 @@ public class RPCProxy {
 			localPort.call(false, remote, EnumCall.ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_HUMANLOGOUT_LONG, new Object[]{ arg0 });
 		}
 		
+		public void humanUpdate(Parms arg0) {
+			remote.callerInfo = Utils.getCallerInfo();
+			localPort.call(false, remote, EnumCall.ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_HUMANUPDATE_PARMS, new Object[]{ arg0 });
+		}
+		
 		public void sendMsg(List arg0, int arg1, Chunk arg2) {
 			remote.callerInfo = Utils.getCallerInfo();
 			localPort.call(false, remote, EnumCall.ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_SENDMSG_LIST_INT_CHUNK, new Object[]{ arg0, arg1, arg2 });
 		}
 		
-		public Call makeCall_changerName(long arg0, String arg1) {
-			Call call = localPort.makeCall(false, remote, EnumCall.ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_CHANGERNAME_LONG_STRING, new Object[]{ arg0, arg1 });
+		public void sendMsg(long arg0, int arg1, Chunk arg2) {
+			remote.callerInfo = Utils.getCallerInfo();
+			localPort.call(false, remote, EnumCall.ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_SENDMSG_LONG_INT_CHUNK, new Object[]{ arg0, arg1, arg2 });
+		}
+		
+		public Call makeCall_changeName(long arg0, String arg1) {
+			Call call = localPort.makeCall(false, remote, EnumCall.ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_CHANGENAME_LONG_STRING, new Object[]{ arg0, arg1 });
 			call.to.callerInfo = Utils.getCallerInfo();
 			
 			return call;
 		}	
-		public Call makeCall_getOnline(List arg0) {
-			Call call = localPort.makeCall(false, remote, EnumCall.ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_GETONLINE_LIST, new Object[]{ arg0 });
+		public Call makeCall_findHuman(String arg0) {
+			Call call = localPort.makeCall(false, remote, EnumCall.ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_FINDHUMAN_STRING, new Object[]{ arg0 });
+			call.to.callerInfo = Utils.getCallerInfo();
+			
+			return call;
+		}	
+		public Call makeCall_getHumanInfo(List arg0) {
+			Call call = localPort.makeCall(false, remote, EnumCall.ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_GETHUMANINFO_LIST, new Object[]{ arg0 });
+			call.to.callerInfo = Utils.getCallerInfo();
+			
+			return call;
+		}	
+		public Call makeCall_getNearbyPlayer(long arg0) {
+			Call call = localPort.makeCall(false, remote, EnumCall.ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_GETNEARBYPLAYER_LONG, new Object[]{ arg0 });
 			call.to.callerInfo = Utils.getCallerInfo();
 			
 			return call;
 		}	
 		public Call makeCall_getOnline(long arg0) {
 			Call call = localPort.makeCall(false, remote, EnumCall.ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_GETONLINE_LONG, new Object[]{ arg0 });
+			call.to.callerInfo = Utils.getCallerInfo();
+			
+			return call;
+		}	
+		public Call makeCall_getOnlines(List arg0) {
+			Call call = localPort.makeCall(false, remote, EnumCall.ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_GETONLINES_LIST, new Object[]{ arg0 });
 			call.to.callerInfo = Utils.getCallerInfo();
 			
 			return call;
@@ -178,8 +226,20 @@ public class RPCProxy {
 			
 			return call;
 		}	
+		public Call makeCall_humanUpdate(Parms arg0) {
+			Call call = localPort.makeCall(false, remote, EnumCall.ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_HUMANUPDATE_PARMS, new Object[]{ arg0 });
+			call.to.callerInfo = Utils.getCallerInfo();
+			
+			return call;
+		}	
 		public Call makeCall_sendMsg(List arg0, int arg1, Chunk arg2) {
 			Call call = localPort.makeCall(false, remote, EnumCall.ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_SENDMSG_LIST_INT_CHUNK, new Object[]{ arg0, arg1, arg2 });
+			call.to.callerInfo = Utils.getCallerInfo();
+			
+			return call;
+		}	
+		public Call makeCall_sendMsg(long arg0, int arg1, Chunk arg2) {
+			Call call = localPort.makeCall(false, remote, EnumCall.ORG_JOW_CENTRALSRV_HUMANGLOBALSERVICE_SENDMSG_LONG_INT_CHUNK, new Object[]{ arg0, arg1, arg2 });
 			call.to.callerInfo = Utils.getCallerInfo();
 			
 			return call;

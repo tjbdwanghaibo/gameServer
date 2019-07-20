@@ -3,7 +3,7 @@ package org.jow.connsrv;
 import org.jow.core.Call;                    
 import org.jow.core.CallPoint;
 import org.jow.core.Port;
-import org.jow.core.support.Param;
+import org.jow.core.Parms;
 import org.jow.core.support.Utils;
 import org.jow.core.support.function.*;
 import org.jow.core.gen.proxy.RPCProxyBase;
@@ -20,7 +20,6 @@ public class RPCProxy {
 			public static final int ORG_JOW_CONNSRV_CONNSERVICE_CHECK_LONG = 1;
 			public static final int ORG_JOW_CONNSRV_CONNSERVICE_SENDMSG_LIST_INT_CHUNK = 2;
 			public static final int ORG_JOW_CONNSRV_CONNSERVICE_SENDMSG_LIST_LIST_LIST = 3;
-			public static final int ORG_JOW_CONNSRV_CONNSERVICE_SENDMSGTOALL_INT_CHUNK = 4;
 		}
 		
 		private CallPoint remote;
@@ -38,7 +37,7 @@ public class RPCProxy {
 		 * @return
 		 */
 		public static ConnServiceProxy newInstance(CallPoint targetPoint) {
-			return createInstance(targetPoint.nodeId, targetPoint.portId, targetPoint.servId);
+			return createInstance(targetPoint.nodeId, targetPoint.portId, targetPoint.serviceId);
 		}
 		
 		/**
@@ -71,8 +70,8 @@ public class RPCProxy {
 		 * @param methodName
 		 * @param context
 		 */
-		public void listenResult(JowFunction2<Param, Param> method, Object...context) {
-			listenResult(method, new Param(context));
+		public void listenResult(JowFunction2<Parms, Parms> method, Object...context) {
+			listenResult(method, new Parms(context));
 		}
 		
 		/**
@@ -81,17 +80,17 @@ public class RPCProxy {
 		 * @param methodName
 		 * @param context
 		 */
-		public void listenResult(JowFunction2<Param, Param> method, Param context) {
+		public void listenResult(JowFunction2<Parms, Parms> method, Parms context) {
 			context.put("_callerInfo", remote.callerInfo);
 			localPort.listenResult(method, context);
 		}
 		
 		
-		public void listenResult(JowFunction3<Boolean, Param, Param> method, Object...context) {
-			listenResult(method, new Param(context));
+		public void listenResult(JowFunction3<Boolean, Parms, Parms> method, Object...context) {
+			listenResult(method, new Parms(context));
 		}
 		
-		public void listenResult(JowFunction3<Boolean, Param, Param> method, Param context) {
+		public void listenResult(JowFunction3<Boolean, Parms, Parms> method, Parms context) {
 			context.put("_callerInfo", remote.callerInfo);
 			localPort.listenResult(method, context);
 		}
@@ -100,7 +99,7 @@ public class RPCProxy {
 		/**
 		 * 等待返回值
 		 */
-		public Param waitForResult() {
+		public Parms waitForResult() {
 			return localPort.waitForResult();
 		}
 		
@@ -119,11 +118,6 @@ public class RPCProxy {
 			localPort.call(false, remote, EnumCall.ORG_JOW_CONNSRV_CONNSERVICE_SENDMSG_LIST_LIST_LIST, new Object[]{ arg0, arg1, arg2 });
 		}
 		
-		public void sendMsgToAll(int arg0, Chunk arg1) {
-			remote.callerInfo = Utils.getCallerInfo();
-			localPort.call(true, remote, EnumCall.ORG_JOW_CONNSRV_CONNSERVICE_SENDMSGTOALL_INT_CHUNK, new Object[]{ arg0, arg1 });
-		}
-		
 		public Call makeCall_check(long arg0) {
 			Call call = localPort.makeCall(false, remote, EnumCall.ORG_JOW_CONNSRV_CONNSERVICE_CHECK_LONG, new Object[]{ arg0 });
 			call.to.callerInfo = Utils.getCallerInfo();
@@ -138,12 +132,6 @@ public class RPCProxy {
 		}	
 		public Call makeCall_sendMsg(List arg0, List arg1, List arg2) {
 			Call call = localPort.makeCall(false, remote, EnumCall.ORG_JOW_CONNSRV_CONNSERVICE_SENDMSG_LIST_LIST_LIST, new Object[]{ arg0, arg1, arg2 });
-			call.to.callerInfo = Utils.getCallerInfo();
-			
-			return call;
-		}	
-		public Call makeCall_sendMsgToAll(int arg0, Chunk arg1) {
-			Call call = localPort.makeCall(true, remote, EnumCall.ORG_JOW_CONNSRV_CONNSERVICE_SENDMSGTOALL_INT_CHUNK, new Object[]{ arg0, arg1 });
 			call.to.callerInfo = Utils.getCallerInfo();
 			
 			return call;
@@ -176,7 +164,7 @@ public class RPCProxy {
 		 * @return
 		 */
 		public static ConnectionProxy newInstance(CallPoint targetPoint) {
-			return createInstance(targetPoint.nodeId, targetPoint.portId, targetPoint.servId);
+			return createInstance(targetPoint.nodeId, targetPoint.portId, targetPoint.serviceId);
 		}
 		
 		/**
@@ -209,8 +197,8 @@ public class RPCProxy {
 		 * @param methodName
 		 * @param context
 		 */
-		public void listenResult(JowFunction2<Param, Param> method, Object...context) {
-			listenResult(method, new Param(context));
+		public void listenResult(JowFunction2<Parms, Parms> method, Object...context) {
+			listenResult(method, new Parms(context));
 		}
 		
 		/**
@@ -219,17 +207,17 @@ public class RPCProxy {
 		 * @param methodName
 		 * @param context
 		 */
-		public void listenResult(JowFunction2<Param, Param> method, Param context) {
+		public void listenResult(JowFunction2<Parms, Parms> method, Parms context) {
 			context.put("_callerInfo", remote.callerInfo);
 			localPort.listenResult(method, context);
 		}
 		
 		
-		public void listenResult(JowFunction3<Boolean, Param, Param> method, Object...context) {
-			listenResult(method, new Param(context));
+		public void listenResult(JowFunction3<Boolean, Parms, Parms> method, Object...context) {
+			listenResult(method, new Parms(context));
 		}
 		
-		public void listenResult(JowFunction3<Boolean, Param, Param> method, Param context) {
+		public void listenResult(JowFunction3<Boolean, Parms, Parms> method, Parms context) {
 			context.put("_callerInfo", remote.callerInfo);
 			localPort.listenResult(method, context);
 		}
@@ -238,7 +226,7 @@ public class RPCProxy {
 		/**
 		 * 等待返回值
 		 */
-		public Param waitForResult() {
+		public Parms waitForResult() {
 			return localPort.waitForResult();
 		}
 		

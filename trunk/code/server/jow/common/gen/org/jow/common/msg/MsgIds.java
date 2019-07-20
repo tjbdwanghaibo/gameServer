@@ -39,6 +39,8 @@ public class MsgIds {
 	public static final int CSChat = 1802;
 	public static final int SCChatPack = 1803;
 	public static final int CSGetWorldChatBuffer = 1804;
+	public static final int CSCreatChatRoom = 1805;
+	public static final int SCCreatChatRoom = 1806;
 	public static final int CSInitData = 1101;
 	public static final int SCInitData = 1102;
 	public static final int SCHumanInfoChange = 1103;
@@ -215,6 +217,8 @@ public class MsgIds {
 		classToId.put(MsgChat.CSChat.class, CSChat);
 		classToId.put(MsgChat.SCChatPack.class, SCChatPack);
 		classToId.put(MsgChat.CSGetWorldChatBuffer.class, CSGetWorldChatBuffer);
+		classToId.put(MsgChat.CSCreatChatRoom.class, CSCreatChatRoom);
+		classToId.put(MsgChat.SCCreatChatRoom.class, SCCreatChatRoom);
 		classToId.put(MsgCommon.CSInitData.class, CSInitData);
 		classToId.put(MsgCommon.SCInitData.class, SCInitData);
 		classToId.put(MsgCommon.SCHumanInfoChange.class, SCHumanInfoChange);
@@ -348,6 +352,8 @@ public class MsgIds {
 		idToClass.put(CSChat,MsgChat.CSChat.class);
 		idToClass.put(SCChatPack,MsgChat.SCChatPack.class);
 		idToClass.put(CSGetWorldChatBuffer,MsgChat.CSGetWorldChatBuffer.class);
+		idToClass.put(CSCreatChatRoom,MsgChat.CSCreatChatRoom.class);
+		idToClass.put(SCCreatChatRoom,MsgChat.SCCreatChatRoom.class);
 		idToClass.put(CSInitData,MsgCommon.CSInitData.class);
 		idToClass.put(SCInitData,MsgCommon.SCInitData.class);
 		idToClass.put(SCHumanInfoChange,MsgCommon.SCHumanInfoChange.class);
@@ -510,6 +516,10 @@ public class MsgIds {
 				return MsgChat.SCChatPack.parseFrom(s);
 			case CSGetWorldChatBuffer:
 				return MsgChat.CSGetWorldChatBuffer.parseFrom(s);
+			case CSCreatChatRoom:
+				return MsgChat.CSCreatChatRoom.parseFrom(s);
+			case SCCreatChatRoom:
+				return MsgChat.SCCreatChatRoom.parseFrom(s);
 			case CSInitData:
 				return MsgCommon.CSInitData.parseFrom(s);
 			case SCInitData:

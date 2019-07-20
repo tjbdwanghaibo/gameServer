@@ -40,7 +40,7 @@ public class GameService extends Service{
 	}
 
 	@Override
-	public void pulseOverride() {
+	protected void pulseOverride() {
 		super.pulseOverride();
 		
 		long nowTime = port.getTimeCurrent();
@@ -64,7 +64,7 @@ public class GameService extends Service{
 		}
 		
 		
-		long currConnId = (long) humanObj.getConnPoint().servId;
+		long currConnId = (long) humanObj.getConnPoint().serviceId;
 		//连接点不匹配，关闭连接
 		if(currConnId != connId) {
 			Log.game.warn("ConnId not match, connId={}, currConnId={}", connId, currConnId);
@@ -90,7 +90,7 @@ public class GameService extends Service{
 			return;
 		}
 		
-		long currConnId = (long)humanObj.getConnPoint().servId;
+		long currConnId = (long)humanObj.getConnPoint().serviceId;
 		// 连接点不匹配
 		if (currConnId != connId) {
 			Log.game.warn("ConnId not match, connId={}, currConnId={}", connId, currConnId);
@@ -112,7 +112,7 @@ public class GameService extends Service{
 			return;
 		}
 		
-		long currConnId = (long)humanObj.getConnPoint().servId;
+		long currConnId = (long)humanObj.getConnPoint().serviceId;
 		// 连接点不匹配
 		if (currConnId != connId) {
 			Log.game.warn("ConnId not match, connId={}, currConnId={}", connId, currConnId);
@@ -131,7 +131,7 @@ public class GameService extends Service{
 			return;
 		}
 		
-		long currConnId = (long)humanObj.getConnPoint().servId;
+		long currConnId = (long)humanObj.getConnPoint().serviceId;
 		// 连接点不匹配
 		if (currConnId != connId) {
 			port.returns(false);
@@ -157,7 +157,7 @@ public class GameService extends Service{
 			status.step = ConnectionStatus.STATUS_PLAYING;
 			status.humanId = humanId;
 			status.account = account;
-			status.gamePoint = new CallPoint(port.getNodeId(), port.getId(), getId());
+			status.gamePoint = new CallPoint(port.getNodeId(), port.getPortId(), getId());
 			ConnectionProxy prx = ConnectionProxy.newInstance(connPoint);
 			prx.statusUpdate(status);
 			

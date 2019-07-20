@@ -11,6 +11,7 @@ import org.jow.common.game.HumanInfo;
 import org.jow.common.game.HumanOnlineInfo;
 import org.jow.common.support.utils.DBUtils;
 import org.jow.core.CallPoint;
+import org.jow.core.Parms;
 import org.jow.core.Port;
 import org.jow.core.PortTask;
 import org.jow.core.Service;
@@ -18,14 +19,15 @@ import org.jow.core.config.GameConfig;
 import org.jow.core.config.LoginConfig;
 import org.jow.core.gen.proxy.DistrClass;
 import org.jow.core.gen.proxy.DistrMethod;
-import org.jow.core.support.Param;
 import org.jow.core.support.TickTimer;
 import org.jow.core.support.TimeUtils;
 import org.jow.gamesrv.support.Log;
 import org.jow.loginsrv.RPCProxy.AccountServiceProxy;
 
-@DistrClass(importClass= {CallPoint.class, HumanInfo.class, Param.class, List.class, HumanCentralInfo.class})
+@DistrClass(importClass= {CallPoint.class, HumanInfo.class, Parms.class, List.class, HumanCentralInfo.class})
 public class GameManagerService extends Service{
+
+	
 	/** 在线玩家信息 */
 	private Map<Long, HumanOnlineInfo> onlineHumans = new HashMap<>();
 	/** 本服全部玩家基本信息 */
@@ -93,6 +95,7 @@ public class GameManagerService extends Service{
 		// ping account service
 		if (pingTimer.isPeriod(port.getTimeCurrent())) {
 			AccountServiceProxy prx = AccountServiceProxy.newInstance(LoginConfig.NODE_LOGIN, 
+//			AccountServiceProxy prx = AccountServiceProxy.newInstance("MainStartup", 
 					LoginConfig.PORT_ACCOUNT, LoginConfig.SERV_ACCOUNT);
 			prx.gamePing(GameConfig.GAME_INDEX, onlineHumans.size());
 		}

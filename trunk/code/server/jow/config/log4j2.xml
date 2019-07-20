@@ -22,10 +22,13 @@
 		<Logger name="CENTRAL" level="info" />
 		<Logger name="ROOM" level="info" />
 		<Logger name="ROBOT" level="info" />
+		<Logger name="TEST_MSG" level="info" />
 
 		<Logger name="CONFIG" level="info" />
 		<Logger name="HUMAN" level="info" />
 		<Logger name="TEAM" level="info" />
+		<Logger name="MAIN" level="info" />
+		<Logger name="ROBBOT" level="info" />
 	</Loggers>
 	<Appenders>
 		<Console name="Console" target="SYSTEM_OUT">

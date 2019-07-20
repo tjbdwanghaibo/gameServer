@@ -4,64 +4,67 @@ import java.util.List;
 
 import org.jow.core.Chunk;
 import org.jow.core.OutputStream;
+import org.jow.core.Parms;
 import org.jow.core.Record;
 import org.jow.core.config.DBConfig;
-import org.jow.core.config.JowDistr;
-import org.jow.core.support.Param;
+import org.jow.core.config.JowConfig;
 import org.jow.core.support.Utils;
 import org.jow.core.support.function.JowFunction2;
 import org.jow.core.support.function.JowFunction3;
 import org.jow.dbsrv.RPCProxy.DBPartServiceProxy;
 
-/**
- * 数据操作接口
- */
 public class DB {
-	/** 操作代理类 */
-	private DBPartServiceProxy prx;
+
 	/** 操作目标表名 */
 	private String tableName;
 	
-	/**
+	/** 操作代理类 */
+	private DBPartServiceProxy prx;
+	
+	/***
 	 * 内部构造函数
 	 * @param tableName
 	 */
 	private DB(String tableName) {
-		//赋值
 		this.tableName = tableName;
 		
 		//初始化代理类 根据表名进行代理类压力分摊
 		int hash = Math.abs(Utils.hash(tableName.hashCode()));
 		String portId = DBConfig.PORT_DB_PART_PREFIX + hash % DBConfig.PORT_STARTUP_NUM_DB_PART;
-		this.prx = DBPartServiceProxy.newInstance(DBConfig.NODE_DB, portId, JowDistr.SERV_DEFAULT);
+		this.prx = DBPartServiceProxy.newInstance(DBConfig.NODE_DB, portId, JowConfig.SERV_DEFAULT);
 	}
-
+	
 	/**
 	 * 创建一个新的操作接口
+	 * @param tableName
 	 * @return
 	 */
 	public static DB newInstance(String tableName) {
 		return new DB(tableName);
 	}
-
+	
+	/**
+	 * 异步监听返回值
+	 */
+	public void listenResult(JowFunction2<Parms, Parms> func , Object...ctx) {
+		prx.listenResult(func, new Parms(ctx));
+	}
 	/**
 	 * 异步监听返回值
 	 * 当超时后<B>不会</B>进行回调通知
 	 * @param func
 	 * @param ctx
 	 */
-	public void listenResult(JowFunction2<Param, Param> func, Object... ctx) {
-		prx.listenResult(func, new Param(ctx));
+	public void listenResult(JowFunction3<Boolean, Parms, Parms> func , Object...ctx) {
+		prx.listenResult(func, new Parms(ctx));
 	}
+	
 	
 	/**
 	 * 异步监听返回值
-	 * 当超时后<B>会</B>进行回调通知
-	 * @param func
-	 * @param ctx
 	 */
-	public void listenResult(JowFunction3<Boolean, Param, Param> func, Object... ctx) {
-		prx.listenResult(func, new Param(ctx));
+	public void listenResult(JowFunction2<Parms, Parms> func , Parms ctx) {
+		prx.listenResult(func, ctx);
 	}
 	
 	/**
@@ -70,95 +73,66 @@ public class DB {
 	 * @param func
 	 * @param ctx
 	 */
-	public void listenResult(JowFunction2<Param, Param> func, Param ctx) {
+	public void listenResult(JowFunction3<Boolean, Parms, Parms> func , Parms ctx) {
 		prx.listenResult(func, ctx);
 	}
 	
-	/**
-	 * 异步监听返回值
-	 * 当超时后<B>会</B>进行回调通知
-	 * @param func
-	 * @param ctx
-	 */
-	public void listenResult(JowFunction3<Boolean, Param, Param> func, Param ctx) {
-		prx.listenResult(func, ctx);
-	}
-	
-	/**
-	 * 同步等待返回值
-	 */
-	public Param waitForResult() {
+	//同步等待返回值
+	public Parms waitForResult() {
 		return prx.waitForResult();
 	}
 	
 	/**
-	 * 新增一条数据
+	 * 插入一条新数据
+	 * @param record
 	 */
 	public void insert(Record record) {
 		prx.insert(record);
+		
 	}
-	
 	/**
-	 * 通过升级包更新数据
+	 * 更新数据
 	 * @param id
-	 * @param patch
+	 * @param chunk
 	 * @param sync
 	 */
-	public void update(long id, Chunk patch, boolean sync) {
-		prx.update(tableName, id, patch, sync);
+	public void update(long id, Chunk chunk, boolean sync) {
+		prx.update(tableName, id, chunk, sync);
 	}
 	
 	/**
 	 * 删除
+	 * @param id
 	 */
 	public void delete(long id) {
 		prx.delete(tableName, id);
 	}
 	
-//	/**
-//	 * 获取全部数据集合
-//	 */
-//	public void findAll() {
-//		prx.findAll(tableName);
-//	}
-	
 	/**
 	 * 根据主键获取数据
-	 * @param ids			主键集合
+	 * @param ids	主键集合
 	 */
 	public void find(List<Long> ids) {
 		prx.find(tableName, ids);
 	}
-	
 	/**
 	 * 获取符合条件的数据集合
 	 * 支持排序
+	 * @param flush
+	 * @param params
 	 */
-	public void findBy(boolean flush, Object... params) {
+	public void findBy(boolean flush, Object...params) {
 		prx.findBy(flush, tableName, params);
 	}
-	
-	/**
-	 * 获取符合条件的数据集合
-	 * 支持分页，支持排序
-	 * 
-	 * firstResult/maxResults设置定包装类型，是以为否则函数调用判断会与findBy(boolean flush, Object... params)冲突
-	 * 定义时不冲突 调用时会报错
-	 */
-	public void findBy(boolean flush, Integer firstResult, Integer maxResults, Object... params) {
-		prx.findBy(flush, firstResult, maxResults, tableName, params);
-	}
-	
 	/**
 	 * 获取查询条件的数据集合
 	 * @param flush
 	 * @param whereAndOther
 	 * @param params
 	 */
-	public void findByQuery(boolean flush, String whereAndOther, Object... params) {
+	public void findByQuery(boolean flush, String whereAndOther, Object...params) {
 		prx.findByQuery(flush, tableName, whereAndOther, params);
 	}
-	
 	/**
 	 * 获取查询条件的数据集合
 	 * @param flush
@@ -167,12 +141,12 @@ public class DB {
 	 * @param whereAndOther
 	 * @param params
 	 */
-	public void findByQuery(boolean flush, Integer firstResult, Integer maxResults, String whereAndOther, Object... params) {
+	public void findByQuery(boolean flush,Integer firstResult, Integer maxResults, String whereAndOther, Object...params) {
 		prx.findByQuery(flush, firstResult, maxResults, tableName, whereAndOther, params);
 	}
-
+	
 	/**
-	 * 刷新单张表的缓存至数据库
+	 * 刷新单张表缓存至数据库
 	 */
 	public void flush() {
 		prx.flush(tableName);
@@ -184,10 +158,9 @@ public class DB {
 	public void flushAll() {
 		prx.flushAll();
 	}
-
+	
 	/**
 	 * 根据主键获取数据
-	 * @param id			主键
 	 */
 	public void get(long id) {
 		prx.get(tableName, id);
@@ -195,11 +168,11 @@ public class DB {
 	
 	/**
 	 * 获取符合条件的单体数据
-	 * 如果有多条符合则返回第一条
+	 * 如果有多条符合转则返回第一条
 	 * @param flush
 	 * @param params
 	 */
-	public void getBy(boolean flush, Object... params) {
+	public void getBy(boolean flush, Object...params) {
 		prx.getBy(flush, tableName, params);
 	}
 	

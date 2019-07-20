@@ -1,14 +1,14 @@
 package org.jow.loginsrv;
                     
 import org.jow.core.Service;
-import org.jow.core.gen.proxy.RPCImplBase;
+import org.jow.core.gen.proxy.RPCImpIBase;
 import org.jow.loginsrv.RPCProxy.AccountServiceProxy.EnumCall;
 import org.jow.core.support.function.*;
 import org.jow.core.gen.JowGenFile;
 
 @SuppressWarnings("unchecked")
 @JowGenFile
-public final class AccountServiceImpl extends RPCImplBase {
+public final class AccountServiceImpl extends RPCImpIBase {
 	
 	/**
 	 * 获取函数指针

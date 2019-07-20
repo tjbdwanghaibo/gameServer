@@ -6,11 +6,11 @@ import java.util.List;
 import java.util.function.Consumer;
 
 import org.jow.common.db.DB;
+import org.jow.core.Parms;
 import org.jow.core.Record;
 import org.jow.core.RecordTransient;
 import org.jow.core.db.DBKey;
 import org.jow.core.interfaces.IRecord;
-import org.jow.core.support.Param;
 import org.jow.core.support.log.LogCore;
 
 public class DBUtils {
@@ -30,7 +30,7 @@ public class DBUtils {
 		DB prx = DB.newInstance(tableName);
 		//获得记录条数
 		prx.countBy(false);
-		Param param = prx.waitForResult();
+		Parms param = prx.waitForResult();
 		
 		int count = param.get();
 		LogCore.temp.info("Start to load {}: count {}", tableName, count);
@@ -85,7 +85,7 @@ public class DBUtils {
 
 		// 获得记录总条数
 		prx.countBy(false);
-		Param param = prx.waitForResult();
+		Parms param = prx.waitForResult();
 
 		int count = param.get();
 		LogCore.temp.info("Start to load {}: count {}", tableName, count);

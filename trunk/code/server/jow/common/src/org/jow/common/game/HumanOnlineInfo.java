@@ -5,14 +5,14 @@ import java.io.IOException;
 import org.jow.core.CallPoint;
 import org.jow.core.InputStream;
 import org.jow.core.OutputStream;
-import org.jow.core.interfaces.ISerilizable;
+import org.jow.core.interfaces.ISerializable;
 
 /**
  * @author gaopan
  *
  * 在线玩家的信息
  */
-public class HumanOnlineInfo implements ISerilizable {
+public class HumanOnlineInfo implements ISerializable {
 	/** 玩家状态 */
 	/** 空闲 */
 	public static final int STATE_IDLE	= 0;

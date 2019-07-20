@@ -5,14 +5,14 @@ import java.io.IOException;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.jow.core.InputStream;
 import org.jow.core.OutputStream;
-import org.jow.core.interfaces.ISerilizable;
+import org.jow.core.interfaces.ISerializable;
 
 /**
  * @author gaopan
  *
  * 封装错误结果
  */
-public class ErrorResult implements ISerilizable {
+public class ErrorResult implements ISerializable {
 	/** 正确结果 */
 	public static final ErrorResult OK = new ErrorResult(ErrorCode.OK);
 	
@@ -37,7 +37,7 @@ public class ErrorResult implements ISerilizable {
 		
 	}
 	
-	public static ISerilizable create(InputStream in) throws IOException {
+	public static ISerializable create(InputStream in) throws IOException {
 		int errorCode = in.read();
 		String[] params = in.read();
 		

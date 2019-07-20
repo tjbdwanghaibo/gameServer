@@ -8,9 +8,9 @@ import org.jow.core.gen.entity.Entity;
  * @author Yangxianmeng
  *
  */
-@Entity(entityName = "AccountDB", tableName = "login_account")
+@Entity(entityName="AccountDB", tableName="login_account")
 public enum EntityAccount {
-	
+
 	@Column(type=String.class, comment="账号名", index=true)
 	account,
 	@Column(type=String.class, comment="密码")

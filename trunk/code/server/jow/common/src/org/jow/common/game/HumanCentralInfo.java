@@ -6,14 +6,14 @@ import org.jow.common.entity.central.HumanSimpleDB;
 import org.jow.common.msg.MsgDef.DHumanSimpleInfo;
 import org.jow.core.InputStream;
 import org.jow.core.OutputStream;
-import org.jow.core.interfaces.ISerilizable;
+import org.jow.core.interfaces.ISerializable;
 
 /**
  * 中央服上的玩家信息
- * @author Yangxianmeng
+ * @author Administrator
  *
  */
-public class HumanCentralInfo implements ISerilizable {
+public class HumanCentralInfo implements ISerializable {
 
 	/** 玩家id */
 	private long id;

@@ -4762,6 +4762,1689 @@ public final class MsgChat {
     // @@protoc_insertion_point(class_scope:org.jow.common.msg.CSGetWorldChatBuffer)
   }
 
+  public interface DRoomOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required int64 HumanId = 1;
+    /**
+     * <code>required int64 HumanId = 1;</code>
+     *
+     * <pre>
+     *创建好友Id
+     * </pre>
+     */
+    boolean hasHumanId();
+    /**
+     * <code>required int64 HumanId = 1;</code>
+     *
+     * <pre>
+     *创建好友Id
+     * </pre>
+     */
+    long getHumanId();
+  }
+  /**
+   * Protobuf type {@code org.jow.common.msg.DRoom}
+   */
+  public static final class DRoom extends
+      com.google.protobuf.GeneratedMessage
+      implements DRoomOrBuilder {
+    // Use DRoom.newBuilder() to construct.
+    private DRoom(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private DRoom(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final DRoom defaultInstance;
+    public static DRoom getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public DRoom getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DRoom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              humanId_ = input.readInt64();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.jow.common.msg.MsgChat.internal_static_org_jow_common_msg_DRoom_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.jow.common.msg.MsgChat.internal_static_org_jow_common_msg_DRoom_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.jow.common.msg.MsgChat.DRoom.class, org.jow.common.msg.MsgChat.DRoom.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<DRoom> PARSER =
+        new com.google.protobuf.AbstractParser<DRoom>() {
+      public DRoom parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DRoom(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DRoom> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required int64 HumanId = 1;
+    public static final int HUMANID_FIELD_NUMBER = 1;
+    private long humanId_;
+    /**
+     * <code>required int64 HumanId = 1;</code>
+     *
+     * <pre>
+     *创建好友Id
+     * </pre>
+     */
+    public boolean hasHumanId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int64 HumanId = 1;</code>
+     *
+     * <pre>
+     *创建好友Id
+     * </pre>
+     */
+    public long getHumanId() {
+      return humanId_;
+    }
+
+    private void initFields() {
+      humanId_ = 0L;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasHumanId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt64(1, humanId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, humanId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static org.jow.common.msg.MsgChat.DRoom parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.jow.common.msg.MsgChat.DRoom parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.jow.common.msg.MsgChat.DRoom parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.jow.common.msg.MsgChat.DRoom parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.jow.common.msg.MsgChat.DRoom parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static org.jow.common.msg.MsgChat.DRoom parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static org.jow.common.msg.MsgChat.DRoom parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static org.jow.common.msg.MsgChat.DRoom parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static org.jow.common.msg.MsgChat.DRoom parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static org.jow.common.msg.MsgChat.DRoom parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(org.jow.common.msg.MsgChat.DRoom prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code org.jow.common.msg.DRoom}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements org.jow.common.msg.MsgChat.DRoomOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.jow.common.msg.MsgChat.internal_static_org_jow_common_msg_DRoom_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.jow.common.msg.MsgChat.internal_static_org_jow_common_msg_DRoom_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.jow.common.msg.MsgChat.DRoom.class, org.jow.common.msg.MsgChat.DRoom.Builder.class);
+      }
+
+      // Construct using org.jow.common.msg.MsgChat.DRoom.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        humanId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.jow.common.msg.MsgChat.internal_static_org_jow_common_msg_DRoom_descriptor;
+      }
+
+      public org.jow.common.msg.MsgChat.DRoom getDefaultInstanceForType() {
+        return org.jow.common.msg.MsgChat.DRoom.getDefaultInstance();
+      }
+
+      public org.jow.common.msg.MsgChat.DRoom build() {
+        org.jow.common.msg.MsgChat.DRoom result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public org.jow.common.msg.MsgChat.DRoom buildPartial() {
+        org.jow.common.msg.MsgChat.DRoom result = new org.jow.common.msg.MsgChat.DRoom(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.humanId_ = humanId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.jow.common.msg.MsgChat.DRoom) {
+          return mergeFrom((org.jow.common.msg.MsgChat.DRoom)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.jow.common.msg.MsgChat.DRoom other) {
+        if (other == org.jow.common.msg.MsgChat.DRoom.getDefaultInstance()) return this;
+        if (other.hasHumanId()) {
+          setHumanId(other.getHumanId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasHumanId()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.jow.common.msg.MsgChat.DRoom parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.jow.common.msg.MsgChat.DRoom) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required int64 HumanId = 1;
+      private long humanId_ ;
+      /**
+       * <code>required int64 HumanId = 1;</code>
+       *
+       * <pre>
+       *创建好友Id
+       * </pre>
+       */
+      public boolean hasHumanId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int64 HumanId = 1;</code>
+       *
+       * <pre>
+       *创建好友Id
+       * </pre>
+       */
+      public long getHumanId() {
+        return humanId_;
+      }
+      /**
+       * <code>required int64 HumanId = 1;</code>
+       *
+       * <pre>
+       *创建好友Id
+       * </pre>
+       */
+      public Builder setHumanId(long value) {
+        bitField0_ |= 0x00000001;
+        humanId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 HumanId = 1;</code>
+       *
+       * <pre>
+       *创建好友Id
+       * </pre>
+       */
+      public Builder clearHumanId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        humanId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:org.jow.common.msg.DRoom)
+    }
+
+    static {
+      defaultInstance = new DRoom(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:org.jow.common.msg.DRoom)
+  }
+
+  public interface CSCreatChatRoomOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // repeated .org.jow.common.msg.DRoom msg = 1;
+    /**
+     * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+     *
+     * <pre>
+     *创建房间
+     * </pre>
+     */
+    java.util.List<org.jow.common.msg.MsgChat.DRoom> 
+        getMsgList();
+    /**
+     * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+     *
+     * <pre>
+     *创建房间
+     * </pre>
+     */
+    org.jow.common.msg.MsgChat.DRoom getMsg(int index);
+    /**
+     * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+     *
+     * <pre>
+     *创建房间
+     * </pre>
+     */
+    int getMsgCount();
+    /**
+     * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+     *
+     * <pre>
+     *创建房间
+     * </pre>
+     */
+    java.util.List<? extends org.jow.common.msg.MsgChat.DRoomOrBuilder> 
+        getMsgOrBuilderList();
+    /**
+     * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+     *
+     * <pre>
+     *创建房间
+     * </pre>
+     */
+    org.jow.common.msg.MsgChat.DRoomOrBuilder getMsgOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code org.jow.common.msg.CSCreatChatRoom}
+   *
+   * <pre>
+   *请求创建聊天房间
+   * </pre>
+   */
+  public static final class CSCreatChatRoom extends
+      com.google.protobuf.GeneratedMessage
+      implements CSCreatChatRoomOrBuilder {
+    // Use CSCreatChatRoom.newBuilder() to construct.
+    private CSCreatChatRoom(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private CSCreatChatRoom(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final CSCreatChatRoom defaultInstance;
+    public static CSCreatChatRoom getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public CSCreatChatRoom getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CSCreatChatRoom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                msg_ = new java.util.ArrayList<org.jow.common.msg.MsgChat.DRoom>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              msg_.add(input.readMessage(org.jow.common.msg.MsgChat.DRoom.PARSER, extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          msg_ = java.util.Collections.unmodifiableList(msg_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.jow.common.msg.MsgChat.internal_static_org_jow_common_msg_CSCreatChatRoom_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.jow.common.msg.MsgChat.internal_static_org_jow_common_msg_CSCreatChatRoom_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.jow.common.msg.MsgChat.CSCreatChatRoom.class, org.jow.common.msg.MsgChat.CSCreatChatRoom.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<CSCreatChatRoom> PARSER =
+        new com.google.protobuf.AbstractParser<CSCreatChatRoom>() {
+      public CSCreatChatRoom parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CSCreatChatRoom(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CSCreatChatRoom> getParserForType() {
+      return PARSER;
+    }
+
+    // repeated .org.jow.common.msg.DRoom msg = 1;
+    public static final int MSG_FIELD_NUMBER = 1;
+    private java.util.List<org.jow.common.msg.MsgChat.DRoom> msg_;
+    /**
+     * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+     *
+     * <pre>
+     *创建房间
+     * </pre>
+     */
+    public java.util.List<org.jow.common.msg.MsgChat.DRoom> getMsgList() {
+      return msg_;
+    }
+    /**
+     * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+     *
+     * <pre>
+     *创建房间
+     * </pre>
+     */
+    public java.util.List<? extends org.jow.common.msg.MsgChat.DRoomOrBuilder> 
+        getMsgOrBuilderList() {
+      return msg_;
+    }
+    /**
+     * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+     *
+     * <pre>
+     *创建房间
+     * </pre>
+     */
+    public int getMsgCount() {
+      return msg_.size();
+    }
+    /**
+     * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+     *
+     * <pre>
+     *创建房间
+     * </pre>
+     */
+    public org.jow.common.msg.MsgChat.DRoom getMsg(int index) {
+      return msg_.get(index);
+    }
+    /**
+     * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+     *
+     * <pre>
+     *创建房间
+     * </pre>
+     */
+    public org.jow.common.msg.MsgChat.DRoomOrBuilder getMsgOrBuilder(
+        int index) {
+      return msg_.get(index);
+    }
+
+    private void initFields() {
+      msg_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      for (int i = 0; i < getMsgCount(); i++) {
+        if (!getMsg(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      for (int i = 0; i < msg_.size(); i++) {
+        output.writeMessage(1, msg_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < msg_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, msg_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static org.jow.common.msg.MsgChat.CSCreatChatRoom parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.jow.common.msg.MsgChat.CSCreatChatRoom parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.jow.common.msg.MsgChat.CSCreatChatRoom parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.jow.common.msg.MsgChat.CSCreatChatRoom parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.jow.common.msg.MsgChat.CSCreatChatRoom parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static org.jow.common.msg.MsgChat.CSCreatChatRoom parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static org.jow.common.msg.MsgChat.CSCreatChatRoom parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static org.jow.common.msg.MsgChat.CSCreatChatRoom parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static org.jow.common.msg.MsgChat.CSCreatChatRoom parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static org.jow.common.msg.MsgChat.CSCreatChatRoom parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(org.jow.common.msg.MsgChat.CSCreatChatRoom prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code org.jow.common.msg.CSCreatChatRoom}
+     *
+     * <pre>
+     *请求创建聊天房间
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements org.jow.common.msg.MsgChat.CSCreatChatRoomOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.jow.common.msg.MsgChat.internal_static_org_jow_common_msg_CSCreatChatRoom_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.jow.common.msg.MsgChat.internal_static_org_jow_common_msg_CSCreatChatRoom_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.jow.common.msg.MsgChat.CSCreatChatRoom.class, org.jow.common.msg.MsgChat.CSCreatChatRoom.Builder.class);
+      }
+
+      // Construct using org.jow.common.msg.MsgChat.CSCreatChatRoom.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getMsgFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        if (msgBuilder_ == null) {
+          msg_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          msgBuilder_.clear();
+        }
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.jow.common.msg.MsgChat.internal_static_org_jow_common_msg_CSCreatChatRoom_descriptor;
+      }
+
+      public org.jow.common.msg.MsgChat.CSCreatChatRoom getDefaultInstanceForType() {
+        return org.jow.common.msg.MsgChat.CSCreatChatRoom.getDefaultInstance();
+      }
+
+      public org.jow.common.msg.MsgChat.CSCreatChatRoom build() {
+        org.jow.common.msg.MsgChat.CSCreatChatRoom result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public org.jow.common.msg.MsgChat.CSCreatChatRoom buildPartial() {
+        org.jow.common.msg.MsgChat.CSCreatChatRoom result = new org.jow.common.msg.MsgChat.CSCreatChatRoom(this);
+        if (msgBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            msg_ = java.util.Collections.unmodifiableList(msg_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.msg_ = msg_;
+        } else {
+          result.msg_ = msgBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.jow.common.msg.MsgChat.CSCreatChatRoom) {
+          return mergeFrom((org.jow.common.msg.MsgChat.CSCreatChatRoom)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.jow.common.msg.MsgChat.CSCreatChatRoom other) {
+        if (other == org.jow.common.msg.MsgChat.CSCreatChatRoom.getDefaultInstance()) return this;
+        if (msgBuilder_ == null) {
+          if (!other.msg_.isEmpty()) {
+            if (msg_.isEmpty()) {
+              msg_ = other.msg_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureMsgIsMutable();
+              msg_.addAll(other.msg_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.msg_.isEmpty()) {
+            if (msgBuilder_.isEmpty()) {
+              msgBuilder_.dispose();
+              msgBuilder_ = null;
+              msg_ = other.msg_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              msgBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getMsgFieldBuilder() : null;
+            } else {
+              msgBuilder_.addAllMessages(other.msg_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        for (int i = 0; i < getMsgCount(); i++) {
+          if (!getMsg(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.jow.common.msg.MsgChat.CSCreatChatRoom parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.jow.common.msg.MsgChat.CSCreatChatRoom) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // repeated .org.jow.common.msg.DRoom msg = 1;
+      private java.util.List<org.jow.common.msg.MsgChat.DRoom> msg_ =
+        java.util.Collections.emptyList();
+      private void ensureMsgIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          msg_ = new java.util.ArrayList<org.jow.common.msg.MsgChat.DRoom>(msg_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          org.jow.common.msg.MsgChat.DRoom, org.jow.common.msg.MsgChat.DRoom.Builder, org.jow.common.msg.MsgChat.DRoomOrBuilder> msgBuilder_;
+
+      /**
+       * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+       *
+       * <pre>
+       *创建房间
+       * </pre>
+       */
+      public java.util.List<org.jow.common.msg.MsgChat.DRoom> getMsgList() {
+        if (msgBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(msg_);
+        } else {
+          return msgBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+       *
+       * <pre>
+       *创建房间
+       * </pre>
+       */
+      public int getMsgCount() {
+        if (msgBuilder_ == null) {
+          return msg_.size();
+        } else {
+          return msgBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+       *
+       * <pre>
+       *创建房间
+       * </pre>
+       */
+      public org.jow.common.msg.MsgChat.DRoom getMsg(int index) {
+        if (msgBuilder_ == null) {
+          return msg_.get(index);
+        } else {
+          return msgBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+       *
+       * <pre>
+       *创建房间
+       * </pre>
+       */
+      public Builder setMsg(
+          int index, org.jow.common.msg.MsgChat.DRoom value) {
+        if (msgBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMsgIsMutable();
+          msg_.set(index, value);
+          onChanged();
+        } else {
+          msgBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+       *
+       * <pre>
+       *创建房间
+       * </pre>
+       */
+      public Builder setMsg(
+          int index, org.jow.common.msg.MsgChat.DRoom.Builder builderForValue) {
+        if (msgBuilder_ == null) {
+          ensureMsgIsMutable();
+          msg_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          msgBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+       *
+       * <pre>
+       *创建房间
+       * </pre>
+       */
+      public Builder addMsg(org.jow.common.msg.MsgChat.DRoom value) {
+        if (msgBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMsgIsMutable();
+          msg_.add(value);
+          onChanged();
+        } else {
+          msgBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+       *
+       * <pre>
+       *创建房间
+       * </pre>
+       */
+      public Builder addMsg(
+          int index, org.jow.common.msg.MsgChat.DRoom value) {
+        if (msgBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMsgIsMutable();
+          msg_.add(index, value);
+          onChanged();
+        } else {
+          msgBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+       *
+       * <pre>
+       *创建房间
+       * </pre>
+       */
+      public Builder addMsg(
+          org.jow.common.msg.MsgChat.DRoom.Builder builderForValue) {
+        if (msgBuilder_ == null) {
+          ensureMsgIsMutable();
+          msg_.add(builderForValue.build());
+          onChanged();
+        } else {
+          msgBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+       *
+       * <pre>
+       *创建房间
+       * </pre>
+       */
+      public Builder addMsg(
+          int index, org.jow.common.msg.MsgChat.DRoom.Builder builderForValue) {
+        if (msgBuilder_ == null) {
+          ensureMsgIsMutable();
+          msg_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          msgBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+       *
+       * <pre>
+       *创建房间
+       * </pre>
+       */
+      public Builder addAllMsg(
+          java.lang.Iterable<? extends org.jow.common.msg.MsgChat.DRoom> values) {
+        if (msgBuilder_ == null) {
+          ensureMsgIsMutable();
+          super.addAll(values, msg_);
+          onChanged();
+        } else {
+          msgBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+       *
+       * <pre>
+       *创建房间
+       * </pre>
+       */
+      public Builder clearMsg() {
+        if (msgBuilder_ == null) {
+          msg_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          msgBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+       *
+       * <pre>
+       *创建房间
+       * </pre>
+       */
+      public Builder removeMsg(int index) {
+        if (msgBuilder_ == null) {
+          ensureMsgIsMutable();
+          msg_.remove(index);
+          onChanged();
+        } else {
+          msgBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+       *
+       * <pre>
+       *创建房间
+       * </pre>
+       */
+      public org.jow.common.msg.MsgChat.DRoom.Builder getMsgBuilder(
+          int index) {
+        return getMsgFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+       *
+       * <pre>
+       *创建房间
+       * </pre>
+       */
+      public org.jow.common.msg.MsgChat.DRoomOrBuilder getMsgOrBuilder(
+          int index) {
+        if (msgBuilder_ == null) {
+          return msg_.get(index);  } else {
+          return msgBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+       *
+       * <pre>
+       *创建房间
+       * </pre>
+       */
+      public java.util.List<? extends org.jow.common.msg.MsgChat.DRoomOrBuilder> 
+           getMsgOrBuilderList() {
+        if (msgBuilder_ != null) {
+          return msgBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(msg_);
+        }
+      }
+      /**
+       * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+       *
+       * <pre>
+       *创建房间
+       * </pre>
+       */
+      public org.jow.common.msg.MsgChat.DRoom.Builder addMsgBuilder() {
+        return getMsgFieldBuilder().addBuilder(
+            org.jow.common.msg.MsgChat.DRoom.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+       *
+       * <pre>
+       *创建房间
+       * </pre>
+       */
+      public org.jow.common.msg.MsgChat.DRoom.Builder addMsgBuilder(
+          int index) {
+        return getMsgFieldBuilder().addBuilder(
+            index, org.jow.common.msg.MsgChat.DRoom.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .org.jow.common.msg.DRoom msg = 1;</code>
+       *
+       * <pre>
+       *创建房间
+       * </pre>
+       */
+      public java.util.List<org.jow.common.msg.MsgChat.DRoom.Builder> 
+           getMsgBuilderList() {
+        return getMsgFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          org.jow.common.msg.MsgChat.DRoom, org.jow.common.msg.MsgChat.DRoom.Builder, org.jow.common.msg.MsgChat.DRoomOrBuilder> 
+          getMsgFieldBuilder() {
+        if (msgBuilder_ == null) {
+          msgBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              org.jow.common.msg.MsgChat.DRoom, org.jow.common.msg.MsgChat.DRoom.Builder, org.jow.common.msg.MsgChat.DRoomOrBuilder>(
+                  msg_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          msg_ = null;
+        }
+        return msgBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:org.jow.common.msg.CSCreatChatRoom)
+    }
+
+    static {
+      defaultInstance = new CSCreatChatRoom(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:org.jow.common.msg.CSCreatChatRoom)
+  }
+
+  public interface SCCreatChatRoomOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required int64 roomId = 1;
+    /**
+     * <code>required int64 roomId = 1;</code>
+     *
+     * <pre>
+     *房间Id
+     * </pre>
+     */
+    boolean hasRoomId();
+    /**
+     * <code>required int64 roomId = 1;</code>
+     *
+     * <pre>
+     *房间Id
+     * </pre>
+     */
+    long getRoomId();
+  }
+  /**
+   * Protobuf type {@code org.jow.common.msg.SCCreatChatRoom}
+   *
+   * <pre>
+   *聊天房间创建返回
+   * </pre>
+   */
+  public static final class SCCreatChatRoom extends
+      com.google.protobuf.GeneratedMessage
+      implements SCCreatChatRoomOrBuilder {
+    // Use SCCreatChatRoom.newBuilder() to construct.
+    private SCCreatChatRoom(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private SCCreatChatRoom(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final SCCreatChatRoom defaultInstance;
+    public static SCCreatChatRoom getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public SCCreatChatRoom getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private SCCreatChatRoom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              roomId_ = input.readInt64();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.jow.common.msg.MsgChat.internal_static_org_jow_common_msg_SCCreatChatRoom_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.jow.common.msg.MsgChat.internal_static_org_jow_common_msg_SCCreatChatRoom_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.jow.common.msg.MsgChat.SCCreatChatRoom.class, org.jow.common.msg.MsgChat.SCCreatChatRoom.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<SCCreatChatRoom> PARSER =
+        new com.google.protobuf.AbstractParser<SCCreatChatRoom>() {
+      public SCCreatChatRoom parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new SCCreatChatRoom(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SCCreatChatRoom> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required int64 roomId = 1;
+    public static final int ROOMID_FIELD_NUMBER = 1;
+    private long roomId_;
+    /**
+     * <code>required int64 roomId = 1;</code>
+     *
+     * <pre>
+     *房间Id
+     * </pre>
+     */
+    public boolean hasRoomId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required int64 roomId = 1;</code>
+     *
+     * <pre>
+     *房间Id
+     * </pre>
+     */
+    public long getRoomId() {
+      return roomId_;
+    }
+
+    private void initFields() {
+      roomId_ = 0L;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasRoomId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt64(1, roomId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, roomId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static org.jow.common.msg.MsgChat.SCCreatChatRoom parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.jow.common.msg.MsgChat.SCCreatChatRoom parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.jow.common.msg.MsgChat.SCCreatChatRoom parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.jow.common.msg.MsgChat.SCCreatChatRoom parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.jow.common.msg.MsgChat.SCCreatChatRoom parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static org.jow.common.msg.MsgChat.SCCreatChatRoom parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static org.jow.common.msg.MsgChat.SCCreatChatRoom parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static org.jow.common.msg.MsgChat.SCCreatChatRoom parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static org.jow.common.msg.MsgChat.SCCreatChatRoom parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static org.jow.common.msg.MsgChat.SCCreatChatRoom parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(org.jow.common.msg.MsgChat.SCCreatChatRoom prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code org.jow.common.msg.SCCreatChatRoom}
+     *
+     * <pre>
+     *聊天房间创建返回
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements org.jow.common.msg.MsgChat.SCCreatChatRoomOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.jow.common.msg.MsgChat.internal_static_org_jow_common_msg_SCCreatChatRoom_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.jow.common.msg.MsgChat.internal_static_org_jow_common_msg_SCCreatChatRoom_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.jow.common.msg.MsgChat.SCCreatChatRoom.class, org.jow.common.msg.MsgChat.SCCreatChatRoom.Builder.class);
+      }
+
+      // Construct using org.jow.common.msg.MsgChat.SCCreatChatRoom.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        roomId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.jow.common.msg.MsgChat.internal_static_org_jow_common_msg_SCCreatChatRoom_descriptor;
+      }
+
+      public org.jow.common.msg.MsgChat.SCCreatChatRoom getDefaultInstanceForType() {
+        return org.jow.common.msg.MsgChat.SCCreatChatRoom.getDefaultInstance();
+      }
+
+      public org.jow.common.msg.MsgChat.SCCreatChatRoom build() {
+        org.jow.common.msg.MsgChat.SCCreatChatRoom result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public org.jow.common.msg.MsgChat.SCCreatChatRoom buildPartial() {
+        org.jow.common.msg.MsgChat.SCCreatChatRoom result = new org.jow.common.msg.MsgChat.SCCreatChatRoom(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.roomId_ = roomId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.jow.common.msg.MsgChat.SCCreatChatRoom) {
+          return mergeFrom((org.jow.common.msg.MsgChat.SCCreatChatRoom)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.jow.common.msg.MsgChat.SCCreatChatRoom other) {
+        if (other == org.jow.common.msg.MsgChat.SCCreatChatRoom.getDefaultInstance()) return this;
+        if (other.hasRoomId()) {
+          setRoomId(other.getRoomId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasRoomId()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        org.jow.common.msg.MsgChat.SCCreatChatRoom parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (org.jow.common.msg.MsgChat.SCCreatChatRoom) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required int64 roomId = 1;
+      private long roomId_ ;
+      /**
+       * <code>required int64 roomId = 1;</code>
+       *
+       * <pre>
+       *房间Id
+       * </pre>
+       */
+      public boolean hasRoomId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required int64 roomId = 1;</code>
+       *
+       * <pre>
+       *房间Id
+       * </pre>
+       */
+      public long getRoomId() {
+        return roomId_;
+      }
+      /**
+       * <code>required int64 roomId = 1;</code>
+       *
+       * <pre>
+       *房间Id
+       * </pre>
+       */
+      public Builder setRoomId(long value) {
+        bitField0_ |= 0x00000001;
+        roomId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int64 roomId = 1;</code>
+       *
+       * <pre>
+       *房间Id
+       * </pre>
+       */
+      public Builder clearRoomId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        roomId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:org.jow.common.msg.SCCreatChatRoom)
+    }
+
+    static {
+      defaultInstance = new SCCreatChatRoom(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:org.jow.common.msg.SCCreatChatRoom)
+  }
+
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_org_jow_common_msg_DMSG_descriptor;
   private static
@@ -4787,6 +6470,21 @@ public final class MsgChat {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_org_jow_common_msg_CSGetWorldChatBuffer_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_jow_common_msg_DRoom_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_jow_common_msg_DRoom_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_jow_common_msg_CSCreatChatRoom_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_jow_common_msg_CSCreatChatRoom_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_org_jow_common_msg_SCCreatChatRoom_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_org_jow_common_msg_SCCreatChatRoom_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -4809,7 +6507,10 @@ public final class MsgChat {
       "(\003\022\r\n\005items\030\004 \003(\003\022\020\n\010voiceURL\030\005 \001(\t:\005\210\361\004" +
       "\212\016\"@\n\nSCChatPack\022+\n\007chatMsg\030\001 \003(\0132\032.org." +
       "jow.common.msg.SCChat:\005\210\361\004\213\016\"\035\n\024CSGetWor" +
-      "ldChatBuffer:\005\210\361\004\214\016"
+      "ldChatBuffer:\005\210\361\004\214\016\"\030\n\005DRoom\022\017\n\007HumanId\030" +
+      "\001 \002(\003\"@\n\017CSCreatChatRoom\022&\n\003msg\030\001 \003(\0132\031." +
+      "org.jow.common.msg.DRoom:\005\210\361\004\215\016\"(\n\017SCCre" +
+      "atChatRoom\022\016\n\006roomId\030\001 \002(\003:\005\210\361\004\216\016"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -4846,8 +6547,28 @@ public final class MsgChat {
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_org_jow_common_msg_CSGetWorldChatBuffer_descriptor,
               new java.lang.String[] { });
+          internal_static_org_jow_common_msg_DRoom_descriptor =
+            getDescriptor().getMessageTypes().get(5);
+          internal_static_org_jow_common_msg_DRoom_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_org_jow_common_msg_DRoom_descriptor,
+              new java.lang.String[] { "HumanId", });
+          internal_static_org_jow_common_msg_CSCreatChatRoom_descriptor =
+            getDescriptor().getMessageTypes().get(6);
+          internal_static_org_jow_common_msg_CSCreatChatRoom_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_org_jow_common_msg_CSCreatChatRoom_descriptor,
+              new java.lang.String[] { "Msg", });
+          internal_static_org_jow_common_msg_SCCreatChatRoom_descriptor =
+            getDescriptor().getMessageTypes().get(7);
+          internal_static_org_jow_common_msg_SCCreatChatRoom_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_org_jow_common_msg_SCCreatChatRoom_descriptor,
+              new java.lang.String[] { "RoomId", });
           com.google.protobuf.ExtensionRegistry registry =
             com.google.protobuf.ExtensionRegistry.newInstance();
+          registry.add(org.jow.common.msg.Options.msgid);
+          registry.add(org.jow.common.msg.Options.msgid);
           registry.add(org.jow.common.msg.Options.msgid);
           registry.add(org.jow.common.msg.Options.msgid);
           registry.add(org.jow.common.msg.Options.msgid);

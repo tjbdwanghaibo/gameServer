@@ -1,10 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="lib" path="connsrv.jar"/>
 	<classpathentry kind="lib" path="core.jar"/>
 	<classpathentry kind="lib" path="dbsrv.jar"/>
+	<classpathentry kind="lib" path="/libs/commons-io-2.5.jar"/>
+	<classpathentry kind="lib" path="/libs/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="/libs/dom4j.jar"/>
+	<classpathentry kind="lib" path="/libs/fastjson.jar"/>
+	<classpathentry kind="lib" path="/libs/freemarker.jar"/>
+	<classpathentry kind="lib" path="/libs/httpclient.jar"/>
+	<classpathentry kind="lib" path="/libs/httpcore.jar"/>
+	<classpathentry kind="lib" path="/libs/log4j-api-2.6.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="/libs/log4j-api-2.6.2.jar"/>
+	<classpathentry kind="lib" path="/libs/log4j-slf4j-impl-2.6.2.jar"/>
+	<classpathentry kind="lib" path="/libs/mysql-connector-java-5.1.22-bin.jar"/>
+	<classpathentry kind="lib" path="/libs/netty.jar"/>
+	<classpathentry kind="lib" path="/libs/poi-3.7-20101029.jar"/>
+	<classpathentry kind="lib" path="/libs/poi-ooxml-3.7-20101029.jar"/>
+	<classpathentry kind="lib" path="/libs/poi-ooxml-schemas-3.7-20101029.jar"/>
+	<classpathentry kind="lib" path="/libs/protobuf.jar"/>
+	<classpathentry kind="lib" path="/libs/quartz-jobs.jar"/>
+	<classpathentry kind="lib" path="/libs/quartz.jar"/>
+	<classpathentry kind="lib" path="/libs/slf4j-api-1.7.21.jar"/>
+	<classpathentry kind="lib" path="/libs/xmlbeans-2.3.0.jar"/>
+	<classpathentry kind="lib" path="/libs/zmq.jar"/>
+	<classpathentry kind="lib" path="G:/YangXianMeng/trunk/code/server/jow/config"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/common"/>
+	<classpathentry kind="lib" path="/libs/log4j-core-2.6.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
