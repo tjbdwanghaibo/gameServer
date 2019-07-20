@@ -7,5 +7,4 @@
 
 多进程：登陆服（loginsrv），中心服（centralsrv），游戏服(gamesrv)，匹配服(matchsrv)，房间服(roomsrv)。
 
-
-2019.06.15
+可以参考CSDN: https://blog.csdn.net/qq_39742510/article/details/89150552
