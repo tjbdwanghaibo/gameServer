@@ -1,4 +1,4 @@
-package org.jow.gamesrv;
+package org.jow.matchsrv;
 import java.io.IOException;
 import org.jow.core.InputStream;
 import org.jow.core.gen.JowGenFile;

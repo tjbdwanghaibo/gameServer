@@ -164,10 +164,11 @@ public class RPCProxy {
 	
 	public static final class GameManagerServiceProxy extends RPCProxyBase {
 		public final class EnumCall{
-			public static final int ORG_JOW_GAMESRV_MANAGER_GAMEMANAGERSERVICE_HUMANCREATE_HUMANINFO = 1;
-			public static final int ORG_JOW_GAMESRV_MANAGER_GAMEMANAGERSERVICE_HUMANLOGIN_LONG_CALLPOINT_CALLPOINT = 2;
-			public static final int ORG_JOW_GAMESRV_MANAGER_GAMEMANAGERSERVICE_HUMANLOGOUT_LONG = 3;
-			public static final int ORG_JOW_GAMESRV_MANAGER_GAMEMANAGERSERVICE_ISLOGIN_LONG = 4;
+			public static final int ORG_JOW_GAMESRV_MANAGER_GAMEMANAGERSERVICE_GETINITROBOTDATA = 1;
+			public static final int ORG_JOW_GAMESRV_MANAGER_GAMEMANAGERSERVICE_HUMANCREATE_HUMANINFO = 2;
+			public static final int ORG_JOW_GAMESRV_MANAGER_GAMEMANAGERSERVICE_HUMANLOGIN_LONG_CALLPOINT_CALLPOINT = 3;
+			public static final int ORG_JOW_GAMESRV_MANAGER_GAMEMANAGERSERVICE_HUMANLOGOUT_LONG = 4;
+			public static final int ORG_JOW_GAMESRV_MANAGER_GAMEMANAGERSERVICE_ISLOGIN_LONG = 5;
 		}
 		
 		private CallPoint remote;
@@ -251,6 +252,11 @@ public class RPCProxy {
 			return localPort.waitForResult();
 		}
 		
+		public void getInitRobotData() {
+			remote.callerInfo = Utils.getCallerInfo();
+			localPort.call(false, remote, EnumCall.ORG_JOW_GAMESRV_MANAGER_GAMEMANAGERSERVICE_GETINITROBOTDATA, new Object[]{  });
+		}
+		
 		public void humanCreate(HumanInfo arg0) {
 			remote.callerInfo = Utils.getCallerInfo();
 			localPort.call(false, remote, EnumCall.ORG_JOW_GAMESRV_MANAGER_GAMEMANAGERSERVICE_HUMANCREATE_HUMANINFO, new Object[]{ arg0 });
@@ -271,6 +277,12 @@ public class RPCProxy {
 			localPort.call(false, remote, EnumCall.ORG_JOW_GAMESRV_MANAGER_GAMEMANAGERSERVICE_ISLOGIN_LONG, new Object[]{ arg0 });
 		}
 		
+		public Call makeCall_getInitRobotData() {
+			Call call = localPort.makeCall(false, remote, EnumCall.ORG_JOW_GAMESRV_MANAGER_GAMEMANAGERSERVICE_GETINITROBOTDATA, new Object[]{  });
+			call.to.callerInfo = Utils.getCallerInfo();
+			
+			return call;
+		}	
 		public Call makeCall_humanCreate(HumanInfo arg0) {
 			Call call = localPort.makeCall(false, remote, EnumCall.ORG_JOW_GAMESRV_MANAGER_GAMEMANAGERSERVICE_HUMANCREATE_HUMANINFO, new Object[]{ arg0 });
 			call.to.callerInfo = Utils.getCallerInfo();

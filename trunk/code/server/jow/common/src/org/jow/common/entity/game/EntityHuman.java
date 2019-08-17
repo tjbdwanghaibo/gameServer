@@ -24,4 +24,6 @@ public enum EntityHuman {
 	timeLogin,
 	@Column(type=long.class, comment="最后一次登出时间")
 	timeLogout,
+	@Column(type=boolean.class, comment="是否机器人", defaults="false")
+	robot,
 }

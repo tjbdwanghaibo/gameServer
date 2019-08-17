@@ -22,6 +22,9 @@ public final class GameManagerServiceImpl extends RPCImpIBase {
 	public Object getMethodFunction(Service service, int methodKey) {
 		GameManagerService serv = (GameManagerService)service;
 		switch (methodKey) {
+			case EnumCall.ORG_JOW_GAMESRV_MANAGER_GAMEMANAGERSERVICE_GETINITROBOTDATA: {
+				return (JowFunction0)serv::getInitRobotData;
+			}
 			case EnumCall.ORG_JOW_GAMESRV_MANAGER_GAMEMANAGERSERVICE_HUMANCREATE_HUMANINFO: {
 				return (JowFunction1<HumanInfo>)serv::humanCreate;
 			}

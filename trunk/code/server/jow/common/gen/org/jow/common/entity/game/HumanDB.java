@@ -37,6 +37,8 @@ public final class HumanDB extends EntityBase {
 		public static final String timeLogin = "timeLogin";
 		/** 最后一次登出时间 */
 		public static final String timeLogout = "timeLogout";
+		/** 是否机器人 */
+		public static final String robot = "robot";
 	}
 
 	@Override
@@ -164,6 +166,10 @@ public final class HumanDB extends EntityBase {
 				value = getTimeLogout();
 				break;
 			}
+			case K.robot: {
+				value = isRobot();
+				break;
+			}
 			default: break;
 		}
 		
@@ -206,6 +212,10 @@ public final class HumanDB extends EntityBase {
 			}
 			case K.timeLogout: {
 				setTimeLogout((long) value);
+				break;
+			}
+			case K.robot: {
+				setRobot((boolean) value);
 				break;
 			}
 			default: break;
@@ -436,5 +446,32 @@ public final class HumanDB extends EntityBase {
 			}
 		}
 	}
+	/**
+	 * 是否机器人
+	 */
+	public boolean isRobot() {
+		return record.<Integer>get("robot") == 1;
+	}
 
+	public void setRobot(boolean robot) {
+		//更新前的数据状态
+		int statusOld = record.getStatus();
+		
+		//更新属性
+		record.set("robot", robot ? 1 : 0);
+
+		//更新后的数据状态
+		int statusNew = record.getStatus();
+		//1.如果更新前是普通状态 and 更新后是修改状态，那么就记录这条数据，用来稍后自动提交。
+		//2.哪怕之前是修改状态，只要数据是刚创建或串行化过来的新对象，则也会记录修改，因为有些时候会串行化过来一个修改状态下的数据。
+		if ((statusOld == DBConsts.RECORD_STATUS_NONE && statusNew == DBConsts.RECORD_STATUS_MODIFIED) ||
+		   (statusOld == DBConsts.RECORD_STATUS_MODIFIED && record.isNewness())) {
+			//记录修改的数据 用来稍后自动提交
+			Port.getCurrent().addEntityModify(this);
+			//如果是刚创建或串行化过来的新对象 取消这个标示
+			if (record.isNewness()) {
+				record.setNewness(false);
+			}
+		}
+	}
 }

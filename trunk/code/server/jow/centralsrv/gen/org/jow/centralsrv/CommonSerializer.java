@@ -7,6 +7,8 @@ import org.jow.core.gen.JowGenFile;
 public final class CommonSerializer {
 	public static org.jow.core.interfaces.ISerializable create(int id, InputStream in) throws IOException {
 		switch (id) {
+			case -1883554581:
+				return new org.jow.common.battle.BattlePlayerVO();
 			case 1959012824:
 				return org.jow.common.constant.ErrorResult.create(in);
 			case 456271190:

@@ -2,7 +2,7 @@ package org.jow.centralsrv.mian;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.jow.centralsrv.CommonSerializer;
-import org.jow.centralsrv.HumanGlobalService;
+import org.jow.centralsrv.human.HumanGlobalService;
 import org.jow.centralsrv.support.Log;
 import org.jow.common.DefaultPort;
 import org.jow.common.db.InitFieldTable;

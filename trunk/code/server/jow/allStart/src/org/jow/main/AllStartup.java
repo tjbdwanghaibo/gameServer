@@ -1,7 +1,7 @@
 package org.jow.main;
 
 import org.apache.commons.lang3.exception.ExceptionUtils;
-import org.jow.centralsrv.HumanGlobalService;
+import org.jow.centralsrv.human.HumanGlobalService;
 import org.jow.common.DefaultPort;
 import org.jow.common.db.InitFieldTable;
 import org.jow.common.entity.DBReferenceTable;

@@ -1,4 +1,4 @@
-package org.jow.centralsrv;
+package org.jow.centralsrv.human;
 
 import java.util.ArrayList;
 import java.util.HashMap;

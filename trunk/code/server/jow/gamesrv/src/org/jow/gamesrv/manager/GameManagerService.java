@@ -1,10 +1,13 @@
 package org.jow.gamesrv.manager;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.jow.common.battle.BattlePlayerVO;
+import org.jow.common.db.DB;
 import org.jow.common.entity.game.HumanDB;
 import org.jow.common.game.HumanCentralInfo;
 import org.jow.common.game.HumanInfo;
@@ -14,9 +17,11 @@ import org.jow.core.CallPoint;
 import org.jow.core.Parms;
 import org.jow.core.Port;
 import org.jow.core.PortTask;
+import org.jow.core.RecordTransient;
 import org.jow.core.Service;
 import org.jow.core.config.GameConfig;
 import org.jow.core.config.LoginConfig;
+import org.jow.core.db.DBKey;
 import org.jow.core.gen.proxy.DistrClass;
 import org.jow.core.gen.proxy.DistrMethod;
 import org.jow.core.support.TickTimer;
@@ -139,4 +144,32 @@ public class GameManagerService extends Service{
 		humans.put(humanInfo.getId(), humanInfo);
 	}
 	
+	/**
+	 * 加载机器人数据
+	 */
+	@DistrMethod
+	public void getInitRobotData() {
+		long pid = port.createReturnAsync();
+		DB db = DB.newInstance(HumanDB.tableName);
+		db.findBy(false,  DBKey.COLUMN, Arrays.asList(HumanDB.K.id, HumanDB.K.name), HumanDB.K.robot, true);
+		db.listenResult(this::_result_getInitRobotData, "pid", pid);
+		
+	}
+	
+	private void _result_getInitRobotData(Parms results, Parms context) {
+		List<RecordTransient> records = results.get();
+		long pid = context.get("pid");
+		
+		List<BattlePlayerVO> robots = new ArrayList<>();
+		for (RecordTransient record : records) {
+			long humanId = record.get(HumanDB.K.id);
+			String name = record.get(HumanDB.K.name);
+			
+			BattlePlayerVO player = new BattlePlayerVO();
+			player.setId(humanId);
+			player.setName(name);
+			robots.add(player);
+		}
+		port.returnsAsync(pid, robots);
+	}
 }
