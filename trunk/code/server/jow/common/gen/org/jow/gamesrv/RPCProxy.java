@@ -7,8 +7,8 @@ import org.jow.core.Parms;
 import org.jow.core.support.Utils;
 import org.jow.core.support.function.*;
 import org.jow.core.gen.proxy.RPCProxyBase;
-import java.util.List;
-import org.jow.common.game.HumanCentralInfo;
+
+import org.jow.common.battle.BattleEndInfo;
 import org.jow.common.game.HumanInfo;
 import org.jow.core.gen.JowGenFile;
 
@@ -21,7 +21,10 @@ public class RPCProxy {
 			public static final int ORG_JOW_GAMESRV_GAMESERVICE_CONNCLOSED_LONG_LONG = 2;
 			public static final int ORG_JOW_GAMESRV_GAMESERVICE_CONNDROPPED_LONG_LONG = 3;
 			public static final int ORG_JOW_GAMESRV_GAMESERVICE_LOGIN_CALLPOINT_LONG_STRING = 4;
-			public static final int ORG_JOW_GAMESRV_GAMESERVICE_MSGHANDLER_LONG_LONG_BYTES = 5;
+			public static final int ORG_JOW_GAMESRV_GAMESERVICE_MODONBATTLEOVER_LONG_BATTLEENDINFO_STRING = 5;
+			public static final int ORG_JOW_GAMESRV_GAMESERVICE_MODONBATTLESTART_LONG_CALLPOINT_LONG = 6;
+			public static final int ORG_JOW_GAMESRV_GAMESERVICE_MODTEAMONINVITE_LONG_INT_LONG_STRING_STRING = 7;
+			public static final int ORG_JOW_GAMESRV_GAMESERVICE_MSGHANDLER_LONG_LONG_BYTES = 8;
 		}
 		
 		private CallPoint remote;
@@ -125,6 +128,21 @@ public class RPCProxy {
 			localPort.call(false, remote, EnumCall.ORG_JOW_GAMESRV_GAMESERVICE_LOGIN_CALLPOINT_LONG_STRING, new Object[]{ arg0, arg1, arg2 });
 		}
 		
+		public void modOnBattleOver(long arg0, BattleEndInfo arg1, String arg2) {
+			remote.callerInfo = Utils.getCallerInfo();
+			localPort.call(false, remote, EnumCall.ORG_JOW_GAMESRV_GAMESERVICE_MODONBATTLEOVER_LONG_BATTLEENDINFO_STRING, new Object[]{ arg0, arg1, arg2 });
+		}
+		
+		public void modOnBattleStart(long arg0, CallPoint arg1, long arg2) {
+			remote.callerInfo = Utils.getCallerInfo();
+			localPort.call(false, remote, EnumCall.ORG_JOW_GAMESRV_GAMESERVICE_MODONBATTLESTART_LONG_CALLPOINT_LONG, new Object[]{ arg0, arg1, arg2 });
+		}
+		
+		public void modTeamOnInvite(long arg0, int arg1, long arg2, String arg3, String arg4) {
+			remote.callerInfo = Utils.getCallerInfo();
+			localPort.call(false, remote, EnumCall.ORG_JOW_GAMESRV_GAMESERVICE_MODTEAMONINVITE_LONG_INT_LONG_STRING_STRING, new Object[]{ arg0, arg1, arg2, arg3, arg4 });
+		}
+		
 		public void msgHandler(long arg0, long arg1, byte... arg2) {
 			remote.callerInfo = Utils.getCallerInfo();
 			localPort.call(false, remote, EnumCall.ORG_JOW_GAMESRV_GAMESERVICE_MSGHANDLER_LONG_LONG_BYTES, new Object[]{ arg0, arg1, arg2 });
@@ -150,6 +168,24 @@ public class RPCProxy {
 		}	
 		public Call makeCall_login(CallPoint arg0, long arg1, String arg2) {
 			Call call = localPort.makeCall(false, remote, EnumCall.ORG_JOW_GAMESRV_GAMESERVICE_LOGIN_CALLPOINT_LONG_STRING, new Object[]{ arg0, arg1, arg2 });
+			call.to.callerInfo = Utils.getCallerInfo();
+			
+			return call;
+		}	
+		public Call makeCall_modOnBattleOver(long arg0, BattleEndInfo arg1, String arg2) {
+			Call call = localPort.makeCall(false, remote, EnumCall.ORG_JOW_GAMESRV_GAMESERVICE_MODONBATTLEOVER_LONG_BATTLEENDINFO_STRING, new Object[]{ arg0, arg1, arg2 });
+			call.to.callerInfo = Utils.getCallerInfo();
+			
+			return call;
+		}	
+		public Call makeCall_modOnBattleStart(long arg0, CallPoint arg1, long arg2) {
+			Call call = localPort.makeCall(false, remote, EnumCall.ORG_JOW_GAMESRV_GAMESERVICE_MODONBATTLESTART_LONG_CALLPOINT_LONG, new Object[]{ arg0, arg1, arg2 });
+			call.to.callerInfo = Utils.getCallerInfo();
+			
+			return call;
+		}	
+		public Call makeCall_modTeamOnInvite(long arg0, int arg1, long arg2, String arg3, String arg4) {
+			Call call = localPort.makeCall(false, remote, EnumCall.ORG_JOW_GAMESRV_GAMESERVICE_MODTEAMONINVITE_LONG_INT_LONG_STRING_STRING, new Object[]{ arg0, arg1, arg2, arg3, arg4 });
 			call.to.callerInfo = Utils.getCallerInfo();
 			
 			return call;

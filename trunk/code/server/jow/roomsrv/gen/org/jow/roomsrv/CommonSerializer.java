@@ -1,4 +1,4 @@
-package org.jow.matchsrv;
+package org.jow.roomsrv;
 import java.io.IOException;
 import org.jow.core.InputStream;
 import org.jow.core.gen.JowGenFile;

@@ -6,5 +6,14 @@
 	<classpathentry kind="lib" path="/corelibs/connsrv.jar"/>
 	<classpathentry kind="lib" path="/corelibs/core.jar"/>
 	<classpathentry kind="lib" path="/corelibs/dbsrv.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/common"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/corelibs"/>
+	<classpathentry kind="lib" path="/libs/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="/libs/fastjson.jar"/>
+	<classpathentry kind="lib" path="/libs/log4j-api-2.6.2.jar"/>
+	<classpathentry kind="lib" path="/libs/log4j-core-2.6.2.jar"/>
+	<classpathentry kind="lib" path="/libs/log4j-slf4j-impl-2.6.2.jar"/>
+	<classpathentry kind="lib" path="/libs/protobuf.jar"/>
+	<classpathentry kind="lib" path="/libs/slf4j-api-1.7.21.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

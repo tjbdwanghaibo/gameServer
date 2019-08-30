@@ -3,7 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/common"/>
 	<classpathentry kind="lib" path="/libs/log4j-api-2.6.2.jar"/>
 	<classpathentry kind="lib" path="../config"/>
 	<classpathentry kind="lib" path="/libs/commons-lang3-3.4.jar"/>
@@ -15,5 +14,6 @@
 	<classpathentry kind="lib" path="/corelibs/dbsrv.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/corelibs"/>
 	<classpathentry kind="lib" path="/libs/log4j-core-2.6.2.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/common"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

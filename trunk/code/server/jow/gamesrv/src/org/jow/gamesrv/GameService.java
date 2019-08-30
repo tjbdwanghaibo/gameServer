@@ -3,7 +3,9 @@ package org.jow.gamesrv;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.jow.common.battle.BattleEndInfo;
 import org.jow.common.constant.ErrorCode;
+import org.jow.common.constant.ErrorResult;
 import org.jow.connsrv.RPCProxy.ConnectionProxy;
 import org.jow.core.CallPoint;
 import org.jow.core.Port;
@@ -165,7 +167,38 @@ public class GameService extends Service{
 		}
 	}
 	
+	@DistrMethod
+	public void modTeamOnInvite(long humanId, int teamId, long inviteId, String inviteName, String inviteHead) {
+		HumanObject humanObj = humanObjs.get(humanId);
+		if(humanObj == null) {
+			Log.team.error("Team invite human failed, human not online, humanId={}", humanId);
+			port.returns(new ErrorResult(ErrorCode.HUMAN_NOT_ONLINE));
+			return;
+		}
+		
+		Log.team.error("Team 功能模块 暂未开发！, humanId={}", humanId);
+	}
 	
+	@DistrMethod
+	public void modOnBattleOver(long humanId, BattleEndInfo battleEndInfo, String rankInfo) {
+		
+		HumanObject huamnObject = humanObjs.get(humanId);
+		if(huamnObject == null) {
+			Log.team.error("Battle result failed, human not online, humanId={}", humanId);
+			return;
+		}
+		Log.team.error("战斗 功能模块 暂未开发！, humanId={}", humanId);
+	}
 	
+	@DistrMethod
+	public void modOnBattleStart(long humanId, CallPoint roomPoint, long roomId) {
+		HumanObject humanObj = humanObjs.get(humanId);
+		if (humanObj == null) {
+			Log.team.error("BattleStart result failed, human not online, humanId={}", humanId);
+			return;
+		}
+		
+		Log.team.error("战斗 功能模块 暂未开发！, humanId={}", humanId);
+	}
 	
 }

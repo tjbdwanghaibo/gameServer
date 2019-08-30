@@ -7,6 +7,8 @@ import org.jow.core.gen.JowGenFile;
 public final class CommonSerializer {
 	public static org.jow.core.interfaces.ISerializable create(int id, InputStream in) throws IOException {
 		switch (id) {
+			case -1451853192:
+				return new org.jow.common.battle.BattleEndInfo();
 			case -1883554581:
 				return new org.jow.common.battle.BattlePlayerVO();
 			case 1959012824:
@@ -51,6 +53,12 @@ public final class CommonSerializer {
 				return new org.jow.core.support.Parms();
 			case -1539888512:
 				return new org.jow.core.support.TickTimer();
+			case 44852340:
+				return org.jow.core.support.tuple.FourTuple.create(in);
+			case -723224360:
+				return org.jow.core.support.tuple.ThreeTuple.create(in);
+			case -286473110:
+				return org.jow.core.support.tuple.TwoTuple.create(in);
 		}
 		return null;
 	}
